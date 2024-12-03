@@ -1,5 +1,7 @@
 # ICLR Bi-Align Workshop 2025
 
+This is the website for the ICLR Bi-Align Workshop 2025: https://bialign-workshop.github.io/.
+<!-- 
 ## dev
 
 ```sh
@@ -15,4 +17,4 @@ If you only want to change certain information for our workshop, please feel fre
 ```sh
 npm run deploy
 # visit at https://bialign-workshop.github.io/
-```
+``` -->
