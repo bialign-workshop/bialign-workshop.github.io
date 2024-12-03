@@ -1,4 +1,4 @@
-# CHI-TRAIT.github.io
+# ICLR Bi-Align Workshop 2025
 
 ## dev
 
@@ -14,5 +14,5 @@ If you only want to change certain information for our workshop, please feel fre
 
 ```sh
 npm run deploy
-# visit at https://chi-trait.github.io/
+# visit at https://bialign-workshop.github.io/
 ```
