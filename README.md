@@ -1,20 +1,3 @@
 # ICLR Bi-Align Workshop 2025
 
-This is the website for the ICLR Bi-Align Workshop 2025: https://bialign-workshop.github.io/.
-<!-- 
-## dev
-
-```sh
-npm install
-npm run start
-# visit at localhost:3000
-```
-
-If you only want to change certain information for our workshop, please feel free to directly edit [this file](https://bialign-workshop.github.io/), or ping Hua.
-
-## publish
-
-```sh
-npm run deploy
-# visit at https://bialign-workshop.github.io/
-``` -->
+This is a placeholder for the ICLR Bi-Align Workshop 2025 website: [https://bialign-workshop.github.io/](https://bialign-workshop.github.io/).
