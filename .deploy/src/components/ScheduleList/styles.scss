@@ -1,0 +1,43 @@
+@import "../sass/colors";
+.schedule-list {
+  padding: 10px 30px;
+  color: $grey800;
+  .schedule {
+    //display: flex;
+    //justify-content: "flex-start";
+    //margin: 4px 0;
+    > * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .icon {
+      visibility: hidden;
+      cursor: pointer;
+      margin-left: 5px;
+      color: $grey600;
+      vertical-align: middle;
+      &.visible {
+        visibility: visible;
+      }
+    }
+    .description {
+      font-size: 14px;
+      color: $grey600;
+      display: none;
+      cursor: pointer;
+      &.visible {
+        display: flex;
+      }
+    }
+    .theme {
+      margin-top: 0px;
+      color: $primary-color;
+      
+    }
+    .time {
+      font-family: "Roboto Mono", Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+      //margin: 0 30px;
+    }
+  }
+}
