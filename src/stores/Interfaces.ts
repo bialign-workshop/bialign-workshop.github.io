@@ -2,12 +2,14 @@ import { ReactElement } from "react";
 
 export enum PageIds {
   about = "Overview",
-  cfp = "Call for Papers",
-  schedule = "Schedule",
   speakers = "Speakers",
+  schedule = "Schedule",
+  papers = "Accepted Papers",
+  cfp = "Call for Papers",
   organizers = "Organizers",
-  // committee = "Committee"
+  committee = "Committees",
 }
+
 export interface People {
   name: string;
   description: string;
@@ -15,10 +17,15 @@ export interface People {
   webpage: string;
   affliation: string;
   twitter?: string;
+  bluesky?: string;
 }
 export interface Speaker extends People {
   type: string;
 }
+export interface CHIPeople extends People {
+  type: string;
+}
+
 
 export interface CFP {
   description: string;
@@ -27,7 +34,7 @@ export interface CFP {
   dates: {
     description?: string;
     date: string | ReactElement;
-    type: "Submission" | "Notification" | "Camera ready" | "Workshop";
+    type: "Submission" | "Notification" | "Camera ready" | "ICLR Workshop" | "CHI SIG";
   }[];
   submit: {
     platform: {
@@ -35,7 +42,7 @@ export interface CFP {
       url: string;
     };
     format: string | ReactElement;
-    type: string;
+    type: string | ReactElement;
   };
 }
 
@@ -54,6 +61,7 @@ export interface Schedule {
 export interface Overview {
   contact: string;
   acronym: string;
+  slack: string;
   year: string;
   description: string | ReactElement;
   fullName: string;
@@ -69,11 +77,31 @@ export interface Overview {
   date: string;
 }
 
+export interface Oral {
+  title: string;
+  authors: string;
+}
+
+export interface Poster {
+  title: string;
+  authors: string;
+}
+
+export interface Tiny {
+  title: string;
+  authors: string;
+}
+
 export interface Metadata {
   overview: Overview;
   organizers: People[];
+  chiorganizers: CHIPeople[];
   speakers: Speaker[];
+  orals: Oral[];
+  poster: Poster[];
+  tiny: Tiny[];
   cfp: CFP;
   pcs: ProgramCommittee[];
   schedule: Schedule[];
+
 }

@@ -13,8 +13,26 @@
     padding: 10px;
     margin: 10px;
     font-size: 27px;
-    //text-align: center;
     color: $primary-color;
+    // text-align: center;
+    font-weight: bolder;
+    border-bottom: $grey200 solid 1px;
+  }
+  .iclrtitle {
+    padding: 10px;
+    margin: 10px;
+    font-size: 27px;
+    //text-align: center;
+    color: #5B8AE6;
+    font-weight: bolder;
+    border-bottom: $grey200 solid 1px;
+  }
+  .chititle {
+    padding: 10px;
+    margin: 10px;
+    font-size: 27px;
+    //text-align: center;
+    color: #E25481;
     font-weight: bolder;
     border-bottom: $grey200 solid 1px;
   }
@@ -34,10 +52,48 @@
     //border: 1px solid rgba(0, 0, 0, 0.12);
     padding: 5px;
   }
+
+  .chisection {
+    background-color: #FDF9FB;
+    max-width: calc(100vw - min(10vw, 100px));
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    //margin: 50px;
+    width: 100%;
+    margin: auto;
+    > * {
+      margin: auto;
+    }
+    margin-top: 30px;
+    padding: 5px;
+  }
+
+  .iclrsection {
+    background-color: #F9FBFE;
+    max-width: calc(100vw - min(10vw, 100px));
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    margin: auto;
+    > * {
+      margin: auto;
+    }
+    margin-top: 30px;
+    padding: 5px;
+  }
 }
 
-
-
+.section-container {
+  display: flex;
+  width: 96%;
+  gap: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2%;  // This adds margin of 10% on left and right sides
+  .section {
+    flex: 1;
+  }
+}
 
 
 

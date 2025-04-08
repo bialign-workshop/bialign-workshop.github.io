@@ -3,6 +3,7 @@ import { makeStyles, Menu, MenuItem, Paper } from "@material-ui/core";
 import "./styles.scss";
 import { Metadata, PageIds } from "../../stores/Interfaces";
 import OrganizerList from "../OrganizerList";
+import CHIOrganizerList from "../CHIOrganizerList";
 import "./styles.scss";
 import CommmitteeList from "../CommitteeList";
 import CFPText from "../CFPText";
@@ -10,6 +11,7 @@ import ScheduleList from "../ScheduleList";
 import LandingDiv from "../Landing";
 import AboutDiv from "../About";
 import SpeakerList from "../Speaker";
+import PaperList from "../PaperList"
 import { Alert } from "@material-ui/lab";
 import { NavLink } from "react-router-dom";
 
@@ -40,8 +42,18 @@ const Main = ({
         )}
         {types.includes("schedule") && (
           <div className="section">
-            <div className="title">Schedule (to be finalized)</div>
+            <div className="title">Schedule (Singapore Time, GMT+8)</div>
             <ScheduleList schedules={meta.schedule} />
+          </div>
+        )}
+        {types.includes("orals") && (
+          <div className="section">
+            <div className="title">Accepted Papers</div>
+            <PaperList 
+              orals={meta.orals}
+              poster={meta.poster}
+              tiny={meta.tiny}
+               />
           </div>
         )}
         {types.includes("schedule") && (
@@ -63,10 +75,16 @@ const Main = ({
           </div>
         )}
         {types.includes("organizers") && (
-          <div className="section">
-            <div className="title">Organizers</div>
-            <OrganizerList organizers={meta.organizers} />
-          </div>
+          <div className="section-container">
+            <div className="iclrsection">
+              <div className="iclrtitle">Main ICLR Organizers</div>
+              <OrganizerList organizers={meta.organizers} />
+            </div>
+            <div className="chisection">
+              <div className="chititle">Main CHI Organizers</div>
+              <CHIOrganizerList chiorganizers={meta.chiorganizers} />
+            </div>
+        </div>
         )}
         {types.includes("committee") && (
           <div className="section">

@@ -9,14 +9,19 @@ const CommmitteeList = ({
   members: ProgramCommittee[];
 }): ReactElement => {
   return (
-    <div className="committee-list">
+    // <div className="committee-list">
+    <Grid container className="committee-list">
       {members.map((member, index) => (
-        <div className="member" key={member.name}>
+        <Grid item xs={12} sm={6} key={member.name}>
+        {/* <div className="member" key={member.name}> */}
+        <div className="member">
           <span className="name">{member.name}</span>
           <span className="affiliation">{member.affiliation}</span>
         </div>
+      </Grid>
       ))}
-    </div>
+    {/* </div> */}
+    </Grid>
   );
 };
 export default CommmitteeList;

@@ -67,11 +67,20 @@ export const theme = createTheme({
 });
 
 const App = (): ReactElement => {
+  const [selectedVenue, setSelectedVenue] = useState("ICLR2025");
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
+      {/* <Router basename={`/${selectedVenue}`}> */}
+      {/* <Router basename={`/${selectedVenue}`}> */}
+      {/* <Router> */}
         <div className="app">
-          <Header logo={Iclr2025.overview.logoImg} />
+          <Header 
+          logo={Iclr2025.overview.logoImg} 
+          // selectedVenue={selectedVenue}
+          // onVenueChange={(v) => setSelectedVenue(v)}
+          />
           <Switch>
             <Route
               path="/about"
@@ -87,6 +96,11 @@ const App = (): ReactElement => {
               path="/cfp"
               exact
               render={() => <Main meta={Iclr2025} types={["cfp"]} />}
+            />
+            <Route
+              path="/papers"
+              exact
+              render={() => <Main meta={Iclr2025} types={["orals"]} />}
             />
             <Route
               path="/schedule"
@@ -119,7 +133,7 @@ const App = (): ReactElement => {
               )}
             />
           </Switch>
-          <Footer contact={Iclr2025.overview.contact} />
+          <Footer contact={Iclr2025.overview.contact} slack={Iclr2025.overview.slack}/>
         </div>
       </Router>
     </ThemeProvider>

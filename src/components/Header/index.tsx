@@ -4,6 +4,7 @@ import {
   makeStyles,
   Menu,
   MenuItem,
+  Select,
   Toolbar,
 } from "@material-ui/core";
 import React, { ReactElement } from "react";
@@ -26,26 +27,33 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Header = ({ logo }: { logo: string }): ReactElement => {
-  {
-    /* <header className="app-header">
-      <h1>TRAIT</h1>
-      <nav>
-        <ul>
-          {Object.values(PageIds).map((value) => (
-            <li className="option">
-              <a href={`#${value}`} key={value}>
-                {value}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-          </header>*/
-  }
+
+
+interface HeaderProps {
+  logo: string;
+  selectedVenue: string;
+  onVenueChange: (year: string) => void;
+}
+
+
+const Header = ({ logo, selectedVenue, onVenueChange }: HeaderProps) => {
+  const venues = ["ICLR2025", "CHI2025"]; 
+  
+  const handleVenueChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const venue = event.target.value as string;
+    onVenueChange(venue);
+    // Optional: Reload the page with the new year
+    // window.location.href = `/${selectedVenue}`;
+
+  };
+
+// const Header = ({ logo }: { logo: string }): ReactElement => {
+//   {  }
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -83,6 +91,9 @@ const Header = ({ logo }: { logo: string }): ReactElement => {
   );
   const classes = useStyles();
   return (
+
+
+
     <AppBar className="app-header" position="sticky">
       <Toolbar variant="dense" className="toolbar">
         <NavLink exact to="/">
@@ -90,7 +101,27 @@ const Header = ({ logo }: { logo: string }): ReactElement => {
             className="logo"
             src={`${process.env.PUBLIC_URL}/images/logo_word_white.png`}
           ></img>
+
+        {/* <Select
+          value={selectedVenue}
+          onChange={handleVenueChange}
+          style={{ 
+            marginLeft: 10,
+            marginTop: 10,
+            color: 'lightgrey',
+            fontWeight: 'bold', 
+            fontSize: 20
+          }}
+        >
+          {venues.map((venue) => (
+            <MenuItem key={venue} value={venue}>
+              {venue}
+            </MenuItem>
+          ))}
+        </Select> */}
+
         </NavLink>
+
 
         <nav className={classes.sectionDesktop}>
           <ul>
@@ -103,6 +134,8 @@ const Header = ({ logo }: { logo: string }): ReactElement => {
             ))}
           </ul>
         </nav>
+        
+
         <div className={classes.sectionMobile}>
           <IconButton
             aria-label="show more"

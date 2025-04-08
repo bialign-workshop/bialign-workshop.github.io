@@ -5,29 +5,9 @@ import "./styles.scss";
 import { Visibility } from "@material-ui/icons";
 import { Grid } from "@material-ui/core";
 
+
 const ScheduleEntry = ({ schedule }: { schedule: Schedule }): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
-
-  /*<div className="schedule">
-      <div className="time">
-        {schedule.start} -- {schedule.end}
-      </div>
-      <div className="theme">
-        
-        {schedule.title}
-        <Visibility
-          onClick={() => setIsOpen(!isOpen)}
-          className={clsx("icon", { visible: schedule.description })}
-          fontSize="small"
-          color="secondary"
-        />
-        <div className={clsx("description", { visible: isOpen })}>
-          {schedule.description}
-        </div>
-      </div>
-      <div></div>
-  </div>*/
-
   return (
     <Grid
       container
@@ -53,6 +33,7 @@ const ScheduleEntry = ({ schedule }: { schedule: Schedule }): ReactElement => {
     </Grid>
   );
 };
+
 const ScheduleList = ({
   schedules,
 }: {
@@ -66,4 +47,5 @@ const ScheduleList = ({
     </div>
   );
 };
+
 export default ScheduleList;

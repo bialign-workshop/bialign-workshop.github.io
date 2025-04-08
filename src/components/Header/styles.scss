@@ -60,8 +60,8 @@
     font-weight: bold;
     padding: 0 20px;
     // line-height: 40px; // Reduce from $header-height
-    // line-height: $header-height / 2;
-    line-height: $header-height;
+    line-height: $header-height / 2;
+    // line-height: $header-height;
     text-decoration: none;
     box-sizing: border-box;
     cursor: pointer;
@@ -72,7 +72,7 @@
     // }
     &.selected {
       color: $yellow600;
-      box-shadow: 0 -2px 0 $yellow600 inset;
+      // box-shadow: 0 -2px 0 $yellow600 inset;
       bottom: 0;
     }
   }

@@ -1,11 +1,15 @@
 #!/bin/bash
 # GIT_REPO_URL=$(git config --get remote.origin.url)
 
+# # npm run build && gh-pages -d build
+
+
 GIT_REPO_URL="https://github.com/bialign-workshop/bialign-workshop.github.io.git"
+
 
 mkdir .deploy
 cp -R ./* .deploy
-cd .build
+cd build
 git init .
 git remote add github $GIT_REPO_URL
 git checkout -b gh-pages
@@ -14,7 +18,6 @@ git commit -am "Static site deploy"
 git push github gh-pages --force
 cd ..
 rm -rf .deploy
-
 
 
 

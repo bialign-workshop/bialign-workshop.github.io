@@ -1,6 +1,6 @@
 import { Grid, Avatar } from "@material-ui/core";
 import React, { ReactElement } from "react";
-import { People, PageIds } from "../../stores/Interfaces";
+import { CHIPeople } from "../../stores/Interfaces";
 
 import "./styles.scss";
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import { Language, Twitter, Web, Group } from "@material-ui/icons";
 import { Tooltip } from "@material-ui/core";
 
 
-const OrganizerEntry = ({ organizer }: { organizer: People }): ReactElement => {
+const OrganizerEntry = ({ organizer }: { organizer: CHIPeople }): ReactElement => {
   const [isSeeDescription, setIsSeeDescription] = React.useState(false);
   const icons = (
     <>
@@ -63,22 +63,26 @@ const OrganizerEntry = ({ organizer }: { organizer: People }): ReactElement => {
   );
 };
 
-const OrganizerList = ({
-  organizers,
+const CHIOrganizerList = ({
+  chiorganizers,
 }: {
-  organizers: People[];
+  chiorganizers: CHIPeople[];
 }): ReactElement => {
-
   return (
-    <div className="organizer-list">
-      
-      {organizers.map((organizer: People) => (
-        <div key={organizer.name} className="organizer-item">
-          <OrganizerEntry organizer={organizer} />
+    <div className="chiorganizer-list">
+      {chiorganizers.map((chiorganizer: CHIPeople) => (
+        <div key={chiorganizer.name} className="organizer-item">
+          <OrganizerEntry organizer={chiorganizer} />
         </div>
       ))}
     </div>
-    
+    // <Grid container spacing={2} className="chiorganizer-list">
+    //   {chiorganizers.map((organizer: CHIPeople) => (
+    //     <Grid item xs={12} sm={6} md={3} key={organizer.name}>
+    //       <OrganizerEntry organizer={organizer} />
+    //     </Grid>
+    //   ))}
+    // </Grid>
   );
 };
-export default OrganizerList;
+export default CHIOrganizerList;
