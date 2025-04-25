@@ -76,8 +76,7 @@ const App = (): ReactElement => {
       {/* <Router basename={`/${selectedVenue}`}> */}
       {/* <Router> */}
         <div className="app">
-          <Header 
-          logo={Iclr2025.overview.logoImg} 
+          <Header logo={Iclr2025.overview.logoImg} 
           // selectedVenue={selectedVenue}
           // onVenueChange={(v) => setSelectedVenue(v)}
           />

@@ -40,11 +40,16 @@ const ScheduleList = ({
   schedules: Schedule[];
 }): ReactElement => {
   return (
+    <>
+    <div className="paper-title" style={{ marginLeft: "-30px" }}> <a href="https://docs.google.com/spreadsheets/d/1TkJNuE4cXcBChvlPVHUl3rcERhbwEhxURPBpN1flKJk/edit?usp=sharing" target="_blank">Paper Presentation Schedule</a> <span style={{ color: "red" }}>is Now Released</span>!</div>
+    <div className="paper-title" style={{ marginLeft: "-30px" }}> <a href="https://washington.zoom.us/j/96622186079" target="_blank">Join the Zoom Link</a> <span style={{ color: "red" }}>for BiAlign Workshop's Online Stream</span>!</div>
+    <br/>
     <div className="schedule-list">
       {schedules.map((schedule, index) => (
         <ScheduleEntry schedule={schedule} key={index} />
       ))}
     </div>
+    </>
   );
 };
 

@@ -58,6 +58,7 @@ const OrganizerEntry = ({ organizer }: { organizer: People }): ReactElement => {
         </div>
         <div className="name">{organizer.name}</div>
         <div className="affiliation">{organizer.affliation}</div>
+        <div className="affiliation">{organizer.label}</div>
       </div>
     </div>
   );

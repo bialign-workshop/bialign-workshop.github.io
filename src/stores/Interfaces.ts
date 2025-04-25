@@ -13,6 +13,7 @@ export enum PageIds {
 export interface People {
   name: string;
   description: string;
+  label?: string;
   img: string;
   webpage: string;
   affliation: string;
@@ -80,16 +81,19 @@ export interface Overview {
 export interface Oral {
   title: string;
   authors: string;
+  link: string;
 }
 
 export interface Poster {
   title: string;
   authors: string;
+  link: string;
 }
 
 export interface Tiny {
   title: string;
   authors: string;
+  link: string;
 }
 
 export interface Metadata {
