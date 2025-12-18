@@ -17,7 +17,7 @@ const About2026 = ({
         {/* Custom layout for 2026 - you can customize this section */}
         <Grid container spacing={4} className="dates" justifyContent="center">
           {cfp.dates.map((date, i) => {
-            if (date.type === "Camera ready") {
+            if (date.type === "Camera Ready") {
               return null;
             }
             return (
