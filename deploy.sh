@@ -21,6 +21,11 @@ rm -rf .deploy
 
 
 
+
+# git push origin gh-pages --force
+
+
+
 # #!/bin/bash
 # GIT_REPO_URL="https://github.com/bialign-workshop/bialign-workshop.github.io.git"
 
