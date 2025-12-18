@@ -317,14 +317,8 @@ const cfp: CFP = {
           </span>
         </span>
       ),
-      type: "Camera ready",
+      type: "Camera Ready",
     },
-    // {
-    //   date: "April 13-17 (TBD), 2026",
-    //   type: "ICLR Workshop",
-    //   description:
-    //     "At least one author must register and attend the workshop in person.",
-    // },
     {
       date: "April 13-17 (TBD), 2026",
       type: "CHI Workshop",
