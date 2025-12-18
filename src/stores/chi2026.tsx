@@ -339,12 +339,12 @@ const cfp: CFP = {
         We call for <b>2-page</b>(tiny), <b>4-page</b> (short), and <b>8-page</b> (long) papers,  excluding references, <b>NOT anonymized</b>. 
       </span>
     ),
-    // type: (
-    //   <span>
-    //     {" "}
-    //   This workshop is optionally archival. Please indicate your selection of an <b>"archival submission"</b> or a <b>"non-archival submission"</b> at the bottom of your OpenReview Submission Portal. The archival option will not influence the review of your submission.
-    //   </span>
-    // )
+    type: (
+      <span>
+        {" "}
+      This workshop is optionally archival. Please indicate your selection of an <b>"archival submission"</b> or a <b>"non-archival submission"</b> at the bottom of your OpenReview Submission Portal. The archival option will not influence the review of your submission.
+      </span>
+    )
   },
   
 };
