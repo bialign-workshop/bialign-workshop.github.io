@@ -83,3 +83,25 @@
   color: $grey700;
   font-weight: 500;
 }
+
+.year-select {
+  color: $grey200 !important;
+  font-weight: bold !important;
+  margin-left: 8px;
+  
+  .MuiSelect-select {
+    padding: 4px 24px 4px 8px !important;
+  }
+  
+  .MuiSelect-icon {
+    color: $grey200 !important;
+  }
+  
+  &:hover {
+    color: $grey900 !important;
+    
+    .MuiSelect-icon {
+      color: $grey900 !important;
+    }
+  }
+}

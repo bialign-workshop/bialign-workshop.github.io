@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { grey, orange, pink, red, blue, yellow } from "@material-ui/core/colors";
 
 
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import "./styles.scss";
 
@@ -11,10 +11,10 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 
-// import { Info2022 } from "../stores/Info2022";
 import { Iclr2025 } from "../stores/iclr2025";
+import { CHI2026 } from "../stores/chi2026";
 
-//import {store } from '../stores/Database';
+
 
 export const theme = createTheme({
   palette: {
@@ -76,13 +76,16 @@ const App = (): ReactElement => {
       {/* <Router basename={`/${selectedVenue}`}> */}
       {/* <Router> */}
         <div className="app">
-          <Header logo={Iclr2025.overview.logoImg} 
-          // selectedVenue={selectedVenue}
-          // onVenueChange={(v) => setSelectedVenue(v)}
+          <Header 
+          selectedVenue={selectedVenue}
+          onVenueChange={(v) => setSelectedVenue(v)}
           />
           <Switch>
+            <Route exact path="/">
+              <Redirect to="/2025" />
+            </Route>
             <Route
-              path="/about"
+              path="/2025"
               exact
               render={() => (
                 <Main
@@ -92,37 +95,47 @@ const App = (): ReactElement => {
               )}
             />
             <Route
-              path="/cfp"
+              path="/2025/about"
+              exact
+              render={() => (
+                <Main
+                  meta={Iclr2025}
+                  types={["about", "organizers"]}
+                />
+              )}
+            />
+            <Route
+              path="/2025/cfp"
               exact
               render={() => <Main meta={Iclr2025} types={["cfp"]} />}
             />
             <Route
-              path="/papers"
+              path="/2025/papers"
               exact
               render={() => <Main meta={Iclr2025} types={["orals"]} />}
             />
             <Route
-              path="/schedule"
+              path="/2025/schedule"
               exact
               render={() => <Main meta={Iclr2025} types={["schedule"]} />}
             />
             <Route
-              path="/speakers"
+              path="/2025/speakers"
               exact
               render={() => <Main meta={Iclr2025} types={["speakers"]} />}
             />
             <Route
-              path="/organizers"
+              path="/2025/organizers"
               exact
               render={() => <Main meta={Iclr2025} types={["organizers"]} />}
             />
             <Route
-              path="/committee"
+              path="/2025/committee"
               exact
               render={() => <Main meta={Iclr2025} types={["committee"]} />}
             />
             <Route
-              path="/"
+              path="/2025/"
               exact
               render={() => (
                 <Main
@@ -131,8 +144,70 @@ const App = (): ReactElement => {
                 />
               )}
             />
+            <Route
+              path="/chi2026/about"
+              exact
+              render={() => (
+                <Main
+                  meta={CHI2026}
+                  types={["about", "organizers"]}
+                />
+              )}
+            />
+            <Route
+              path="/chi2026/cfp"
+              exact
+              render={() => <Main meta={CHI2026} types={["cfp"]} />}
+            />
+            <Route
+              path="/chi2026/papers"
+              exact
+              render={() => <Main meta={CHI2026} types={["orals"]} />}
+            />
+            <Route
+              path="/chi2026/schedule"
+              exact
+              render={() => <Main meta={CHI2026} types={["schedule"]} />}
+            />
+            <Route
+              path="/chi2026/speakers"
+              exact
+              render={() => <Main meta={CHI2026} types={["speakers"]} />}
+            />
+            <Route
+              path="/chi2026/organizers"
+              exact
+              render={() => <Main meta={CHI2026} types={["organizers"]} />}
+            />
+            <Route
+              path="/chi2026/committee"
+              exact
+              render={() => <Main meta={CHI2026} types={["committee"]} />}
+            />
+            <Route
+              path="/chi2026/"
+              exact
+              render={() => (
+                <Main
+                  meta={CHI2026}
+                  types={["about", "organizers"]}
+                />
+              )}
+            />
+            <Route
+              path="/chi2026"
+              exact
+              render={() => (
+                <Main
+                  meta={CHI2026}
+                  types={["about", "organizers"]}
+                />
+              )}
+            />
+
+
           </Switch>
-          <Footer contact={Iclr2025.overview.contact} slack={Iclr2025.overview.slack}/>
+          <Footer />
         </div>
       </Router>
     </ThemeProvider>

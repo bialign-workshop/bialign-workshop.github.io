@@ -10,6 +10,7 @@ import {
   Oral,
   Poster,
   Tiny,
+  CHIPeople,
 } from "./Interfaces";
 const format = "documentclass [manuscript, review, anonymous] {acmart}";
 const overview: Overview = {
@@ -90,6 +91,7 @@ const overview: Overview = {
   logoWithWord: "logo_word_long_chi.png",
   confName: "ICLR",
 };
+
 
 const organizers: People[] = [
   {
@@ -217,7 +219,6 @@ const organizers: People[] = [
 ];
 
 
-
 const chiorganizers: CHIPeople[] = [
   {
     name: "Hua Shen",
@@ -227,6 +228,7 @@ const chiorganizers: CHIPeople[] = [
     img: "hua.png",
     twitter: "https://x.com/huashen218",
     bluesky: "https://bsky.app/profile/huashen.bsky.social",
+    type: "Organizer",
     description:
       "Hua Shen is a Postdoctoral Scholar at the University of Washington. " +
       "She is leading the bidirectional human-AI alignment projects and workshops with collaborators. " + 
@@ -242,6 +244,7 @@ const chiorganizers: CHIPeople[] = [
     img: "tiffany.png",
     twitter: "https://x.com/tknearem",
     bluesky: "https://bsky.app/profile/tknearem.bsky.social",
+    type: "Organizer",
     description:
       "Tiffany Knearem is a User Experience Researcher on the Material Design team at Google. Her research focus is on product designer-developer collaboration, creativity support tooling and opportunities for AI in the user interface (UI) design space. She holds a PhD in Information Sciences and Technologies with emphasis on Human-Computer Interaction from Pennsylvania State University, advised by Dr. John M. Carroll. She co-organized the CHI 2024 workshop on Computational UI."
   },
@@ -253,6 +256,7 @@ const chiorganizers: CHIPeople[] = [
     img: "michael.png",
     twitter: "https://x.com/lxieyang",
     // bluesky: "",
+    type: "Organizer",
     description:
       "Michael Xieyang Liu is a research scientist at Google DeepMind. His research aims to improve human-AI interaction, with a particular focus on human interaction with multimodal large language models and controllable AI. Michael organized the Sensemaking workshop at CHI 2024. Michael previously earned his Ph.D. from the Human-Computer Interaction Institute at Carnegie Mellon University. There, he worked at the intersection of HCI, programming tools, sensemaking, intelligent user interfaces, and human-AI interaction, where he designed and built systems that accelerate online sensemaking for developers and facilitate human-AI interactions for end-users."
   },
@@ -264,6 +268,7 @@ const chiorganizers: CHIPeople[] = [
     twitter: "https://x.com/tongshuangwu",
     bluesky: "https://bsky.app/profile/sherrytswu.bsky.social",
     img: "sherry.png",
+    type: "Organizer",
     description:
       "Sherry Wu is an Assistant Professor at the Human-Computer Interaction Institute, Carnegie Mellon University. Her research lies at the intersection of Human-Computer Interaction and Natural Language Processing, aiming to design, evaluate, build, and interact with AI systems that are compatible with actual human goals. Sherry has organized three workshops at NLP and HCI conferences: Shared Stories and Lessons Learned workshop at EMNLP 2022 and Trust and Reliance in AI-Human Teams at CHI 2023-2024. She has also given two tutorials related to Human-AI Interaction at EMNLP 2023 and NAACL 2024. Before joining CMU, Sherry received her Ph.D. degree from the University of Washington.",
   },
@@ -275,6 +280,7 @@ const chiorganizers: CHIPeople[] = [
     img: "yun.png",
     twitter: "https://x.com/YunHuang_HCI",
     // bluesky: "",
+    type: "Organizer",
     description:
       "Yun Huang is an Associate Professor at the School of Information Sciences at the University of Illinois at Urbana-Champaign. She co-directs the SALT lab, focusing on social computing systems research. She is dedicated to innovating AI-based solutions that foster a synergistic relationship between humans and machines, enhancing educational opportunities to all and expanding access to community services. She received her Ph.D. in information and computer science from the University of California, Irvine."
   },
@@ -285,6 +291,7 @@ const chiorganizers: CHIPeople[] = [
     img: "andres.png",
     twitter: "https://x.com/andresmh",
     bluesky: "andresmh.com",
+    type: "Organizer",
     description: "Andrés Monroy-Hernández is an Assistant Professor co-leading the Princeton HCI Lab at Princeton University, where his research focuses on human-computer interaction and social computing. He is also an associated faculty at Princeton's Center for Information Technology and Policy, the Keller Center for Innovation, the DeCenter, the Program in Cognitive Science, and the Program in Latin American Studies. Before Princeton, he founded the HCI research team at Snap and led the FUSE Labs at MSR. He received his Ph.D. degree in Media Arts and Sciences from MIT, was named one of the 35 Innovators under 35 by the MIT Technology Review. He was the technical program co-chair, editor, and steering committee for ACM CSCW conferences."
   },
   {
@@ -295,8 +302,9 @@ const chiorganizers: CHIPeople[] = [
     img: "tanu.png",
     twitter: "https://x.com/tanmit",
     bluesky: "https://bsky.app/profile/tanumitra.bsky.social",
+    type: "Organizer",
     description:
-      "Tanu Mitra is an Associate Professor at the Information School at the University of Washington, and co-founded the Responsibility in AI Systems and Experiences (RAISE) Center. Her research blends human-centered data science and social science principles to develop new knowledge, methods, and systems to defend against the epistemic risks of online mis(dis)information, bias, hate and harms. Tanu’s work has been supported by grants from the NSF, NIH, DoD, Social Science One, and other Foundations. Her research has been recognized through multiple awards and honors, including an NSF-CRII, an early career ONR-YIP, Adamic-Glance Distinguished Young Researcher award and Virginia Tech College of Engineering Outstanding New Assistant Professor award, along with several best paper awards. Dr. Mitra currently serves on Spotify’s safety advisory board and has previously served on the advisory board of the Social Science Research Council’s Social Data Initiative. "
+      "Tanu Mitra is an Associate Professor at the Information School at the University of Washington, and co-founded the Responsibility in AI Systems and Experiences (RAISE) Center. Her research blends human-centered data science and social science principles to develop new knowledge, methods, and systems to defend against the epistemic risks of online mis(dis)information, bias, hate and harms. Tanu's work has been supported by grants from the NSF, NIH, DoD, Social Science One, and other Foundations. Her research has been recognized through multiple awards and honors, including an NSF-CRII, an early career ONR-YIP, Adamic-Glance Distinguished Young Researcher award and Virginia Tech College of Engineering Outstanding New Assistant Professor award, along with several best paper awards. Dr. Mitra currently serves on Spotify's safety advisory board and has previously served on the advisory board of the Social Science Research Council's Social Data Initiative. "
   },
    {
     name: "Yang Li",
@@ -305,6 +313,7 @@ const chiorganizers: CHIPeople[] = [
     img: "yang.png",
     twitter: "https://x.com/yangli169",
     // bluesky: "",
+    type: "Organizer",
     description:
       "Yang Li is a Senior Staff Research Scientist at Google DeepMind, and an affiliate faculty member at University of Washington. His research lies at the intersection of HCI and AI, focusing on general deep learning research and models for solving human interactive intelligence problems and improving user experiences. He earned a Ph.D. degree in Computer Science from the Chinese Academy of Sciences, and conducted postdoctoral research at UC Berkeley EECS. Yang has extensively published in top venues across both the HCI and ML fields, including CHI, UIST, ICML, ACL, CVPR, NeurIPS, ICLR and KDD, and has constantly served as area chairs or senior area chairs across the HCI and ML fields, including ICLR 2025, NeurIPS 2024, ICML 2024, and more. Yang is an editor of the Springer book on AI for HCI: A Modern Approach, and an organizer of multiple workshops that bridges the HCI and AI/ML field, including the first AI\&HCI workshp at ICML." 
     },
@@ -314,6 +323,7 @@ const chiorganizers: CHIPeople[] = [
       label: "(Virtual Chair)",
       webpage: "https://people.ischool.berkeley.edu/~hearst/",
       img: "marti_hearst.png",
+      type: "Organizer",
       description:
         "Marti A. Hearst is a professor and previously the Interim Dean for the UC Berkeley School of Information. She is both an ACL Fellow and a SIGCHI Academy member, and former ACL President. Her research has long combined HCI and NLP; recent projects include adding interactivity to scholarly documents and creating interactive newspods. She recently gave invited keynote talks at the EACL NLP + HCI workshop, the KDD Workshop on Data Science with a Human in the Loop, and she advised the 2022 NAACL program chairs on the Human-Centered NLP special theme. She has taught courses in NLP, HCI, and information visualization for 25 years." 
     },
@@ -548,87 +558,6 @@ const pcs = [
 ];
 
 
-  // { name: "Angelika Romanou,", affiliation: "EPFL" },  
-  // { name: "Amna Liaqatu,", affiliation: "Princeton University" },  
-  // { name: "Chenglei Si,", affiliation: "Stanford University"},
-  // { name: "Chengyang Yang,", affiliation: "Carnegie Mellon University" },
-  // { name: "Chengbo Zheng,", affiliation: "The University of Queensland" },
-  // { name: "Chris (Yue) Fu,", affiliation: "University of Washington" },
-  // { name: "Canyu Chen,", affiliation: "Illinois Institute of Technology" },
-  // { name: "Daeun Lee,", affiliation: "University of North Carolina at Chapel Hill" },
-  // { name: "Haoyi Qiu,", affiliation: "University of California, Los Angeles" },
-  // { name: "He (Albert) Zhang,", affiliation: "Pennsylvania State University" },
-  // { name: "Jiayi Pan,", affiliation: "University of California, Berkeley" },
-  // { name: "Jenny T. Liang,", affiliation: "Carnegie Mellon University" },
-  // { name: "Karolina Stanczak,", affiliation: "Mila Quebec AI Institute / McGill University" },
-  // { name: "Negar Foroutan,", affiliation: "EPFL" },
-  // { name: "Qiaosi Wang,", affiliation: "Carnegie Mellon University" },
-  // { name: "Qianou Christina Ma,", affiliation: "Carnegie Mellon University" },
-  // { name: "Riddhiman Dasgupta,", affiliation: "Microsoft" },
-  // { name: "Ruoxi Ning,", affiliation: "University of Waterloo" },
-  // { name: "Ryan Liu,", affiliation: "Princeton University" },
-  // { name: "Shwetha Rajaram,", affiliation: "University of Michigan" },
-  // { name: "Sumit Asthana,", affiliation: "University of Michigan" },
-  // { name: "Shoubin Yu,", affiliation: "University of North Carolina at Chapel Hill" },
-  // { name: "Simret A Gebreegziabher,", affiliation: "University of Notre Dame" },
-  // { name: "Simin Fan,", affiliation: "EPFL" },
-  // { name: "Snehal Prabhudesai,", affiliation: "University of Michigan"},
-  // { name: "Sushrita Rakshit,", affiliation: "University of Michigan"},
-  // { name: "Taylor Sorensen,", affiliation: "University of Washington" },
-  // { name: "Tuc Van Nguyen,", affiliation: "Indiana University" },
-  // { name: "Wenhao Chai,", affiliation: "University of Washington" },
-  // { name: "Xinran Zhao,", affiliation: "Carnegie Mellon University" },
-  // { name: "Xingjian Zhang,", affiliation: "University of Michigan" },
-  // { name: "Xuandong Zhao,", affiliation: "University of California, Berkeley"},
-  // { name: "Yongyuan Liang,", affiliation: "University of Maryland, College Park"},
-  // { name: "Yi-Hao Peng,", affiliation: "Carnegie Mellon University" },
-  // { name: "Yinghui He,", affiliation: "Princeton University" },
-  // { name: "Yutong Xie,", affiliation: "University of Michigan" },
-  // { name: "Yuwei Bao,", affiliation: "University of California, Los Angeles" },
-
-
-
-// const pcs = [
-//   { name: "Amna Liaqatu,", affiliation: "Princeton University" },  
-//   { name: "Angelika Romanou,", affiliation: "EPFL" },  
-//   { name: "Chenglei Si,", affiliation: "Stanford University"},
-//   { name: "Chengyang Yang,", affiliation: "Carnegie Mellon University" },
-//   { name: "Chengbo Zheng,", affiliation: "The University of Queensland" },
-//   { name: "Chris (Yue) Fu,", affiliation: "University of Washington" },
-//   { name: "Canyu Chen,", affiliation: "Illinois Institute of Technology" },
-//   { name: "Daeun Lee,", affiliation: "University of North Carolina at Chapel Hill" },
-//   { name: "Haoyi Qiu,", affiliation: "University of California, Los Angeles" },
-//   { name: "He (Albert) Zhang,", affiliation: "Pennsylvania State University" },
-//   { name: "Jiayi Pan,", affiliation: "University of California, Berkeley" },
-//   { name: "Jenny T. Liang,", affiliation: "Carnegie Mellon University" },
-//   // { name: "Liwei Jiang,", affiliation: "University of Washington" },
-//   { name: "Karolina Stanczak,", affiliation: "Mila Quebec AI Institute / McGill University" },
-//   { name: "Negar Foroutan,", affiliation: "EPFL" },
-//   { name: "Qiaosi Wang,", affiliation: "Carnegie Mellon University" },
-//   { name: "Qianou Christina Ma,", affiliation: "Carnegie Mellon University" },
-//   { name: "Riddhiman Dasgupta,", affiliation: "Microsoft" },
-//   { name: "Ruoxi Ning,", affiliation: "University of Waterloo" },
-//   { name: "Ryan Liu,", affiliation: "Princeton University" },
-//   { name: "Shwetha Rajaram,", affiliation: "University of Michigan" },
-//   { name: "Sumit Asthana,", affiliation: "University of Michigan" },
-//   { name: "Shoubin Yu,", affiliation: "University of North Carolina at Chapel Hill" },
-//   { name: "Simret A Gebreegziabher,", affiliation: "University of Notre Dame" },
-//   { name: "Simin Fan,", affiliation: "EPFL" },
-//   { name: "Snehal Prabhudesai,", affiliation: "University of Michigan"},
-//   { name: "Sushrita Rakshit,", affiliation: "University of Michigan"},
-//   { name: "Taylor Sorensen,", affiliation: "University of Washington" },
-//   { name: "Tuc Van Nguyen,", affiliation: "Indiana University" },
-//   { name: "Wenhao Chai,", affiliation: "University of Washington" },
-//   { name: "Xinran Zhao,", affiliation: "Carnegie Mellon University" },
-//   { name: "Xingjian Zhang,", affiliation: "University of Michigan" },
-//   { name: "Xuandong Zhao,", affiliation: "University of California, Berkeley"},
-//   { name: "Yongyuan Liang,", affiliation: "University of Maryland, College Park"},
-//   { name: "Yi-Hao Peng,", affiliation: "Carnegie Mellon University" },
-//   { name: "Yinghui He,", affiliation: "Princeton University" },
-//   { name: "Yutong Xie,", affiliation: "University of Michigan" },
-//   { name: "Yuwei Bao,", affiliation: "University of California, Los Angeles" },
-// ];
-
 export const schedule: Schedule[] = [
   {
     start: "08:50",
@@ -663,13 +592,8 @@ export const schedule: Schedule[] = [
   },
   {
     start: "12:10",
-    end: "13:10 (60min)",
+    end: "13:30 (80min)",
     title: "Lunch break",
-  },
-  {
-    start: "13:10",
-    end: "13:30 (20min)",
-    title: "CHI SIG Presentation  (10min × 2 Papers @CHI)",
   },
   {
     start: "13:30",
@@ -781,6 +705,15 @@ const speakers: Speaker[] = [
     img: "richard.png",
     description:
       "Richard Ngo was a Research Scientist working on the Governance team at OpenAI, focusing on long-term AI safety and alignment. He was previously a research engineer on the AGI safety team at DeepMind. His work explores the development of general intelligence and the challenges of ensuring that advanced AI systems act in ways aligned with human values. He has written extensively on topics such as AI governance, ethics, and the societal impacts of AI. Richard is a prominent voice in the field, regularly contributing to discussions on AI policy and safety, and has a background in philosophy and computer science. He created the My Alignment Fundamentals Curriculum.",
+  },
+  {
+    name: "Tammy Masterson (Panelist)",
+    type: "AI Governance \& Safety",
+    affliation: "UK Government AI Security Insititute",
+    webpage: "https://bialign-workshop.github.io/",
+    img: "tammy.png",
+    description:
+      "Tammy is the Head of Best Practice at the UK AI Security Insititute, where she works on technical pre-standards. Prior to this she worked at the Department for Science, Innovation and Technology, where she led the discussion paper on capabilities and risks from frontier AI the Bletchley Summit, the proto-report to the International AI Safety Report. Prior to that she was a technical advisor and data scientist at the Competition and Markets Authority.",
   },
 ];
 

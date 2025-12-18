@@ -4,16 +4,19 @@ import "./styles.scss";
 import { Metadata, PageIds } from "../../stores/Interfaces";
 import OrganizerList from "../OrganizerList";
 import CHIOrganizerList from "../CHIOrganizerList";
+import CHIOrganizerList2026 from "../CHIOrganizerList2026";
 import "./styles.scss";
 import CommmitteeList from "../CommitteeList";
 import CFPText from "../CFPText";
+import CFPText2026 from "../CFPText2026";
 import ScheduleList from "../ScheduleList";
+import ScheduleList2026 from "../ScheduleList2026";
 import LandingDiv from "../Landing";
 import AboutDiv from "../About";
+import About2026 from "../About2026";
 import SpeakerList from "../Speaker";
 import PaperList from "../PaperList"
-import { Alert } from "@material-ui/lab";
-import { NavLink } from "react-router-dom";
+
 
 export type PageBlock =
   | "cfp"
@@ -21,7 +24,8 @@ export type PageBlock =
   | "organizers"
   | "committee"
   | "schedule"
-  | "speakers";
+  | "speakers"
+  | "orals";
 
 const Main = ({
   meta,
@@ -37,13 +41,21 @@ const Main = ({
         {types.includes("about") && (
           <div className="section">
             <div className="title">Overview</div>
-            <AboutDiv overview={meta.overview} cfp={meta.cfp} />
+            {meta.overview.year === "2026" ? (
+              <About2026 overview={meta.overview} cfp={meta.cfp} />
+            ) : (
+              <AboutDiv overview={meta.overview} cfp={meta.cfp} />
+            )}
           </div>
         )}
         {types.includes("schedule") && (
           <div className="section">
-            <div className="title">Schedule (Singapore Time, GMT+8)</div>
-            <ScheduleList schedules={meta.schedule} />
+            <div className="title">Tentative Schedule (TBD)</div>
+            {meta.overview.year === "2026" ? (
+              <ScheduleList2026 schedules={meta.schedule} />
+            ) : (
+              <ScheduleList schedules={meta.schedule} />
+            )}
           </div>
         )}
         {types.includes("orals") && (
@@ -71,18 +83,28 @@ const Main = ({
         {types.includes("cfp") && (
           <div className="section">
             <div className="title">Call for Papers</div>
-            <CFPText cfp={meta.cfp} />
+            {meta.overview.year === "2026" ? (
+              <CFPText2026 cfp={meta.cfp} />
+            ) : (
+              <CFPText cfp={meta.cfp} />
+            )}
           </div>
         )}
         {types.includes("organizers") && (
           <div className="section-container">
-            <div className="iclrsection">
-              <div className="iclrtitle">Main ICLR Organizers</div>
-              <OrganizerList organizers={meta.organizers} />
-            </div>
+            {meta.overview.year !== "2026" && (
+              <div className="iclrsection">
+                <div className="iclrtitle">Main ICLR Organizers</div>
+                <OrganizerList organizers={meta.organizers} />
+              </div>
+            )}
             <div className="chisection">
-              <div className="chititle">Main CHI Organizers</div>
-              <CHIOrganizerList chiorganizers={meta.chiorganizers} />
+              <div className="chititle">Organizing Committee</div>
+              {meta.overview.year === "2026" ? (
+                <CHIOrganizerList2026 chiorganizers={meta.chiorganizers} />
+              ) : (
+                <CHIOrganizerList chiorganizers={meta.chiorganizers} />
+              )}
             </div>
         </div>
         )}

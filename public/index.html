@@ -59,6 +59,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>BiAlign ICLR 2025</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks the URL for a redirect parameter and converts it back
+      // to a clean path for React Router to handle
+      (function() {
+        var pathSegmentsToKeep = 0;
+        var l = window.location;
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

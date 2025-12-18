@@ -19,6 +19,7 @@ export interface People {
   affliation: string;
   twitter?: string;
   bluesky?: string;
+  linkedin?: string;
 }
 export interface Speaker extends People {
   type: string;
