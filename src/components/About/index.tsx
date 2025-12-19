@@ -17,7 +17,7 @@ const AboutDiv = ({
       <div className="about-div">
         <Grid container spacing={4} className="dates" justifyContent="center">
           {cfp.dates.map((date, i) => {
-            if (date.type === "Camera Ready") {
+            if (date.type === "Camera ready") {
               return null;
             }
             return (

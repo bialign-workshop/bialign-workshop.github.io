@@ -36,7 +36,7 @@ export interface CFP {
   dates: {
     description?: string;
     date: string | ReactElement;
-    type: "Submission" | "Notification" | "Camera Ready" | "ICLR Workshop" | "CHI SIG" | "CHI Workshop";
+    type: "Submission" | "Notification" | "Camera ready" | "ICLR Workshop" | "CHI SIG" | "CHI Workshop";
   }[];
   submit: {
     platform: {
