@@ -42,9 +42,9 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   const history = useHistory();
   const location = useLocation();
   
-  // Extract year from current pathname (e.g., "/2025/about" -> "2025", "/chi2026/about" -> "chi2026")
+  // Extract year from current pathname (e.g., "/2025/about" -> "2025", "/2026/about" -> "2026")
   const getYearFromPath = () => {
-    const match = location.pathname.match(/^\/(chi2026|\d{4})/);
+    const match = location.pathname.match(/^\/(\d{4})/);
     return match ? match[1] : "2025";
   };
 
@@ -57,7 +57,7 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
 
   // Get the appropriate metadata based on year
   const getMetadata = () => {
-    return selectedYear === "chi2026" ? CHI2026 : Iclr2025;
+    return selectedYear === "2026" ? CHI2026 : Iclr2025;
   };
 
   const currentMeta = getMetadata();
@@ -65,8 +65,8 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   
   // Get the pages to display based on year
   const getPagesForYear = () => {
-    if (selectedYear === "chi2026") {
-      // For chi2026, only show: Overview, Schedule, Call for Papers, Organizers
+    if (selectedYear === "2026") {
+      // For 2026, only show: Overview, Schedule, Call for Papers, Organizers
       return ["about", "schedule", "cfp", "organizers"];
     }
     // For other years, show all pages
@@ -152,7 +152,7 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
             onMouseDown={(e) => e.stopPropagation()}
           >
             <MenuItem value="2025">2025</MenuItem>
-            <MenuItem value="chi2026">chi2026</MenuItem>
+            <MenuItem value="2026">2026</MenuItem>
           </Select>
         </div>
 

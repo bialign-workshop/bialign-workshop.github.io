@@ -145,7 +145,7 @@ const App = (): ReactElement => {
               )}
             />
             <Route
-              path="/chi2026/about"
+              path="/2026"
               exact
               render={() => (
                 <Main
@@ -155,37 +155,47 @@ const App = (): ReactElement => {
               )}
             />
             <Route
-              path="/chi2026/cfp"
+              path="/2026/about"
+              exact
+              render={() => (
+                <Main
+                  meta={CHI2026}
+                  types={["about", "organizers"]}
+                />
+              )}
+            />
+            <Route
+              path="/2026/cfp"
               exact
               render={() => <Main meta={CHI2026} types={["cfp"]} />}
             />
             <Route
-              path="/chi2026/papers"
+              path="/2026/papers"
               exact
               render={() => <Main meta={CHI2026} types={["orals"]} />}
             />
             <Route
-              path="/chi2026/schedule"
+              path="/2026/schedule"
               exact
               render={() => <Main meta={CHI2026} types={["schedule"]} />}
             />
             <Route
-              path="/chi2026/speakers"
+              path="/2026/speakers"
               exact
               render={() => <Main meta={CHI2026} types={["speakers"]} />}
             />
             <Route
-              path="/chi2026/organizers"
+              path="/2026/organizers"
               exact
               render={() => <Main meta={CHI2026} types={["organizers"]} />}
             />
             <Route
-              path="/chi2026/committee"
+              path="/2026/committee"
               exact
               render={() => <Main meta={CHI2026} types={["committee"]} />}
             />
             <Route
-              path="/chi2026/"
+              path="/2026/"
               exact
               render={() => (
                 <Main
@@ -194,16 +204,61 @@ const App = (): ReactElement => {
                 />
               )}
             />
+            {/* Redirects from old chi2026 paths to new 2026 paths */}
             <Route
               path="/chi2026"
               exact
-              render={() => (
-                <Main
-                  meta={CHI2026}
-                  types={["about", "organizers"]}
-                />
-              )}
-            />
+            >
+              <Redirect to="/2026" />
+            </Route>
+            <Route
+              path="/chi2026/"
+              exact
+            >
+              <Redirect to="/2026" />
+            </Route>
+            <Route
+              path="/chi2026/about"
+              exact
+            >
+              <Redirect to="/2026/about" />
+            </Route>
+            <Route
+              path="/chi2026/cfp"
+              exact
+            >
+              <Redirect to="/2026/cfp" />
+            </Route>
+            <Route
+              path="/chi2026/papers"
+              exact
+            >
+              <Redirect to="/2026/papers" />
+            </Route>
+            <Route
+              path="/chi2026/schedule"
+              exact
+            >
+              <Redirect to="/2026/schedule" />
+            </Route>
+            <Route
+              path="/chi2026/speakers"
+              exact
+            >
+              <Redirect to="/2026/speakers" />
+            </Route>
+            <Route
+              path="/chi2026/organizers"
+              exact
+            >
+              <Redirect to="/2026/organizers" />
+            </Route>
+            <Route
+              path="/chi2026/committee"
+              exact
+            >
+              <Redirect to="/2026/committee" />
+            </Route>
 
 
           </Switch>

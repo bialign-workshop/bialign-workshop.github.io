@@ -329,7 +329,7 @@ const cfp: CFP = {
   submit: {
     platform: {
       name: "OpenReview Submission Portal",
-      url: "https://bialign-workshop.github.io/chi2026",
+      url: "https://bialign-workshop.github.io/2026",
     },
     format: (
       <span>
