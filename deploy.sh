@@ -20,6 +20,20 @@ cd ..
 rm -rf .deploy
 
 
+# How to Update the Website in the Future
+# To update the website, run these two commands:
+# npm run build
+# bash deploy.sh
+
+# npm run buildbash deploy.sh
+# Or use the npm deploy script (which does both):
+# npm run deploy
+
+
+
+
+
+
 
 
 # git push origin gh-pages --force
@@ -49,6 +63,3 @@ rm -rf .deploy
 # cd ..
 # rm -rf .deploy
 
-
-
-# # npm run build && gh-pages -d build

@@ -67,7 +67,7 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   const getPagesForYear = () => {
     if (selectedYear === "2026") {
       // For 2026, only show: Overview, Schedule, Call for Papers, Organizers
-      return ["about", "schedule", "cfp", "organizers"];
+      return ["about", "cfp", "organizers", "schedule", ];
     }
     // For other years, show all pages
     return Object.keys(PageIds);

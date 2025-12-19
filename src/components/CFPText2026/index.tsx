@@ -38,14 +38,20 @@ const CFPText2026 = ({ cfp }: { cfp: CFP }): ReactElement => {
               <div className="row-key">Format</div>
               <div className="row-value">{cfp.submit.format}</div>
             </div>{" "}
-            {/* <div className="row">
-              <div className="row-key">Archival</div>
+              <div className="row">
+              <div className="row-key">Length</div>
+              <div className="row-value">{cfp.submit.length}</div>
+            </div>{" "}
+            <div className="row">
+              <div className="row-key">CHI2026</div>
               <div className="row-value">{cfp.submit.type}</div>
-            </div>{" "} */}
+            </div>{" "}
           </div>
         </Grid>
       </Grid>
       {/* Custom 2026 content - customize as needed */}
+      <div className="info-title">Publication and Notes</div>
+      <p>{cfp.notes}</p>
       <div className="info-title">Topics and Scopes</div>
       <p>{cfp.description}</p>
       <p>{cfp.invitation}</p>

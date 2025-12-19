@@ -32,6 +32,7 @@ export interface CHIPeople extends People {
 export interface CFP {
   description: string;
   scope: string | ReactElement;
+  notes?: string | ReactElement | undefined;
   invitation: string;
   dates: {
     description?: string;
@@ -45,6 +46,7 @@ export interface CFP {
     };
     format: string | ReactElement;
     type: string | ReactElement;
+    length?: string | ReactElement | undefined;
   };
 }
 

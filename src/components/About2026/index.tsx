@@ -17,9 +17,6 @@ const About2026 = ({
         {/* Custom layout for 2026 - you can customize this section */}
         <Grid container spacing={4} className="dates" justifyContent="center">
           {cfp.dates.map((date, i) => {
-            if (date.type === "Camera ready") {
-              return null;
-            }
             return (
               <Grid item md={2} sm={6} xs={12} key={i}>
                 <div className="col">
@@ -35,7 +32,7 @@ const About2026 = ({
               <span className="col-key">Submission Portal</span>
               <div className="col-value">
                 <Home className="icon" fontSize="small" color="primary" />{" "}
-                <a href="https://openreview.net/group?id=ICLR.cc/2025/Workshop/Bi-Align" target="_blank">OpenReview</a>
+                <a href="https://openreview.net/group?id=ACM.org/CHI/2026/Workshop/BiAlign" target="_blank">OpenReview</a>
               </div>
             </div>
           </Grid>

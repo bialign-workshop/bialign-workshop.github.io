@@ -19,12 +19,12 @@ const overview: Overview = {
   acronym: "BiAlign",
   year: "2026",
   location: "Barcelona",
-  date: "13–17 April, 2026",
+  date: "13 April (TBD), 2026",
   fullName: "Workshop on Human-AI Interaction Alignment",
   description: (
     <>
     <p>
-      This workshop focuses on <b className="text-framework">bidirectional</b> <b className="text-human">Human</b><b className="text-align">↔</b><b className="text-ai">AI</b> <b className="text-framework">alignment</b>, a paradigm shift in how we approach the challenge of human-AI alignment, which emphasizes the dynamic, complex, and evolving alignment process between humans and AI systems. 
+      This <a href="https://chi2026.acm.org/workshops/accepted/#w37-humanai-interaction-alignment-designing-evaluating-and-evolving-valuecentered-ai-for-reciprocal-humanai-futures" target="_blank">CHI 2026 BiAlign Workshop</a> focuses on <b className="text-framework">bidirectional</b> <b className="text-human">Human</b><b className="text-align">↔</b><b className="text-ai">AI</b> <b className="text-framework">alignment</b>, a paradigm shift in how we approach the challenge of human-AI alignment, which emphasizes the dynamic, complex, and evolving alignment process between humans and AI systems. 
       This is grounded on the <b className="text-highlight">"bidirectional human-AI alignment"</b> framework (see <a href="https://arxiv.org/pdf/2406.09264" target="_blank">Definition</a> and <a href="https://hai-alignment-course.github.io/tutorial/" target="_blank">NeurIPS Tutorial</a>) derived from a <a href="https://arxiv.org/abs/2406.09264" target="_blank">systematic survey</a> of over 400 interdisciplinary alignment papers in Machine Learning (ML), Human Computer Interaction (HCI), Natural Language Processing (NLP), more domains.
       Particularly, it involves two directions to  maximize its benefits for human society.
     </p>
@@ -64,7 +64,7 @@ const overview: Overview = {
   ),
   scope: (
     <>
-      <p>This workshop aims to explore the design space of bidirectional human-AI alignment from a comprehensive view, calling for submissions (2-page, 4-page, or 8-page) from various disciplines and topics, including but not limited to (see all in <b className="text-highlight">Call For Papers</b>):</p>
+      <p>This workshop aims to explore the design space of bidirectional human-AI alignment from a comprehensive view, calling for submissions (2-page, 4-page, or 8-page) from various disciplines and topics, including but not limited to (see all in <b className="text-highlight" style={{ color: "red" }}><a href="https://bialign-workshop.github.io/2026/cfp" target="_blank">Call For Papers</a></b>):</p>
       <ul>
         <li>
           <b className="text-framework">Value-Centered Alignment Objectives:</b> Embedding fairness, agency, equity, and responsibility into AI systems 
@@ -95,11 +95,11 @@ const organizers: People[] = [];
 const chiorganizers: CHIPeople[] = [
   {
     name: "Hua Shen",
-    affliation: "NYU Shanghai, NYU / @huashen218",
+    affliation: "NYU Shanghai & NYU / @huashen218",
     webpage: "https://hua-shen.org/",
     img: "hua.png",
     twitter: "https://x.com/huashen218",
-    linkedin: "https://bsky.app/profile/huashen.bsky.social",
+    linkedin: "https://www.linkedin.com/in/hua-shen/",
     type: "Organizer",
     description:
       "Hua Shen is an Assistant Professor of Computer Science at NYU Shanghai and New York University " +
@@ -224,6 +224,7 @@ const chiorganizers: CHIPeople[] = [
 const cfp: CFP = {
   description: "",
   invitation: "We invite researchers and practitioners from academia and industry to join our Bidirectional Human-AI Alignment (BiAlign) Workshop at CHI 2026. As AI systems increasingly permeate everyday life, alignment requires dynamic, reciprocal processes in which humans and AI adapt to each other over time. This workshop provides an interactive forum to explore value-centered alignment, human-AI interaction design, evaluation methods, and strategies for dynamic co-evolution. The workshop will feature paper presentations, poster sessions, and collaborative group activities such as on-the-spot paper writing, concept mapping, and solution ideation. These activities are designed to foster interdisciplinary knowledge creation, critical discussion, and co-development of new research directions. We welcome submissions of position papers, posters, or brief research notes that address human-AI alignment from HCI, AI, psychology, social sciences, or related domains. Accepted participants are expected to attend the workshop, with at least one organizer per accepted submission present. Key workshop topics include:",
+  notes: "All accepted papers will be published on the workshop website. We plan to invite the authors of accepted papers to collaborate on a joint prospective paper on human–AI alignment.",
   scope: (
     <>
       <ul>
@@ -296,7 +297,7 @@ const cfp: CFP = {
             //   marginRight: "5px",
             // }}
           >
-            March 2rd, 2026
+            March 2nd, 2026
           </span>
         </span>
       ),
@@ -320,7 +321,7 @@ const cfp: CFP = {
       type: "Camera ready",
     },
     {
-      date: "April 13-17 (TBD), 2026",
+      date: "April 13 (TBD), 2026",
       type: "CHI Workshop",
       description:
         "At least one author must register and attend the workshop in person.",
@@ -329,20 +330,30 @@ const cfp: CFP = {
   submit: {
     platform: {
       name: "OpenReview Submission Portal",
-      url: "https://bialign-workshop.github.io/2026",
+      url: "https://openreview.net/group?id=ACM.org/CHI/2026/Workshop/BiAlign",
     },
     format: (
       <span>
         {" "}
         {/* CHI 2026 <a href={`${process.env.PUBLIC_URL}/images/iclr_2025_bialign_workshop_template.zip`}>CHI 2026 Submission  Workshop Templates .zip Download</a>.  */}
-        Same as <a href="https://chi2026.acm.org/publication-ready-author-instructions/" target="_blank">CHI 2026 Submission Instructions</a>, 2-column format.
-        We call for <b>2-page</b>(tiny), <b>4-page</b> (short), and <b>8-page</b> (long) papers,  excluding references, <b>NOT anonymized</b>. 
+        Same as <a href="https://chi2026.acm.org/chi-publication-formats/" target="_blank">CHI 2026 Submission Instructions</a>, <b style={{ color: "red" }}>2-column</b>, <b style={{ color: "red" }}>NOT Anonymized</b> format, 
+      </span>
+    ),
+    length: (
+      <span>
+        {" "}
+        {/* CHI 2026 <a href={`${process.env.PUBLIC_URL}/images/iclr_2025_bialign_workshop_template.zip`}>CHI 2026 Submission  Workshop Templates .zip Download</a>.  */}
+        We call for <b>2-page</b>(tiny), <b>4-page</b> (short), and <b>8-page</b> (long) papers,  excluding references.
       </span>
     ),
     type: (
+      // <span>
+      //   {" "}
+      // This workshop is optionally archival. Please indicate your selection of an <b>"archival submission"</b> or a <b>"non-archival submission"</b> at the bottom of your OpenReview Submission Portal. The archival option will not influence the review of your submission.
+      // </span>
       <span>
         {" "}
-      This workshop is optionally archival. Please indicate your selection of an <b>"archival submission"</b> or a <b>"non-archival submission"</b> at the bottom of your OpenReview Submission Portal. The archival option will not influence the review of your submission.
+      <a href="https://chi2026.acm.org/workshops/accepted/#w37-humanai-interaction-alignment-designing-evaluating-and-evolving-valuecentered-ai-for-reciprocal-humanai-futures" target="_blank">CHI 2026 Accepted Workshop -- W37: Human-AI Interaction Alignment</a>
       </span>
     )
   },

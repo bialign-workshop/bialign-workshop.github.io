@@ -82,7 +82,7 @@ const App = (): ReactElement => {
           />
           <Switch>
             <Route exact path="/">
-              <Redirect to="/2025" />
+              <Redirect to="/2026" />
             </Route>
             <Route
               path="/2025"
@@ -151,6 +151,7 @@ const App = (): ReactElement => {
                 <Main
                   meta={CHI2026}
                   types={["about", "organizers"]}
+                  // types={["about", "organizers", "cfp"]}
                 />
               )}
             />
@@ -160,6 +161,7 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={CHI2026}
+                  // types={["about", "organizers", "cfp"]}
                   types={["about", "organizers"]}
                 />
               )}
@@ -201,6 +203,7 @@ const App = (): ReactElement => {
                 <Main
                   meta={CHI2026}
                   types={["about", "organizers"]}
+                  // types={["about", "organizers", "cfp"]}
                 />
               )}
             />

@@ -76,8 +76,7 @@ const OrganizerList2026 = ({
 }): ReactElement => {
 
   return (
-    <div className="organizer-list organizer-list-2026">
-      
+    <div className="organizer-list-2026">
       {organizers.map((organizer: People) => (
         <div key={organizer.name} className="organizer-item">
           <OrganizerEntry organizer={organizer} />
