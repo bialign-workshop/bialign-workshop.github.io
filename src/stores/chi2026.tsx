@@ -317,7 +317,7 @@ const cfp: CFP = {
           </span>
         </span>
       ),
-      type: "Camera Ready",
+      type: "Camera ready",
     },
     {
       date: "April 13-17 (TBD), 2026",
