@@ -70,6 +70,9 @@ const overview: Overview = {
           <b className="text-framework">Value-Centered Alignment Objectives:</b> Embedding fairness, agency, equity, and responsibility into AI systems 
         </li>
         <li>
+          <b className="text-framework">Novel Alignment Demands for Responsible AI:</b> Human-centered alignment demands and goals for responsible AI
+        </li>
+        <li>
           <b className="text-framework">Designing and Interacting for Alignment:</b> Interfaces, explanation, and participatory methods for steering AI;
         </li>
         <li>
