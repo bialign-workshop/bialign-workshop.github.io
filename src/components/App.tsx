@@ -150,7 +150,7 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={CHI2026}
-                  types={["about", "organizers"]}
+                  types={["about", "organizers", "committee"]}
                   // types={["about", "organizers", "cfp"]}
                 />
               )}
@@ -162,7 +162,7 @@ const App = (): ReactElement => {
                 <Main
                   meta={CHI2026}
                   // types={["about", "organizers", "cfp"]}
-                  types={["about", "organizers"]}
+                  types={["about", "organizers", "committee"]}
                 />
               )}
             />
@@ -202,8 +202,8 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={CHI2026}
-                  types={["about", "organizers"]}
-                  // types={["about", "organizers", "cfp"]}
+                  // types={["about", "organizers"]}
+                  types={["about", "organizers", "cfp"]}
                 />
               )}
             />

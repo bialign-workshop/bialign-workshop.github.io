@@ -7,7 +7,7 @@ export enum PageIds {
   papers = "Accepted Papers",
   cfp = "Call for Papers",
   organizers = "Organizers",
-  committee = "Committees",
+  committee = "Program Committee",
 }
 
 export interface People {
