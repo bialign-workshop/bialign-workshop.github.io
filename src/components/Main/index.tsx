@@ -15,7 +15,8 @@ import LandingDiv from "../Landing";
 import AboutDiv from "../About";
 import About2026 from "../About2026";
 import SpeakerList from "../Speaker";
-import PaperList from "../PaperList"
+import PaperList from "../PaperList";
+import PaperList2026 from "../PaperList2026";
 
 
 export type PageBlock =
@@ -50,7 +51,7 @@ const Main = ({
         )}
         {types.includes("schedule") && (
           <div className="section">
-            <div className="title">Tentative Schedule (TBD)</div>
+            <div className="title">Workshop Schedule</div>
             {meta.overview.year === "2026" ? (
               <ScheduleList2026 schedules={meta.schedule} />
             ) : (
@@ -61,11 +62,11 @@ const Main = ({
         {types.includes("orals") && (
           <div className="section">
             <div className="title">Accepted Papers</div>
-            <PaperList 
-              orals={meta.orals}
-              poster={meta.poster}
-              tiny={meta.tiny}
-               />
+            {meta.overview.year === "2026" ? (
+              <PaperList2026 orals={meta.orals} poster={meta.poster} tiny={meta.tiny} />
+            ) : (
+              <PaperList orals={meta.orals} poster={meta.poster} tiny={meta.tiny} />
+            )}
           </div>
         )}
         {types.includes("schedule") && (
@@ -82,7 +83,7 @@ const Main = ({
         )}
         {types.includes("cfp") && (
           <div className="section">
-            <div className="title">Call for Papers</div>
+            <div className="title">CFP</div>
             {meta.overview.year === "2026" ? (
               <CFPText2026 cfp={meta.cfp} />
             ) : (
@@ -110,7 +111,19 @@ const Main = ({
         )}
         {types.includes("committee") && (
           <div className="section">
-            <div className="title">Program Committees</div>
+            <div className="title">Program Committee Members</div>
+            {meta.overview.committeeApplyLink && (
+              <div className="committee-apply">
+                Coming soon! If you're interested in joining the Program Committee, please apply here:{" "}
+                <a
+                  href={meta.overview.committeeApplyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PC Member Application Form -- NeurIPS 2026 Dynamic Alignment Workshop
+                </a>!
+              </div>
+            )}
             <CommmitteeList members={meta.pcs} />
           </div>
         )}

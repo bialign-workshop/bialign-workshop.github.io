@@ -14,12 +14,12 @@ import {
 } from "./Interfaces";
 const format = "documentclass [manuscript, review, anonymous] {acmart}";
 const overview: Overview = {
-  contact: "bidirectional-human-ai-alignment@googlegroups.com",
+  contact: "",
   slack: "https://join.slack.com/t/bi-alignworkshops/shared_invite/zt-2vpuf45n7-zP8DcmoRwjqfCxVQ4f5_Kw",
   acronym: "BiAlign",
   year: "2026",
   location: "Barcelona",
-  date: "13 April (TBD), 2026",
+  date: "15 April, 2026",
   fullName: "Workshop on Human-AI Interaction Alignment",
   description: (
     <>
@@ -281,7 +281,7 @@ const cfp: CFP = {
             //   marginRight: "5px",
             // }}
           >
-            February 12, 2026
+            February 18, 2026
           </span>
         </span>
       ),
@@ -324,7 +324,7 @@ const cfp: CFP = {
       type: "Camera ready",
     },
     {
-      date: "April 13 (TBD), 2026",
+      date: "April 15, 2026",
       type: "CHI Workshop",
       description:
         "At least one author must register and attend the workshop in person.",
@@ -364,20 +364,54 @@ const cfp: CFP = {
 };
 
 const pcs = [
-  { name: "Abhimanyu Pallavi Sudhir,", affiliation: "University of Warwick" },  
+  { name: "Aayush Kumar,", affiliation: "Research Fellow at Microsoft" },  
+  { name: "Abeer Aldayel,", affiliation: "Assistant Professor at King Saud University" },  
+  { name: "Álvaro Fernandez-Quilez,", affiliation: "Associate Professor at University of Stavanger" },  
+  { name: "Bhada Yun,", affiliation: "MS student at ETH Zurich" },  
+  { name: "Boyang Yang,", affiliation: "Assistant Professor at Yan Shan University" },  
+  { name: "Cathy Mengying Fang,", affiliation: "PhD student at MIT" },  
+  { name: "Danqing Shi,", affiliation: "Assistant Professor at Lund University" },  
+  { name: "Deepak Piskala,", affiliation: "Researcher at Amazon" },  
+  { name: "Dilrukshi Gamage,", affiliation: "Postdoc at Tokyo Institute of Technology" },  
+  { name: "Eva Paraschou,", affiliation: "PhD student at Technical University of Denmark" },  
+  { name: "Georges Hattab,", affiliation: "Lecturer at Freie Universität Berlin" }, 
+  { name: "Hao-Chuan Wang,", affiliation: "Associate Professor at University of California, Davis" },  
+  { name: "Hariharan Ragothaman,", affiliation: "Researcher at AMD" },  
+  { name: "Helena Anna Frijns,", affiliation: "Postdoc at Interdisciplinary Transformation University Austria" },  
+  { name: "Hemraj Shobharam Lamkuche,", affiliation: "Senior Assistant Professor at VIT Bhopal" },  
+  { name: "Jessica Bo,", affiliation: "PhD student at University of Toronto" },  
+  { name: "Katherine Wang,", affiliation: "PhD student at University College London" },  
+  { name: "Tao Dong,", affiliation: "Senior Staff UX Researcher at Google" },  
+  { name: "Thiemo Wambsganss,", affiliation: "Assistant Professor at Bern University" },  
+  { name: "Nicholas Clark,", affiliation: "PhD student at University of Washington" },   
+  { name: "Pragya Singh,", affiliation: "Visiting Doctoral Researcher at Aalto University" },  
+  { name: "Quoc-Toan Nguyen,", affiliation: "PhD student atTechnische Universität Dortmund" },  
+  { name: "Qisen Yang,", affiliation: "PhD student at University of California, San Diego" }, 
+  { name: "Qing Xiao,", affiliation: "PhD student at Carnegie Mellon University" },  
+  { name: "Rosanna Bellini,", affiliation: "Assistant Professor at New York University" }, 
+  { name: "Ruyuan Wan,", affiliation: "PhD student at Pennsylvania State University" },  
+  { name: "Sabriya Maryam Alam,", affiliation: "PhD student at University of California, Berkeley" },  
+  { name: "Srishti Palani,", affiliation: "Researcher at Salesforce" },  
+  { name: "Sven Mayer,", affiliation: "Full Professor at Technische Universität Dortmund" },  
+  { name: "Salvatore Andolina,", affiliation: "Associate Professor at Politecnico di Milano" },  
+  { name: "Tariq Osman Andersen,", affiliation: "Associate Professor at Copenhagen University" },  
+  { name: "Yaman Yu,", affiliation: "PhD student at University of Illinois at Urbana-Champaign" },  
+  { name: "Zhiping Zhang,", affiliation: "PhD student at Northeastern University" },  
 ];
+
+
 
 
 export const schedule: Schedule[] = [
   {
     start: "",
-    end: "=== Session 1 (90min) ===",
+    end: "🚀 Session 1 (90min)",
     title: "",
   },
   {
     start: "",
     end: "15min",
-    title: "Welcome and Opening Remarks",
+    title: "Welcome & Opening Remarks",
   },
   {
     start: "",
@@ -396,17 +430,17 @@ export const schedule: Schedule[] = [
   },
   {
     start: "",
-    end: "=== Session 2 (90min) ===",
+    end: " 🚀 Session 2 (90min)",
     title: "",
   },
   {
     start: "",
-    end: "30min",
+    end: "40min",
     title: "Group Activity 2: On-the-spot Paper Writing",
   },
   {
     start: "",
-    end: "30min",
+    end: "20min",
     title: "Insight Sharing",
   },
   {
@@ -431,7 +465,42 @@ const speakers: Speaker[] = [
 ];
 
 const orals: Oral[] = [
-  { link: "https://openreview.net/attachment?id=pytJdAOA0X&name=pdf", title: "SafeChain: Safety of Language Models with Long Chain-of-Thought Reasoning Capabilities", authors: "Fengqing Jiang, Zhangchen Xu, Yuetai Li, Luyao Niu, Zhen Xiang, Bo Li, Bill Yuchen Lin, Radha Poovendran"},
+{ link: "/2026chi-pdfs/1.pdf",	title: "Human Agency, Causality, and the Human Computer Interface in High-Stakes Artificial Intelligence", authors: "Georges Hattab"},
+{ link: "/2026chi-pdfs/2.pdf",	title: "Aligning AI with Developer Preferences: A Taxonomy of Desirable AI Agent Behavior", authors: "Tao Dong, Harini Sampath, Sherry Y. Shi, Andrew Macvean"},
+{ link: "/2026chi-pdfs/3.pdf",	title: "Sustainable Intervention Points: A Framework for Designing High-Leverage Human Roles in AI Pipelines", authors: "Eduardo Baena, Gabriela Torres, Angélica Graciela Chíncaro Donayre"},
+{ link: "/2026chi-pdfs/4.pdf",	title: "Negotiating Identity in the Age of Generative AI: A Five-Year Longitudinal Study of Chinese Digital Painters", authors: "Yibo Meng, Ruiqi Chen, ZhiMing Liu, Xin Chen, Jingjie Wang"},
+{ link: "/2026chi-pdfs/5.pdf",	title: "The Invisible Architect: (Mis)Perceptions of Agency Around GenAI Use in Recruiting Workflows", authors: "Sajel Surati, Rosanna Bellini, Emily Black"},
+{ link: "/2026chi-pdfs/6.pdf",	title: "Context-Dependent Alignment Failures in AI-Generated Religious Guidance", authors: "Sabriya Maryam Alam, Marwa Abdulhai, Tarek Naous, Niloufar Salehi"},
+{ link: "/2026chi-pdfs/7.pdf",	title: "Building Intelligent User Interfaces for Human-AI Alignment", authors: "Danqing Shi"},
+{ link: "/2026chi-pdfs/8.pdf",	title: "When Noticing Is Not a Command: Negotiated Agency in AI-Driven Assistive Household Cleaning Robots", authors: "Quoc-Toan Nguyen, Sven Mayer"},
+{ link: "/2026chi-pdfs/9.pdf",	title: "Human-Centred Mechanism Design for Scalable Oversight", authors: "Eunice Jun, Konstantinos Voudouris"},
+{ link: "/2026chi-pdfs/10.pdf",	title: "Bidirectional Alignment as Situated Repair: Linking Configuration and Runtime", authors: "M. Antonietta Grasso, Jisun Park, Jutta Willamowski"},
+{ link: "/2026chi-pdfs/11.pdf",	title: "From Unilateral Behavioral Tuning to Human–AI Co-Configuration", authors: "Rong-Ching Chang, Hao-Chuan Wang"},
+{ link: "/2026chi-pdfs/12.pdf",	title: "How Value Induction Reshapes LLM Behaviour", authors: "Arnav Arora, Natalie Schluter, Katherine Metcalf, Maartje Ter Hoeve"},
+{ link: "/2026chi-pdfs/13.pdf",	title: "Aligning With the Dead: Posthumous Persistence as a Limit Case for Bidirectional Human-AI Alignment", authors: "Ruben Schlonsak, Denys J.C. Matthies"},
+{ link: "/2026chi-pdfs/14.pdf",	title: "Who Is Imitating Whom? Reframing Bidirectional Alignment as Social Learning and Cultural Transmission", authors: "Sachit Mahajan"},
+{ link: "/2026chi-pdfs/15.pdf",	title: "Supporting Reflection in LLM-based Exploratory Search", authors: "Salvatore Andolina"},
+{ link: "/2026chi-pdfs/16.pdf",	title: "Beyond One-Way Influence: Bidirectional Opinion Dynamics in Multi-Turn Human-LLM Interactions", authors: "Yuyang Jiang, Longjie Guo, Yuchen Wu, Aylin Caliskan, Tanu Mitra, Hua Shen"},
+{ link: "/2026chi-pdfs/17.pdf",	title: "Noise or Nuance? Viewing Annotator Disagreement as a Proxy for Subjectivity in Creative Domains", authors: "Christine Dierk, Jennifer Healey, Uttaran Bhattacharya, Somdeb Sarkhel"},
+{ link: "/2026chi-pdfs/18.pdf",	title: "Relational Co-Adaptation in Emotionally Supportive AI: Tensions in Authentic Emotional Interaction", authors: "Mengqi Shi"},
+{ link: "/2026chi-pdfs/19.pdf",	title: "Steering Vision Models towards Subjective Concepts with Language", authors: "Mihret Agegnehu Bekele, Dawit Getahun Mengistu, Kidus Paulos Gebretsadik, Natnael Abayneh Unasho, Amanuel Gizachew Abebe, Simret A Gebreegziabher"},
+{ link: "/2026chi-pdfs/20.pdf",	title: "Trust Calibration as a Core Mechanism of Bidirectional Human-AI Alignment", authors: "Eryue Xu, Masooda Bashir"},
+{ link: "/2026chi-pdfs/21.pdf",	title: "Multi-System Cognitive Steering for Generative Communication", authors: "Eric Lacosse, Pablo Tano, Daniel C McNamee"},
+{ link: "/2026chi-pdfs/22.pdf",	title: "The Triadic Loop: A Framework for Negotiating Alignment in AI Co-hosted Livestreaming", authors: "Katherine Wang, Nadia Bianchi-Berthouze, Aneesha Singh"},
+{ link: "/2026chi-pdfs/23.pdf",	title: "Bridging Human Interpretation and Machine Representation: A Landscape of Qualitative Data Analysis in the LLM Era", authors: "Xinyu Pi, Qisen Yang, Chuong Nguyen, Hua Shen"},
+{ link: "/2026chi-pdfs/24.pdf",	title: "Design Generative AI for Practitioners: Exploring Interaction Approaches Aligned with Creative Practice", authors: "Xiaohan Peng, Wendy E. Mackay, Janin Koch"},
+{ link: "/2026chi-pdfs/25.pdf",	title: "Revisiting Alignment for Human–AI Integration: A Proposal for Centered Evaluation", authors: "Giulia Frascaria"},
+{ link: "/2026chi-pdfs/26.pdf",	title: "Align with Me, Not TO Me: Interactive Conceptual Alignment with LLM-Based Conversational Agents", authors: "Shengchen Zhang, Weiwei Guo"},
+{ link: "/2026chi-pdfs/27.pdf",	title: "AI Phenomenology for Understanding Human-AI Experiences Across Eras", authors: "Bhada Yun, Evgenia Taranova, Dana Feng, Renn Su, April Wang"},
+{ link: "/2026chi-pdfs/28.pdf",	title: "Multimodal Evaluation of Bidirectional Human–AI Alignment", authors: "Bhagyabati Moharana, Eoghan Hynes, Bryan Dunphy, Conor Keighrey, Niall Murray"},
+{ link: "/2026chi-pdfs/29.pdf",	title: "More Than 1v1: Human–AI Alignment in Early Developmental Communities with Multimodal LLMs", authors: "Weiyan Shi, Kenny Tsu Wei Choo"},
+{ link: "/2026chi-pdfs/30.pdf",	title: "HCI’s emerging roles in shaping alignment discretion", authors: "Dasha Simons"},
+{ link: "/2026chi-pdfs/31.pdf",	title: "When Embodiment Backfires: The Impact of AI Chatbot Avatars on Human Perceived Empathy", authors: "Guanheng Cen, Xiang Dai, Xiaowen Zhu, João Sedoc"},
+{ link: "/2026chi-pdfs/32.pdf",	title: "AI-Wrapped: Participatory, Privacy-Preserving Measurement of Longitudinal LLM Use In-the-Wild", authors: "Cathy Mengying Fang, Sheer Karny, Chayapatr Archiwaranguprok, Yasith Samaradivakara, Pat Pataranutaporn, Patricia Maes"},
+{ link: "/2026chi-pdfs/33.pdf",	title: "Alignment Beyond Extraction: From Preference Optimization to Situated Value Elicitation", authors: "Sasha Mitts"},
+{ link: "/2026chi-pdfs/34.pdf",	title: "A Perspective on Bidirectional Human-AI Alignment and Human Autonomy", authors: "Helena Anna Frijns, Dinara Talypova, Ambika Shahu, Philipp Wintersberger"},
+{ link: "/2026chi-pdfs/35.pdf",	title: "Rationalize: Shared Semantic Reasoning for Human-AI Alignment", authors: "Aritra Dasgupta, Naga Datha Saikiran Battula, Avina Nakarmi, Sohom Sen, Subhodeep Ghosh, Xun Song"},
+{ link: "/2026chi-pdfs/36.pdf",	title: "Generative Friction as an Alignment Mechanism in Human-AI Ideation", authors: "Ahmet Baki Kocaballi, Joseph Kizana, Simon Buckingham Shum"},
 ]
 
 const poster: Poster[] = [

@@ -33,7 +33,7 @@ const SpeakerEntry = ({ speaker }: { speaker: Speaker }): ReactElement => {
 const SpeakerList = ({ speakers }: { speakers: Speaker[] }): ReactElement => {
   return (
     <div className="speaker-list">
-      <i style={{ marginBottom: '20px', display: 'block'  }}>Alphabetical Order of First Name</i>
+      <i style={{ marginBottom: '20px', display: 'block'  }}>Coming Soon!</i>
       {speakers.map((speaker) => (
         <>
           <SpeakerEntry speaker={speaker} key={speaker.name} />

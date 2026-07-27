@@ -5,9 +5,9 @@ export enum PageIds {
   speakers = "Speakers",
   schedule = "Schedule",
   papers = "Accepted Papers",
-  cfp = "Call for Papers",
+  cfp = "CFP",
   organizers = "Organizers",
-  committee = "Program Committee",
+  committee = "Committee",
 }
 
 export interface People {
@@ -37,7 +37,7 @@ export interface CFP {
   dates: {
     description?: string;
     date: string | ReactElement;
-    type: "Submission" | "Notification" | "Camera ready" | "ICLR Workshop" | "CHI SIG" | "CHI Workshop";
+    type: "Submission" | "Notification" | "Camera ready" | "ICLR Workshop" | "CHI SIG" | "CHI Workshop" | "NeurIPS Workshop";
   }[];
   submit: {
     platform: {
@@ -79,6 +79,7 @@ export interface Overview {
   scope: string | ReactElement;
   location: string;
   date: string;
+  committeeApplyLink?: string;
 }
 
 export interface Oral {

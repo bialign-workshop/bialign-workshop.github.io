@@ -13,6 +13,7 @@ import Footer from "./Footer";
 
 import { Iclr2025 } from "../stores/iclr2025";
 import { CHI2026 } from "../stores/chi2026";
+import { NeurIPS2026 } from "../stores/neurips2026";
 
 
 
@@ -82,7 +83,7 @@ const App = (): ReactElement => {
           />
           <Switch>
             <Route exact path="/">
-              <Redirect to="/2026" />
+              <Redirect to="/neurips2026" />
             </Route>
             <Route
               path="/2025"
@@ -161,7 +162,6 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={CHI2026}
-                  // types={["about", "organizers", "cfp"]}
                   types={["about", "organizers", "committee"]}
                 />
               )}
@@ -204,6 +204,66 @@ const App = (): ReactElement => {
                   meta={CHI2026}
                   // types={["about", "organizers"]}
                   types={["about", "organizers", "cfp"]}
+                />
+              )}
+            />
+            <Route
+              path="/neurips2026"
+              exact
+              render={() => (
+                <Main
+                  meta={NeurIPS2026}
+                  types={["about", "organizers", "committee"]}
+                />
+              )}
+            />
+            <Route
+              path="/neurips2026/about"
+              exact
+              render={() => (
+                <Main
+                  meta={NeurIPS2026}
+                  types={["about", "organizers", "committee"]}
+                />
+              )}
+            />
+            <Route
+              path="/neurips2026/cfp"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["cfp"]} />}
+            />
+            <Route
+              path="/neurips2026/papers"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["orals"]} />}
+            />
+            <Route
+              path="/neurips2026/schedule"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["schedule"]} />}
+            />
+            <Route
+              path="/neurips2026/speakers"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["speakers"]} />}
+            />
+            <Route
+              path="/neurips2026/organizers"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["organizers"]} />}
+            />
+            <Route
+              path="/neurips2026/committee"
+              exact
+              render={() => <Main meta={NeurIPS2026} types={["committee"]} />}
+            />
+            <Route
+              path="/neurips2026/"
+              exact
+              render={() => (
+                <Main
+                  meta={NeurIPS2026}
+                  types={["about", "organizers", "committee"]}
                 />
               )}
             />

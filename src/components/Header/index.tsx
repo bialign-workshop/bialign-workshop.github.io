@@ -12,6 +12,7 @@ import { PageIds } from "../../stores/Interfaces";
 import { NavLink, useRouteMatch, useHistory, useLocation } from "react-router-dom";
 import { Iclr2025 } from "../../stores/iclr2025";
 import { CHI2026 } from "../../stores/chi2026";
+import { NeurIPS2026 } from "../../stores/neurips2026";
 
 import "./styles.scss";
 import { More, MoreVert } from "@material-ui/icons";
@@ -42,9 +43,10 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   const history = useHistory();
   const location = useLocation();
   
-  // Extract year from current pathname (e.g., "/2025/about" -> "2025", "/2026/about" -> "2026")
+  // Extract year/venue slug from current pathname (e.g., "/2025/about" -> "2025",
+  // "/2026/about" -> "2026", "/neurips2026/about" -> "neurips2026")
   const getYearFromPath = () => {
-    const match = location.pathname.match(/^\/(\d{4})/);
+    const match = location.pathname.match(/^\/(\d{4}|neurips2026)/);
     return match ? match[1] : "2025";
   };
 
@@ -57,17 +59,22 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
 
   // Get the appropriate metadata based on year
   const getMetadata = () => {
-    return selectedYear === "2026" ? CHI2026 : Iclr2025;
+    if (selectedYear === "2026") return CHI2026;
+    if (selectedYear === "neurips2026") return NeurIPS2026;
+    return Iclr2025;
   };
 
   const currentMeta = getMetadata();
   const logo = currentMeta.overview.logoImg;
-  
+
   // Get the pages to display based on year
   const getPagesForYear = () => {
-    if (selectedYear === "2026") {
-      // For 2026, show: Overview, CFP, Accepted Papers, Organizers, Schedule, Program Committee
-      return ["about", "cfp", "papers", "organizers", "schedule", "committee"];
+    // if (selectedYear === "2026" || selectedYear === "neurips2026") {
+    if (selectedYear === "neurips2026") {
+      // For 2026 workshops, show: Overview, CFP, Speakers, Organizers, Schedule, Program Committee
+      // "papers" (Accepted Papers) temporarily hidden until papers are accepted
+      // return ["about", "cfp", "papers", "speakers", "organizers", "schedule", "committee"];
+      return ["about", "cfp", "schedule", "organizers", "speakers", "committee"];
     }
     // For other years, show all pages
     return Object.keys(PageIds);
@@ -151,8 +158,9 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
             onClick={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <MenuItem value="2025">2025</MenuItem>
-            <MenuItem value="2026">2026</MenuItem>
+            <MenuItem value="2025">ICLR 2025</MenuItem>
+            <MenuItem value="2026">CHI 2026</MenuItem>
+            <MenuItem value="neurips2026">NeurIPS 2026</MenuItem>
           </Select>
         </div>
 

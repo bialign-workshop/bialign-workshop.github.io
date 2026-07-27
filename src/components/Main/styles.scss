@@ -12,7 +12,7 @@
   .title {
     padding: 10px;
     margin: 10px;
-    font-size: 27px;
+    font-size: 24px;
     color: $primary-color;
     // text-align: center;
     font-weight: bolder;
@@ -21,7 +21,7 @@
   .iclrtitle {
     padding: 10px;
     margin: 10px;
-    font-size: 27px;
+    font-size: 24px;
     //text-align: center;
     color: #5B8AE6;
     font-weight: bolder;
@@ -30,11 +30,15 @@
   .chititle {
     padding: 10px;
     margin: 10px;
-    font-size: 27px;
+    font-size: 24px;
     //text-align: center;
     color: #E25481;
     font-weight: bolder;
     border-bottom: $grey200 solid 1px;
+  }
+  .committee-apply {
+    font-size: 20px;
+    padding: 10px 30px;
   }
   .section {
     max-width: calc(100vw - min(10vw, 100px));

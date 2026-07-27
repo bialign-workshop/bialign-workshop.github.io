@@ -64,12 +64,12 @@ const OrganizerEntry = ({ organizer }: { organizer: People }): ReactElement => {
   );
 };
 
+
 const OrganizerList = ({
   organizers,
 }: {
   organizers: People[];
 }): ReactElement => {
-
   return (
     <div className="organizer-list">
       
