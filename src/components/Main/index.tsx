@@ -114,14 +114,16 @@ const Main = ({
             <div className="title">Program Committee Members</div>
             {meta.overview.committeeApplyLink && (
               <div className="committee-apply">
-                Coming soon! If you're interested in joining the Program Committee, please apply here:{" "}
-                <a
-                  href={meta.overview.committeeApplyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  PC Member Application Form -- NeurIPS 2026 Dynamic Alignment Workshop
-                </a>!
+                <b>
+                  If you're interested in joining the Program Committee, please apply here:{" "}
+                  <a
+                    href={meta.overview.committeeApplyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PC Member Application Form -- NeurIPS 2026 Dynamic Alignment Workshop
+                  </a>!
+                </b>
               </div>
             )}
             <CommmitteeList members={meta.pcs} />

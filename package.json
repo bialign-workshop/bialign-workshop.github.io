@@ -5,7 +5,7 @@
   "description": "Webpage for ICLR 2025 Bidirectional Human-AI Alignment Workshop.",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts start -FAST_REFRESH=true",
+    "start": "FAST_REFRESH=true NODE_OPTIONS='--openssl-legacy-provider' react-scripts start",
     "build": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts build",
     "deploy": "npm run build && gh-pages -d build"
   },

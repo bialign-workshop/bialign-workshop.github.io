@@ -43,7 +43,7 @@ const CFPText2026 = ({ cfp }: { cfp: CFP }): ReactElement => {
               <div className="row-value">{cfp.submit.length}</div>
             </div>{" "}
             <div className="row">
-              <div className="row-key">CHI2026</div>
+              <div className="row-key">Archive</div>
               <div className="row-value">{cfp.submit.type}</div>
             </div>{" "}
           </div>

@@ -32,7 +32,7 @@ const About2026 = ({
               <span className="col-key">Submission Portal</span>
               <div className="col-value">
                 <Home className="icon" fontSize="small" color="primary" />{" "}
-                <a href="https://openreview.net/group?id=ACM.org/CHI/2026/Workshop/BiAlign" target="_blank">OpenReview</a>
+                <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/BiAlign#tab-your-consoles" target="_blank">OpenReview</a>
               </div>
             </div>
           </Grid>

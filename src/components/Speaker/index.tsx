@@ -15,8 +15,8 @@ const SpeakerEntry = ({ speaker }: { speaker: Speaker }): ReactElement => {
         src={`${process.env.PUBLIC_URL}/images/${speaker.img}`}
       />
       <div>
-        <b className="name"><a href={speaker.webpage}>{speaker.name}</a>
-        </b>, <i className="affiliation">{speaker.affliation}</i> 
+        <b className="name"><a href={speaker.webpage} target="_blank" rel="noopener noreferrer">{speaker.name}</a>
+        </b>, <i className="affiliation">{speaker.affliation}</i>
         <Chip 
             style={{ marginLeft: 10 }}
             label={speaker.type}
@@ -33,7 +33,6 @@ const SpeakerEntry = ({ speaker }: { speaker: Speaker }): ReactElement => {
 const SpeakerList = ({ speakers }: { speakers: Speaker[] }): ReactElement => {
   return (
     <div className="speaker-list">
-      <i style={{ marginBottom: '20px', display: 'block'  }}>Coming Soon!</i>
       {speakers.map((speaker) => (
         <>
           <SpeakerEntry speaker={speaker} key={speaker.name} />

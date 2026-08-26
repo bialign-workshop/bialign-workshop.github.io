@@ -31,12 +31,6 @@ rm -rf .deploy
 # npm run deploy
 
 
-
-
-
-
-
-
 # git push origin gh-pages --force
 
 

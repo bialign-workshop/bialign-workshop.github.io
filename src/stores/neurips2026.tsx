@@ -88,7 +88,7 @@ const overview: Overview = {
           <a href="https://www.science.org/doi/10.1126/science.aec8352" target="_blank">sycophancy</a>,{" "}
           <a href="https://dl.acm.org/doi/10.1145/3772318.3791149" target="_blank">manipulation</a>,{" "}
           <a href="https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026_1.pdf" target="_blank">overreliance</a>,{" "}
-          <a href="https://aclanthology.org/2025.emnlp-main.154/" target="_blank">value drift</a>, and{" "}
+          <a href="https://aclanthology.org/2025.emnlp-main.154/" target="_blank">value-action gap</a>, and{" "}
           <a href="https://dl.acm.org/doi/10.1145/3805689.3806443" target="_blank">delusional spirals</a>
         </b>, which arise from the mutual influence between human states and agent states. Consequently,
         the same AI system may lead to divergent outcomes depending on users' cognitive, emotional, and social
@@ -150,32 +150,32 @@ const overview: Overview = {
       </p>
       <ul>
         <li>
-          <b className="text-framework">Foundations of Dynamic Alignment:</b> Conceptual and theoretical work
+          <b className="text-orange">Foundations of Dynamic Alignment:</b> Conceptual and theoretical work
           clarifying alignment in systems where human states, agent policies, feedback signals, objectives, and
           environments co-evolve;
         </li>
         <li>
-          <b className="text-framework">Specification, Objectives, and Evolving Preferences:</b> Specifying and
+          <b className="text-orange">Specification, Objectives, and Evolving Preferences:</b> Specifying and
           updating goals, values, norms, and safety constraints under changing human and social contexts;
         </li>
         <li>
-          <b className="text-framework">Learning, Adaptation, and Feedback Dynamics:</b> How agents learn from
+          <b className="text-orange">Learning, Adaptation, and Feedback Dynamics:</b> How agents learn from
           repeated human interaction under non-stationary, noisy, or strategic feedback;
         </li>
         <li>
-          <b className="text-framework">Evaluation, Benchmarks, and Failure Discovery:</b> Metrics, simulations,
+          <b className="text-orange">Evaluation, Benchmarks, and Failure Discovery:</b> Metrics, simulations,
           audits, and red-teaming for long-horizon and interactive alignment;
         </li>
         <li>
-          <b className="text-framework">Control, Intervention, and Monitoring:</b> Maintaining or restoring
+          <b className="text-orange">Control, Intervention, and Monitoring:</b> Maintaining or restoring
           alignment after deployment;
         </li>
         <li>
-          <b className="text-framework">Collective, Multi-Agent, and Societal Dynamics:</b> Alignment across
+          <b className="text-orange">Collective, Multi-Agent, and Societal Dynamics:</b> Alignment across
           multiple humans, agents, organizations, or institutions;
         </li>
         <li>
-          <b className="text-framework">Alignment in Domain-Driven and High-Stakes Applications:</b> Research
+          <b className="text-orange">Alignment in Domain-Driven and High-Stakes Applications:</b> Research
           grounded in real-world settings where long-term interaction and safety constraints shape alignment.
         </li>
       </ul>
@@ -210,7 +210,7 @@ const chiorganizers: CHIPeople[] = [
   {
     name: "Divy Thakkar",
     affliation: "Google DeepMind",
-    webpage: "https://sites.google.com/view/divythakkar/home",
+    webpage: "https://divythakkar.com/",
     img: "divy.png",
     twitter: "https://x.com/divy93t",
     linkedin: "https://www.linkedin.com/in/divythakkar/",
@@ -308,8 +308,15 @@ const cfp: CFP = {
   description: "",
   invitation: 
     "We invite researchers and practitioners from academia and industry to join our Workshop on Dynamic Alignment in Human-AI Coupled Systems at NeurIPS 2026. As AI systems shift from single-turn response tools to long-term interactive actors in high-stakes domains, alignment can no longer be treated as a static, one-time objective: human states, agent policies, feedback signals, objectives, and evaluation criteria co-evolve over time. This workshop provides a forum to develop the theoretical, algorithmic, and evaluative foundations of dynamic alignment — spanning AI alignment, machine learning, human-AI interaction, cognitive science, social computing, law, governance, and philosophy. The one-day hybrid workshop features five keynotes, a panel discussion, spotlight talks, two poster sessions, and Structured Thematic Breakout Discussions at on-site interaction stations, whose outcomes will feed into a potential post-workshop white paper. We welcome submissions from all relevant disciplines; accepted work will be presented as spotlight talks or posters, as decided by the program committee. Key workshop topics include:",
-  notes:
-    "All accepted papers will be published on the workshop website (non-archival). The program committee will select 2 “Outstanding Paper Awards” and 1 “Social Impact Award,” announced before closing remarks. Each submission receives three reviews; conflicts of interest are managed per NeurIPS Workshop requirements. We plan to invite participants to collaborate on a joint post-workshop white paper on dynamic alignment.",
+  notes: (
+    <>
+      All accepted papers will be published on the workshop website (non-archival). As long as the
+      submissions are highly relevant to our workshop, we{" "}
+      <b className="text-orange">encourage dual submissions, even papers that were accepted by somewhere else</b>. The
+      program committee will select 3-5 Workshop Awards announced before closing remarks. We plan to invite participants to collaborate on a joint post-workshop white
+      paper on dynamic alignment.
+    </>
+  ),
   scope: (
     // <>
     //   <ul>
@@ -324,7 +331,7 @@ const cfp: CFP = {
     <>
       <ul>
         <li>
-          <b className="text-framework">Foundations of Dynamic Alignment:</b> Conceptual and theoretical work
+          <b className="text-orange">Foundations of Dynamic Alignment:</b> Conceptual and theoretical work
           clarifying alignment in systems where human states, agent policies, feedback signals, objectives, and
           environments co-evolve.
           <div>
@@ -339,7 +346,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Specification, Objectives, and Evolving Preferences:</b> Methods for
+          <b className="text-orange">Specification, Objectives, and Evolving Preferences:</b> Methods for
           specifying and updating goals, values, norms, preferences, and safety constraints under changing human
           and social contexts.
           <div>
@@ -353,7 +360,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Learning, Adaptation, and Feedback Dynamics:</b> Studies of how agents
+          <b className="text-orange">Learning, Adaptation, and Feedback Dynamics:</b> Studies of how agents
           learn from repeated human interaction through RL, human-in-the-loop learning, memory, and lifelong
           adaptation.
           <div>
@@ -367,7 +374,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Evaluation, Benchmarks, and Failure Discovery:</b> Metrics, benchmarks,
+          <b className="text-orange">Evaluation, Benchmarks, and Failure Discovery:</b> Metrics, benchmarks,
           simulations, audits, and red-teaming methods for long-horizon and interactive alignment.
           <div>
             <span className="text-keyword">- <b>Research Questions</b></span>: How can we detect and measure
@@ -381,7 +388,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Control, Intervention, and Monitoring:</b> Approaches for maintaining or
+          <b className="text-orange">Control, Intervention, and Monitoring:</b> Approaches for maintaining or
           restoring alignment after deployment.
           <div>
             <span className="text-keyword">- <b>Research Questions</b></span>: How can alignment be maintained or
@@ -394,7 +401,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Collective, Multi-Agent, and Societal Dynamics:</b> Work on alignment
+          <b className="text-orange">Collective, Multi-Agent, and Societal Dynamics:</b> Work on alignment
           across multiple humans, agents, organizations, or institutions.
           <div>
             <span className="text-keyword">- <b>Research Questions</b></span>: How does alignment behave across
@@ -408,7 +415,7 @@ const cfp: CFP = {
           </div>
         </li>
         <li>
-          <b className="text-framework">Alignment in Domain-Driven and High-Stakes Applications:</b> Research
+          <b className="text-orange">Alignment in Domain-Driven and High-Stakes Applications:</b> Research
           grounded in real-world settings where long-term interaction and safety constraints shape alignment.
           <div>
             <span className="text-keyword">- <b>Research Questions</b></span>: How do long-term interaction and
@@ -427,7 +434,6 @@ const cfp: CFP = {
     {
       date: "August 29, 2026",
       type: "Submission",
-      description: "Submission",
     },
     {
       date: "September 29, 2026",
@@ -440,25 +446,25 @@ const cfp: CFP = {
     {
       date: "December 11 or 12, 2026",
       type: "NeurIPS Workshop",
-      description: "TODO: attendance requirements.",
     },
   ],
   submit: {
     platform: {
-      name: "OpenReview Submission Portal)",
-      url: "TODO: https://openreview.net/group?id=TODO",
+      name: "OpenReview Submission Portal",
+      url: "https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/BiAlign#tab-your-consoles",
     },
     format: (
       <span>
         {" "}
-        NeurIPS 2026 format: <code>documentclass[manuscript, review, anonymous]{"{neurips}"}</code>,{" "}
-        <b style={{ color: "red" }}>Anonymized</b> for double-blind review. {/* TODO: confirm */}
+        NeurIPS 2026 <a href={`${process.env.PUBLIC_URL}/images/NeurIPS_2026_BiAlign_Workshop_Template.zip`}>BiAlign Workshop Templates .zip</a> Download. 
+        
       </span>
     ),
     length: (
       <span>
         {" "}
-        TBD, excluding references. {/* TODO: e.g., 4-page (short) and 8-page (long) */}
+        We call for <b>2-page</b>(tiny), <b>4-page</b> (short), and <b>9-page</b> (long) papers,  excluding references, fully
+        anonymized. 
       </span>
     ),
     type: (
@@ -472,7 +478,30 @@ const cfp: CFP = {
 };
 
 const pcs: ProgramCommittee[] = [
-  // TODO: Add program committee members, e.g. { name: "Jane Doe,", affiliation: "Professor at Example University" },
+  // Sorted alphabetically by first name.
+  { name: "Aayush Kumar,", affiliation: "PhD @Massachusetts Institute of Technology" },
+  { name: "Alessandro Maria Selvitella,", affiliation: "Faculty @Purdue University Fort Wayne" },
+  { name: "Ali Mahdipour Shirayeh,", affiliation: "Researcher @University Health Network & Roche-Genentech" },
+  { name: "Alysa Ziying Tan,", affiliation: "Postdoc @Nanyang Technological University" },
+  { name: "Anindya Das Antar,", affiliation: "Postdoc @University of Notre Dame" },
+  { name: "Anisha Ramakrishna Yarlapati,", affiliation: "PhD @Purdue University, Product Manager @Adobe" },
+  { name: "Aritra Dasgupta,", affiliation: "Faculty @New Jersey Institute of Technology" },
+  { name: "Ashish Mehta,", affiliation: "Postdoc @Stanford University" },
+  { name: "Dipesh Tharu Mahato,", affiliation: "PhD @New York University" },
+  { name: "Elena Ericheva,", affiliation: "AI Safety Scientist @JetBrains" },
+  { name: "Giulia Frascaria,", affiliation: "PhD @University of Zurich" },
+  { name: "Hengyu Liu,", affiliation: "Faculty @Aalborg University" },
+  { name: "Jared Moore,", affiliation: "PhD @Stanford University" },
+  { name: "Kaushiki Kansara,", affiliation: "Faculty @Arizona State University" },
+  { name: "Lin Zhang,", affiliation: "Postdoc @Johns Hopkins University" },
+  { name: "Mikayel Sukiasyan,", affiliation: "Researcher @Amazon" },
+  { name: "Qianyu Julie Zhu,", affiliation: "PhD @Massachusetts Institute of Technology" },
+  { name: "Shahram Najam Syed,", affiliation: "Technical Lead @Invisible AI" },
+  { name: "Xiaohu Zhu,", affiliation: "Researcher @Center for Safe AGI" },
+  { name: "Yiyun Su,", affiliation: "Researcher @Axon" },
+  { name: "Zeyu Zhang,", affiliation: "PhD @The Chinese University of Hong Kong" },
+  { name: "Zhihong Cui,", affiliation: "Postdoc @University of Oslo" },
+  { name: "Ziwei Hong,", affiliation: "Researcher @University of Pennsylvania" },
 ];
 
 
@@ -561,7 +590,46 @@ export const schedule: Schedule[] = [
 ];
 
 const speakers: Speaker[] = [
-  // TODO: Add invited speakers/keynotes here.
+  // Internal status notes (not rendered): Cappelen — confirmed, virtual. Rieser — confirmed
+  // virtual, but our side still to confirm after in-person speakers are prioritized.
+  // Krishnan and Sekhon — positively responded, on-site, not yet confirmed.
+  {
+    name: "Herman Cappelen",
+    affliation: "The University of Hong Kong",
+    webpage: "https://www.hermancappelen.net/",
+    img: "herman.png",
+    type: "Keynote",
+    description:
+      "Herman Cappelen is Chair Professor of Philosophy at the University of Hong Kong and Director of the AI & Humanity Lab. He holds a BA from the University of Oxford and a PhD in philosophy from UC Berkeley, and previously held positions at Oxford, the University of St Andrews, and the University of Oslo. His work spans conceptual engineering, the philosophy of language, philosophical methodology, and the philosophy of artificial intelligence, bringing a philosophical lens to what it means for AI systems and human concepts to align."
+  },
+  {
+    name: "Verena Rieser",
+    affliation: "Google DeepMind",
+    webpage: "https://sites.google.com/site/verenateresarieser/",
+    linkedin: "https://www.linkedin.com/in/verena-rieser-3590b86/",
+    img: "verena.png",
+    type: "Keynote",
+    description:
+      "Verena Rieser is a Senior Staff Research Scientist at Google DeepMind, where she founded the VOICES (Voices-of-all in Alignment) team within the GenAI unit, a core contributor to Gemini focused on model safety and usability across diverse communities. Before joining DeepMind in 2023, she was a full Professor at Heriot-Watt University in Edinburgh; she holds a PhD from Saarland University and was a postdoctoral researcher at the University of Edinburgh. Her research spans dialogue systems, natural language generation, conversational RL agents, and evaluation methodology, with recent work on aligning AI with diverse views of what is safe and beneficial."
+  },
+  {
+    name: "Sriram Krishnan",
+    affliation: "Former White House Senior Policy Advisor for AI",
+    webpage: "https://en.wikipedia.org/wiki/Sriram_Krishnan",
+    img: "sriram.png",
+    type: "Keynote (to be confirmed)",
+    description:
+      "Sriram Krishnan served as Senior Policy Advisor for Artificial Intelligence at the White House Office of Science and Technology Policy from 2025 until mid-2026, where he helped shape U.S. federal AI strategy, including arrangements giving the government early access to frontier models for capability and security assessment. He is an entrepreneur and venture capitalist who previously held senior product roles at Microsoft, Facebook, Twitter, and Snap. He brings a policy and governance perspective on alignment that is rarely represented in technical alignment venues."
+  },
+  {
+    name: "Jasjeet Sekhon",
+    affliation: "Google DeepMind",
+    webpage: "https://en.wikipedia.org/wiki/Jasjeet_S._Sekhon",
+    img: "jasjeet.png",
+    type: "Keynote (to be confirmed)",
+    description:
+      "Jasjeet Sekhon is Chief Strategy Officer at Google DeepMind, where he oversees strategic initiatives spanning research, commercialization, and policy in support of safe AGI development. He joined in 2026 from Bridgewater Associates, where he was Chief Scientist and Head of AI and helped build the firm's AIA Labs research unit, and has previously held professorships at Harvard, UC Berkeley, and Yale. His work bridges causal inference, statistics, political economy, and machine learning."
+  },
 ];
 
 const orals: Oral[] = [
