@@ -594,6 +594,15 @@ const speakers: Speaker[] = [
   // virtual, but our side still to confirm after in-person speakers are prioritized.
   // Krishnan and Sekhon — positively responded, on-site, not yet confirmed.
   {
+    name: "Jasjeet Sekhon",
+    affliation: "Google DeepMind",
+    webpage: "https://en.wikipedia.org/wiki/Jasjeet_S._Sekhon",
+    img: "jasjeet.png",
+    type: "Keynote (to be confirmed)",
+    description:
+      "Jasjeet Sekhon is Chief Strategy Officer at Google DeepMind, where he oversees strategic initiatives spanning research, commercialization, and policy in support of safe AGI development. He joined in 2026 from Bridgewater Associates, where he was Chief Scientist and Head of AI and helped build the firm's AIA Labs research unit, and has previously held professorships at Harvard, UC Berkeley, and Yale. His work bridges causal inference, statistics, political economy, and machine learning."
+  },
+  {
     name: "Herman Cappelen",
     affliation: "The University of Hong Kong",
     webpage: "https://www.hermancappelen.net/",
@@ -620,16 +629,7 @@ const speakers: Speaker[] = [
     type: "Keynote (to be confirmed)",
     description:
       "Sriram Krishnan served as Senior Policy Advisor for Artificial Intelligence at the White House Office of Science and Technology Policy from 2025 until mid-2026, where he helped shape U.S. federal AI strategy, including arrangements giving the government early access to frontier models for capability and security assessment. He is an entrepreneur and venture capitalist who previously held senior product roles at Microsoft, Facebook, Twitter, and Snap. He brings a policy and governance perspective on alignment that is rarely represented in technical alignment venues."
-  },
-  {
-    name: "Jasjeet Sekhon",
-    affliation: "Google DeepMind",
-    webpage: "https://en.wikipedia.org/wiki/Jasjeet_S._Sekhon",
-    img: "jasjeet.png",
-    type: "Keynote (to be confirmed)",
-    description:
-      "Jasjeet Sekhon is Chief Strategy Officer at Google DeepMind, where he oversees strategic initiatives spanning research, commercialization, and policy in support of safe AGI development. He joined in 2026 from Bridgewater Associates, where he was Chief Scientist and Head of AI and helped build the firm's AIA Labs research unit, and has previously held professorships at Harvard, UC Berkeley, and Yale. His work bridges causal inference, statistics, political economy, and machine learning."
-  },
+  }
 ];
 
 const orals: Oral[] = [

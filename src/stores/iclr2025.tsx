@@ -7,6 +7,10 @@ import {
   Overview,
   Schedule,
   Speaker,
+  Oral,
+  Poster,
+  Tiny,
+  CHIPeople,
 } from "./Interfaces";
 const format = "documentclass [manuscript, review, anonymous] {acmart}";
 const overview: Overview = {
@@ -84,7 +88,7 @@ const overview: Overview = {
   backgroundImg: "background_grey.png",
   confLogoImg: "iclr_logo.png",
   logoImg: "logo.png",
-  logoWithWord: "logo_word_long_shadow.png",
+  logoWithWord: "logo_word_long_chi.png",
   confName: "ICLR",
 };
 
@@ -106,7 +110,7 @@ const organizers: People[] = [
     name: "Ziqiao Ma",
     affliation: "University of Michigan",
     webpage: "https://mars-tin.github.io/",
-    img: "martin.jpg",
+    img: "martin.png",
     twitter: "https://x.com/ziqiao_ma",
     description:
       "Martin Ziqiao Ma is a Ph.D. candidate at the University of Michigan. His research stands on the intersection of language, interaction, and embodiment from a cognitive perspective, with the goal of grounding and aligning language agents to non-linguistic modalities and rich interactive contexts. He is a recipient of the Weinberg Cognitive Science Fellowship, an Outstanding Paper Award at ACL 2023, and the Amazon Alexa Prize Simbot Challenge Award. He co-organized the 4th SpLU-RoboNLP workshop at ACL 2024, served as the poster/demo chair for the 5th Michigan AI Symposium 2022, and as a regular program committee for various ML/NLP venues."
@@ -225,6 +229,117 @@ const organizers: People[] = [
       "Yang Li is a Senior Staff Research Scientist at Google DeepMind, and an affiliate faculty member at University of Washington. His research lies at the intersection of HCI and AI, focusing on general deep learning research and models for solving human interactive intelligence problems and improving user experiences. He earned a Ph.D. degree in Computer Science from the Chinese Academy of Sciences, and conducted postdoctoral research at UC Berkeley EECS. Yang has extensively published in top venues across both the HCI and ML fields, including CHI, UIST, ICML, ACL, CVPR, NeurIPS, ICLR and KDD, and has constantly served as area chairs or senior area chairs across the HCI and ML fields, including ICLR 2025, NeurIPS 2024, ICML 2024, and more. Yang is an editor of the Springer book on AI for HCI: A Modern Approach, and an organizer of multiple workshops that bridges the HCI and AI/ML field, including the first AI\&HCI workshp at ICML." 
     },
 ];
+
+const chiorganizers: CHIPeople[] = [
+  {
+    name: "Hua Shen",
+    affliation: "University of Washington / @huashen218",
+    label: "(Virtual Chair)",
+    webpage: "https://hua-shen.org/",
+    img: "hua.png",
+    twitter: "https://x.com/huashen218",
+    bluesky: "https://bsky.app/profile/huashen.bsky.social",
+    type: "Organizer",
+    description:
+      "Hua Shen is a Postdoctoral Scholar at the University of Washington. " +
+      "She is leading the bidirectional human-AI alignment projects and workshops with collaborators. " + 
+      "Her research is rooted in HCI and intersects with various AI fields, such as NLP, Speech and Computer Vision. " + 
+      "She empowers humans to interactively explain, evaluate, and collaborate with AI, and incorporates human feedback into improving AI. " +
+      "She received multiple awards, including 2023 Rising Stars of Data Science,  2023 Google Research Science Conference Scholarships, AIED'24 Best Paper, CSCW'23 Best Demo, IUI'23 Best Paper Honorable Mention. She also served as Associate Chairs for CHI, CHI LBW, Program Committees for ACL, EMNLP, and more."
+  },
+  {
+    name: "Tiffany Knearem ",
+    affliation: "Google / @tknearem",
+    label: "(Onsite Chair)",
+    webpage: "https://tknearem.wixsite.com/tknearem",
+    img: "tiffany.png",
+    twitter: "https://x.com/tknearem",
+    bluesky: "https://bsky.app/profile/tknearem.bsky.social",
+    type: "Organizer",
+    description:
+      "Tiffany Knearem is a User Experience Researcher on the Material Design team at Google. Her research focus is on product designer-developer collaboration, creativity support tooling and opportunities for AI in the user interface (UI) design space. She holds a PhD in Information Sciences and Technologies with emphasis on Human-Computer Interaction from Pennsylvania State University, advised by Dr. John M. Carroll. She co-organized the CHI 2024 workshop on Computational UI."
+  },
+  {
+    name: "Michael Xieyang Liu",
+    affliation: "Google DeepMind / @lxieyang",
+    label: "(Onsite Chair)",
+    webpage: "https://lxieyang.github.io/",
+    img: "michael.png",
+    twitter: "https://x.com/lxieyang",
+    // bluesky: "",
+    type: "Organizer",
+    description:
+      "Michael Xieyang Liu is a research scientist at Google DeepMind. His research aims to improve human-AI interaction, with a particular focus on human interaction with multimodal large language models and controllable AI. Michael organized the Sensemaking workshop at CHI 2024. Michael previously earned his Ph.D. from the Human-Computer Interaction Institute at Carnegie Mellon University. There, he worked at the intersection of HCI, programming tools, sensemaking, intelligent user interfaces, and human-AI interaction, where he designed and built systems that accelerate online sensemaking for developers and facilitate human-AI interactions for end-users."
+  },
+  {
+    name: "Sherry Tongshuang Wu",
+    affliation: "Carnegie Mellon University / @tongshuangwu",
+    label: "(Onsite Chair)",
+    webpage: "https://www.cs.cmu.edu/~sherryw/",
+    twitter: "https://x.com/tongshuangwu",
+    bluesky: "https://bsky.app/profile/sherrytswu.bsky.social",
+    img: "sherry.png",
+    type: "Organizer",
+    description:
+      "Sherry Wu is an Assistant Professor at the Human-Computer Interaction Institute, Carnegie Mellon University. Her research lies at the intersection of Human-Computer Interaction and Natural Language Processing, aiming to design, evaluate, build, and interact with AI systems that are compatible with actual human goals. Sherry has organized three workshops at NLP and HCI conferences: Shared Stories and Lessons Learned workshop at EMNLP 2022 and Trust and Reliance in AI-Human Teams at CHI 2023-2024. She has also given two tutorials related to Human-AI Interaction at EMNLP 2023 and NAACL 2024. Before joining CMU, Sherry received her Ph.D. degree from the University of Washington.",
+  },
+  {
+    name: "Yun Huang",
+    affliation: "University of Illinois Urbana-Champaign / @YunHuang_HCI",
+    label: "(Onsite Chair)",
+    webpage: "https://ischool.illinois.edu/people/yun-huang",
+    img: "yun.png",
+    twitter: "https://x.com/YunHuang_HCI",
+    // bluesky: "",
+    type: "Organizer",
+    description:
+      "Yun Huang is an Associate Professor at the School of Information Sciences at the University of Illinois at Urbana-Champaign. She co-directs the SALT lab, focusing on social computing systems research. She is dedicated to innovating AI-based solutions that foster a synergistic relationship between humans and machines, enhancing educational opportunities to all and expanding access to community services. She received her Ph.D. in information and computer science from the University of California, Irvine."
+  },
+  {
+    name: "Andrés Monroy-Hernández",
+    affliation: "Princeton University / @andresmh",
+    webpage: "https://www.andresmh.com/",
+    img: "andres.png",
+    twitter: "https://x.com/andresmh",
+    bluesky: "andresmh.com",
+    type: "Organizer",
+    description: "Andrés Monroy-Hernández is an Assistant Professor co-leading the Princeton HCI Lab at Princeton University, where his research focuses on human-computer interaction and social computing. He is also an associated faculty at Princeton's Center for Information Technology and Policy, the Keller Center for Innovation, the DeCenter, the Program in Cognitive Science, and the Program in Latin American Studies. Before Princeton, he founded the HCI research team at Snap and led the FUSE Labs at MSR. He received his Ph.D. degree in Media Arts and Sciences from MIT, was named one of the 35 Innovators under 35 by the MIT Technology Review. He was the technical program co-chair, editor, and steering committee for ACM CSCW conferences."
+  },
+  {
+    name: "Tanu Mitra",
+    affliation: "University of Washington / @tanmit",
+    label: "(Virtual Chair)",
+    webpage: "https://faculty.washington.edu/tmitra/",
+    img: "tanu.png",
+    twitter: "https://x.com/tanmit",
+    bluesky: "https://bsky.app/profile/tanumitra.bsky.social",
+    type: "Organizer",
+    description:
+      "Tanu Mitra is an Associate Professor at the Information School at the University of Washington, and co-founded the Responsibility in AI Systems and Experiences (RAISE) Center. Her research blends human-centered data science and social science principles to develop new knowledge, methods, and systems to defend against the epistemic risks of online mis(dis)information, bias, hate and harms. Tanu's work has been supported by grants from the NSF, NIH, DoD, Social Science One, and other Foundations. Her research has been recognized through multiple awards and honors, including an NSF-CRII, an early career ONR-YIP, Adamic-Glance Distinguished Young Researcher award and Virginia Tech College of Engineering Outstanding New Assistant Professor award, along with several best paper awards. Dr. Mitra currently serves on Spotify's safety advisory board and has previously served on the advisory board of the Social Science Research Council's Social Data Initiative. "
+  },
+   {
+    name: "Yang Li",
+    affliation: "Google DeepMind / @yangli169",
+    webpage: "https://yangli169.github.io/yangl.org/",
+    img: "yang.png",
+    twitter: "https://x.com/yangli169",
+    // bluesky: "",
+    type: "Organizer",
+    description:
+      "Yang Li is a Senior Staff Research Scientist at Google DeepMind, and an affiliate faculty member at University of Washington. His research lies at the intersection of HCI and AI, focusing on general deep learning research and models for solving human interactive intelligence problems and improving user experiences. He earned a Ph.D. degree in Computer Science from the Chinese Academy of Sciences, and conducted postdoctoral research at UC Berkeley EECS. Yang has extensively published in top venues across both the HCI and ML fields, including CHI, UIST, ICML, ACL, CVPR, NeurIPS, ICLR and KDD, and has constantly served as area chairs or senior area chairs across the HCI and ML fields, including ICLR 2025, NeurIPS 2024, ICML 2024, and more. Yang is an editor of the Springer book on AI for HCI: A Modern Approach, and an organizer of multiple workshops that bridges the HCI and AI/ML field, including the first AI\&HCI workshp at ICML." 
+    },
+    {
+      name: "Marti A. Hearst",
+      affliation: "UC Berkeley",
+      label: "(Virtual Chair)",
+      webpage: "https://people.ischool.berkeley.edu/~hearst/",
+      img: "marti_hearst.png",
+      type: "Organizer",
+      description:
+        "Marti A. Hearst is a professor and previously the Interim Dean for the UC Berkeley School of Information. She is both an ACL Fellow and a SIGCHI Academy member, and former ACL President. Her research has long combined HCI and NLP; recent projects include adding interactivity to scholarly documents and creating interactive newspods. She recently gave invited keynote talks at the EACL NLP + HCI workshop, the KDD Workshop on Data Science with a Human in the Loop, and she advised the 2022 NAACL program chairs on the Human-Centered NLP special theme. She has taught courses in NLP, HCI, and information visualization for 25 years." 
+    },
+];
+
 
 const cfp: CFP = {
   description: "",
@@ -516,9 +631,95 @@ const speakers: Speaker[] = [
   },
 ];
 
+const orals: Oral[] = [
+  { link: "https://openreview.net/attachment?id=pytJdAOA0X&name=pdf", title: "SafeChain: Safety of Language Models with Long Chain-of-Thought Reasoning Capabilities", authors: "Fengqing Jiang, Zhangchen Xu, Yuetai Li, Luyao Niu, Zhen Xiang, Bo Li, Bill Yuchen Lin, Radha Poovendran"},
+  { link: "https://openreview.net/attachment?id=vvSOJqC3f6&name=pdf", title: "AI-enhanced semantic feature norms for 786 concepts", authors: "Siddharth Suresh, Kushin Mukherjee, Tyler Giallanza, Xizheng Yu, Mia Patil, Jonathan D. Cohen, Timothy T. Rogers"},
+  { link: "https://openreview.net/attachment?id=AgT3MuT9sh&name=pdf", title: "Societal Impacts Research Requires Usage-Based Benchmarks for Creative Tasks", authors: "Judy Hanwen Shen, Carlos Guestrin"},
+  { link: "https://openreview.net/attachment?id=LzApvoBSRj&name=pdf", title: "PARSE-Ego4D: Toward Bidirectionally Aligned Action Recommendations for Egocentric Videos", authors: "Steven Abreu, Tiffany D Do, Karan Ahuja, Eric J Gonzalez, Lee Payne, Daniel McDuff, Mar Gonzalez-Franco"},
+  { link: "https://openreview.net/attachment?id=7zxUVXFPez&name=pdf",title: "Representational Alignment Supports Effective Teaching", authors: "Ilia Sucholutsky, Katherine M. Collins, Maya Malaviya, Nori Jacoby, Weiyang Liu, Theodore Sumers, Michalis Korakakis, Umang Bhatt, Mark K Ho, Joshua B. Tenenbaum, Bradley C. Love, Zachary Pardos, Adrian Weller, Thomas L. Griffiths"},
+  { link: "https://openreview.net/attachment?id=WKncNqNXOr&name=pdf",title: "InterFeedback: Unveiling Interactive Intelligence of Large Multimodal Models with Human Feedback", authors: "Henry Hengyuan Zhao, Wenqi Pei, Yifei Tao, Haiyang Mei, Mike Zheng Shou"},
+  { link: "https://openreview.net/attachment?id=zjr0kJqL9n&name=pdf",title: "Preference Optimization For Concept Bottleneck Models", authors: "Emiliano Penaloza, Tianyue H. Zhang, Laurent Charlin, Mateo Espinosa Zarlenga"},
+  { link: "https://openreview.net/attachment?id=uy8IKOWpei&name=pdf",title: "Scalably Solving Assistance Games", authors: "Cassidy Laidlaw, Eli Bronstein, Timothy Guo, Dylan Feng, Lukas Berglund, Justin Svegliato, Stuart Russell, Anca Dragan"},
+  { link: "https://openreview.net/attachment?id=ZPTvEUXzSq&name=pdf",title: "Augmenting Image Annotation: A Human–LMM Collaborative Framework for Efficient Object Selection and Label Generation", authors: "HE ZHANG, Xinyi Fu, John Millar Carroll"},
+  { link: "https://openreview.net/attachment?id=ncUW9RfbKK&name=pdf",title: "Policy Prototyping for LLMs: Pluralistic Alignment via Interactive and Collaborative Policymaking", authors: "Kevin Feng, Inyoung Cheong, Quan Ze Chen, Amy X Zhang"},
+]
+
+const poster: Poster[] = [
+  { link: "https://openreview.net/attachment?id=PMUNiNCje7&name=pdf", title: "Envision Human-AI Perceptual Alignment from a Multimodal Interaction Perspective", authors: "Shu Zhong, Marianna Obrist" },
+  { link: "https://openreview.net/attachment?id=8AeAmFu4Qf&name=pdf", title: "A Roadmap for Human-Agent Moral Alignment: Integrating Pre-defined Intrinsic Rewards and Learned Reward Models", authors: "Elizaveta Tennant, Stephen Hailes, Mirco Musolesi"},
+  { link: "https://openreview.net/attachment?id=mzLBxX84VI&name=pdf", title: "A Benchmark for Scalable Oversight Mechanisms", authors: "Abhimanyu Pallavi Sudhir, Jackson Kaunismaa, Arjun Panickssery"},
+  { link: "https://openreview.net/attachment?id=CsCtO2YFn9&name=pdf", title: "Rethinking Anti-Misinformation AI", authors: "Vidya Sujaya, Kellin Pelrine, Andreea Musulan, Reihaneh Rabbany"},
+  { link: "https://openreview.net/attachment?id=a64uvvqwRa&name=pdf", title: "Exploring Persona-dependent LLM Alignment for the Moral Machine Experiment", authors: "Jiseon Kim, Jea Kwon, Luiz Felipe Vecchietti, Alice Oh, Meeyoung Cha"},
+  { link: "https://openreview.net/attachment?id=3snjOkuzDR&name=pdf", title: "Multi-Objective Probabilistic Preference Learning with Soft and Hard Bounds", authors: "Edward Chen, Sang T. Truong, Natalie Dullerud, Sanmi Koyejo, Carlos Guestrin"},
+  { link: "https://openreview.net/attachment?id=64rCWVC78p&name=pdf", title: "We Shape AI, and Thereafter AI Shape Us: Humans Align with AI through Social Influences", authors: "Jingshu Li, Tianqi Song, Beichen Xue, Yi-Chieh Lee"},
+  { link: "https://openreview.net/attachment?id=SM16xgEjos&name=pdf", title: "Towards LVLM-Aided Alignment of Task-Specific Vision Models", authors: "Alexander Koebler, Christian Greisinger, Jan Paulus, Ingo Thon, Florian Buettner"},
+  { link: "https://openreview.net/attachment?id=uaTEZWeMAu&name=pdf", title: "Patterns and Mechanisms of Contrastive Activation Engineering", authors: "Yixiong Hao, Ayush Panda, Stepan Shabalin, Sheikh Abdur Raheem Ali"},
+  { link: "https://openreview.net/attachment?id=8vbMJ3Pmh8&name=pdf", title: "Investigating Alignment Signals in Initial Token Representations", authors: "Carl Rosenblatt"},
+  { link: "https://openreview.net/attachment?id=tXl1gdoAoV&name=pdf", title: "CTRL-Rec: Controlling Recommender Systems With Natural Language", authors: "Micah Carroll, Adeline Foote, Marcus Williams, Anca Dragan, W. Bradley Knox, Smitha Milli"},
+  { link: "https://openreview.net/attachment?id=O4LaRH4zSI&name=pdf", title: "Position: Interpretability is a Bidirectional Communication Problem", authors: "Kola Ayonrinde"},
+  { link: "https://openreview.net/attachment?id=SUNOO5qL3x&name=pdf", title: "OUTLIER-AWARE PREFERENCE OPTIMIZATION FOR LARGE LANGUAGE MODELS", authors: "Pragya Srivastava, Sai Soumya Nalli, Amit Deshpande, Amit Sharma"},
+  { link: "https://openreview.net/attachment?id=H1xdhKlN21&name=pdf", title: "TraCeS: Trajectory Based Credit Assignment For Safe Reinforcement Learning", authors: "Siow Meng Low, Akshat Kumar"},
+  { link: "https://openreview.net/attachment?id=yGXxvRQwbB&name=pdf", title: "Probing Mechanical Reasoning in Large Vision Language Models", authors: "Haoran Sun, Yijiang Li, Qingying Gao, Haiyun Lyu, Dezhi Luo, Hokin Deng"},
+  { link: "https://openreview.net/attachment?id=rmHnNgN5cA&name=pdf", title: "Vision Language Models See What You Want but not What You See", authors: "Qingying Gao, Yijiang Li, Haiyun Lyu, Haoran Sun, Dezhi Luo, Hokin Deng"},
+  { link: "https://openreview.net/attachment?id=0fT6h7RAE4&name=pdf", title: "Vision Language Models Know Law of Conservation without Understanding More-or-Less", authors: "Dezhi Luo, Haiyun Lyu, Qingying Gao, Haoran Sun, Yijiang Li, Hokin Deng"},
+  { link: "https://openreview.net/attachment?id=U3FXUrEJWT&name=pdf", title: "Human Alignment: How Much We Adapt to LLMs?", authors: "Cazalet Tanguy, Ruben Janssens, Tony Belpaeme, Joni Dambre"},
+  { link: "https://openreview.net/attachment?id=3FbMAsfLfU&name=pdf", title: "Moral Alignment for LLM Agents", authors: "Elizaveta Tennant, Stephen Hailes, Mirco Musolesi"},
+  { link: "https://openreview.net/attachment?id=oSRqZO2O2O&name=pdf", title: "A Sociotechnical Perspective on Aligning AI with Pluralistic Human Values", authors: "Dalia Ali, Aysenur Kocak, Michèle Wieland, Dora Zhao, Allison Koenecke, Orestis Papakyriakopoulos"},
+  { link: "https://openreview.net/attachment?id=wc4MhGEsBH&name=pdf", title: "The Human Visual System Can Inspire New Interaction Paradigms for LLMs", authors: "Diana Robinson, Neil D Lawrence"},
+  { link: "https://openreview.net/attachment?id=uDqvsIgCnu&name=pdf", title: "Active Human Feedback Collection via Neural Contextual Dueling Bandits", authors: "Arun Verma, Xiaoqiang Lin, Zhongxiang Dai, Daniela Rus, Bryan Kian Hsiang Low"},
+  { link: "https://openreview.net/attachment?id=2K6pDaDYAh&name=pdf", title: "Shared Similarity Between Humans and Chatbots: Exploring Human Willingness to Seek Social Support From Chatbots", authors: "Zicheng Zhu, Tianqi Song, Jefferson Lim, Chi-Lan Yang, Yi-Chieh Lee"},
+  { link: "https://openreview.net/attachment?id=mQ1pLtdjbq&name=pdf", title: "Decision preference alignment for large-scale agents based on reward model generation", authors: "Zheng Jiaoling, Xu Weifeng, Luo Qian, Dang Wanli, Geng Long, Gao Guokang, Fan Xingyu, Ren Yulin "},
+  { link: "https://openreview.net/attachment?id=HAXNSU8dZv&name=pdf", title: "Societal Alignment Frameworks Can Improve LLM Alignment", authors: "Karolina Stanczak, Nicholas Meade, Mehar Bhatia, Hattie Zhou, Konstantin Böttinger, Jeremy Barnes, Jason Stanley, Jessica Montgomery, Richard Zemel, Nicolas Papernot, Nicolas Chapados, Denis Therien, Timothy P Lillicrap, Ana Marasovic, Sylvie Delacroix, Gillian K Hadfield, Siva Reddy"},
+  { link: "https://openreview.net/attachment?id=fCsQcDG1Ul&name=pdf", title: "Processing, Priming, Probing: Human Interventions for Explainability Alignment", authors: "Kenza Amara"},
+  { link: "https://openreview.net/attachment?id=WvB9hKKjSc&name=pdf", title: "Superalignment with Dynamic Human Values", authors: "Florian Mai, David Kaczér, Nicholas Kluge Corrêa, Lucie Flek"},
+  { link: "https://openreview.net/attachment?id=YsyMLyrLDS&name=pdf", title: "CoPL: Collaborative Preference Learning for Personalizing LLMs", authors: "Youngbin Choi, Seunghyuk Cho, Minjong Lee, MoonJeong Park, Yesong Ko, Jungseul Ok, Dongwoo Kim"},
+  { link: "https://openreview.net/attachment?id=LymJGYBScq&name=pdf", title: "Online Learning and Equilibrium Computation with Ranking Feedback", authors: "Mingyang Liu, Yongshan Chen, Zhiyuan Fan, Gabriele Farina, Asuman E. Ozdaglar, Kaiqing Zhang"},
+  { link: "https://openreview.net/attachment?id=dXOWrqpyvZ&name=pdf", title: "Drift: Efficient Implicit Personalization of Large Language Models", authors: "Minbeom Kim, Kang-il Lee, Seongho Joo, Hwaran Lee, Kyomin Jung"},
+  { link: "https://openreview.net/attachment?id=XkEwFHMv5P&name=pdf", title: "Broaden your SCOPE! Efficient Conversation Planning for LLMs using Semantic Space", authors: "Zhiliang Chen, Xinyuan Niu, Chuan-Sheng Foo, Bryan Kian Hsiang Low"},
+  { link: "https://openreview.net/attachment?id=k6Vkm6MqWi&name=pdf", title: "From Intuition to Understanding: Using AI Peers to Overcome Physics Misconceptions", authors: "Ruben Weijers, Denton Wu, Hannah Betts, Yuxiang Guan, Vidya Sujaya, Kushal Dev, Reihaneh Rabbany, Jean-François Godbout, Kellin Pelrine, Tamara Jacod, William Delooze, Ying Wu"},
+  { link: "https://openreview.net/attachment?id=Mzza24PyIq&name=pdf", title: "AI Systematically Rewires the Flow of Ideas", authors: "Zhonghao He, Tianyi Qiu, Tao Lin, Moshe Glickman, Atoosa Kasirzadeh, John Wihbey, Max Kleiman-Weiner"},
+  { link: "https://openreview.net/attachment?id=4CRMWP1tYc&name=pdf", title: "The Lock-in Hypothesis: Stagnation by Algorithm", authors: "Tianyi Qiu, Zhonghao He, Tejasveer Chugh, Max Kleiman-Weiner"},
+  { link: "https://openreview.net/attachment?id=PGsM81SWHt&name=pdf", title: "Monitoring LLM Agents for Sequentially Contextual Harm", authors: "Chen Yueh-Han, Nitish Joshi, Yulin Chen, He He, Rico Angell"},
+  { link: "https://openreview.net/attachment?id=jf472MdwsP&name=pdf", title: "Understanding (Un)Reliability of Steering Vectors in Language Models", authors: "Joschka Braun, Carsten Eickhoff, David Krueger, Seyed Ali Bahrainian, Dmitrii Krasheninnikov"},
+  { link: "https://openreview.net/attachment?id=E9PzgXCA7J&name=pdf", title: "Observability of Latent States in Generative AI Models", authors: "Tian Yu Liu, Stefano Soatto, Matteo Marchi, Pratik Chaudhari, Paulo Tabuada"},
+  { link: "https://openreview.net/attachment?id=XePNb7JiUi&name=pdf", title: "Sycophancy Claims about Language Models: The Missing Human-in-the-Loop", authors: "Jan Batzner, Volker Stocker, Stefan Schmid, Gjergji Kasneci"},
+  { link: "https://openreview.net/attachment?id=qs9CTsC32h&name=pdf", title: "D3PO: Preference-Based Alignment of Discrete Diffusion Models", authors: "Umberto Borso, Davide Paglieri, Jude Wells, Tim Rocktäschel"},
+  { link: "https://openreview.net/attachment?id=0yBLkJynGy&name=pdf", title: "Addressing and Visualizing Misalignments in Human Task-Solving Trajectories", authors: "Sejin Kim, Hosung Lee, Sundong Kim"},
+  { link: "https://openreview.net/attachment?id=XOj2s8faD6&name=pdf", title: "The Alignment Trilemma: A Theoretical Perspective on Recursive Misalignment and Human-AI Adaptation Dynamics", authors: "Tarun Raheja, Nilay Pochhi"},
+  { link: "https://openreview.net/attachment?id=OxhHnD9wuZ&name=pdf", title: "Representational Difference Clustering", authors: "Neehar Kondapaneni, Emily Gu, Oisin Mac Aodha, Pietro Perona"},
+  { link: "https://openreview.net/attachment?id=97a05ePu0O&name=pdf", title: "SWEPO: Simultaneous Weighted Preference Optimization for Group Contrastive Alignment", authors: "Taneesh Gupta, Rahul Madhavan, Xuchao Zhang, Chetan Bansal, Saravan Rajmohan"},
+  { link: "https://openreview.net/attachment?id=pEQwTKmcks&name=pdf", title: "Symmetry-Breaking Augmentations for Ad Hoc Teamwork", authors: "Ravi Hammond, Dustin Craggs, Mingyu Guo, Jakob Nicolaus Foerster, Ian Reid"},
+  { link: "https://openreview.net/attachment?id=oC5eZCx3KA&name=pdf", title: "Mitigating Societal Cognitive Overload in the Age of AI: Challenges and Directions", authors: "Salem Lahlou"},
+  { link: "https://openreview.net/attachment?id=zQhSOwsQDf&name=pdf", title: "Learning From Diverse Experts: Behavior Alignment Through Multi-Objective Inverse Reinforcement Learning", authors: "Jun-Jie Yang, Qian-You Zhang, Chia-Heng Hsu, Xi Liu, Ping-Chun Hsieh"},
+  { link: "https://openreview.net/attachment?id=08E6XX0Yen&name=pdf", title: "Order Independence With Finetuning", authors: "Katrina Brown, Reid McIlroy-Young"},
+  { link: "https://openreview.net/attachment?id=1mtgbiN4X1&name=pdf", title: "Trustworthy AI Must Account for Intersectionality", authors: "Jesse C. Cresswell"},
+  { link: "https://openreview.net/attachment?id=e13sVlTS3b&name=pdf", title: "Aligning LLMs with Domain Invariant Reward Models", authors: "David Wu, Sanjiban Choudhury"},
+  { link: "https://openreview.net/attachment?id=uZxqFZDKLA&name=pdf", title: "Value Alignment in the Global South: A Multidimensional Approach to Norm Elicitation in Indian Contexts", authors: "Atmadeep Ghoshal, Martim Brandao, Ruba Abu-Salma"},
+  { link: "https://openreview.net/attachment?id=9teQltJgBo&name=pdf", title: "Inference-time Alignment in Continuous Space", authors: "Yige Yuan, Teng Xiao, Li Yunfan, Xu Bingbing, Shuchang Tao, Yunqi Qiu, Huawei Shen, Xueqi Cheng "},
+  { link: "https://openreview.net/attachment?id=NhIp7YdGK6&name=pdf", title: "PILAF: Optimal Human Preference Sampling for Reward Modeling", authors: "Yunzhen Feng, Ariel Kwiatkowski, Kunhao Zheng, Julia Kempe, Yaqi Duan "},
+  { link: "https://openreview.net/attachment?id=qu6wD91UIO&name=pdf", title: "Data-adaptive Safety Rules for Training Reward Models", authors: "Xiaomin Li, Mingye Gao, Zhiwei Zhang, Jingxuan Fan, Weiyu Li "},
+  { link: "https://openreview.net/attachment?id=QjILdRB10X&name=pdf", title: "Can RLHF be More Efficient with Imperfect Reward Models? A Policy Coverage Perspective", authors: "Jiawei Huang, Bingcong Li, Christoph Dann, Niao He "},
+  { link: "https://openreview.net/attachment?id=PUBJyz0WJa&name=pdf", title: "TRIG-Bench: A Benchmark for Text-Rich Image Grounding", authors: "Ming Li, Ruiyi Zhang, Jian Chen, Tianyi Zhou "},
+  { link: "https://openreview.net/attachment?id=bT8Wm4jtJC&name=pdf", title: "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment", authors: "Yifan Zhang, Ge Zhang, Yue Wu, Kangping Xu, Quanquan Gu "},
+  { link: "https://openreview.net/attachment?id=3GCzfMyfsA&name=pdf", title: "A Pilot Study of Weak-to-Strong Generalization in Safety, Toxicity, and Legal Reasoning", authors: "Ruimeng Ye, Yang Xiao, Bo Hui "},
+]
+
+const tiny: Tiny[] = [
+  { link: "https://openreview.net/attachment?id=8jb5Y5Esvs&name=pdf", title: "Rethinking AI cultural alignment", authors: "Michal Bravansky, Filip Trhlík, Fazl Barez"},
+  { link: "https://openreview.net/attachment?id=3qCivWYVDC&name=pdf", title: "Cooperative Agency-Centered LLMs", authors: "Iyadunni J. Adenuga"},
+  { link: "https://openreview.net/attachment?id=cbiUItgpoL&name=pdf", title: "Bidirectional Alignment for Inclusive Narrative Generation", authors: "Ken Kawamura"},
+  { link: "https://openreview.net/attachment?id=GAt5QTT3kO&name=pdf", title: "ValueMap: Mapping Crowdsourced Human Values to Computational Scores for Bi-directional Alignment", authors: "Priya Ronald DCosta, Rupkatha Hira"},
+  { link: "https://openreview.net/attachment?id=BfYx29Lqeu&name=pdf", title: "Negotiative Alignment: An interactive approach to human-AI co-adaptation for clinical applications", authors: "Florence Xini Doo, Nikhil Shah, Pranav Kulkarni, Vishwa Sanjay Parekh, Heng Huang"},
+]
+
+
 export const Iclr2025: Metadata = {
   overview,
   organizers,
+  chiorganizers,
+  orals,
+  poster,
+  tiny,
   cfp,
   pcs,
   schedule,
