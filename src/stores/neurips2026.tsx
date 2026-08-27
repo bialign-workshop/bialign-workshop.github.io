@@ -432,7 +432,7 @@ const cfp: CFP = {
   ),
   dates: [
     {
-      date: "August 29, 2026",
+      date: "September 4, 2026",
       type: "Submission",
     },
     {
