@@ -213,7 +213,7 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={NeurIPS2026}
-                  types={["about", "organizers", "committee"]}
+                  types={["about", "speakers", "organizers", "committee"]}
                 />
               )}
             />
@@ -223,7 +223,7 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={NeurIPS2026}
-                  types={["about", "organizers", "committee"]}
+                  types={["about", "speakers", "organizers", "committee"]}
                 />
               )}
             />
@@ -263,7 +263,7 @@ const App = (): ReactElement => {
               render={() => (
                 <Main
                   meta={NeurIPS2026}
-                  types={["about", "organizers", "committee"]}
+                  types={["about", "speakers", "organizers", "committee"]}
                 />
               )}
             />

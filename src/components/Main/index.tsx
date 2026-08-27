@@ -40,22 +40,26 @@ const Main = ({
       <LandingDiv overview={meta.overview} />
       <div className="app-main">
         {types.includes("about") && (
-          <>
-            <div className="section">
-              <div className="title">Overview</div>
-              {meta.overview.year === "2026" ? (
-                <About2026 overview={meta.overview} cfp={meta.cfp} />
-              ) : (
-                <AboutDiv overview={meta.overview} cfp={meta.cfp} />
-              )}
-            </div>
-            {meta.overview.year === "2026" && (
-              <div className="section">
-                <div className="title">Challenges, Goals &amp; Scopes</div>
-                <ChallengesScopes2026 overview={meta.overview} />
-              </div>
+          <div className="section">
+            <div className="title">Overview</div>
+            {meta.overview.year === "2026" ? (
+              <About2026 overview={meta.overview} cfp={meta.cfp} />
+            ) : (
+              <AboutDiv overview={meta.overview} cfp={meta.cfp} />
             )}
-          </>
+          </div>
+        )}
+        {types.includes("speakers") && (
+          <div className="section">
+            <div className="title">Speakers & Keynote Talks</div>
+            <SpeakerList speakers={meta.speakers} />
+          </div>
+        )}
+        {types.includes("about") && meta.overview.year === "2026" && (
+          <div className="section">
+            <div className="title">Challenges, Goals &amp; Scopes</div>
+            <ChallengesScopes2026 overview={meta.overview} />
+          </div>
         )}
         {types.includes("schedule") && (
           <div className="section">
@@ -78,12 +82,6 @@ const Main = ({
           </div>
         )}
         {types.includes("schedule") && (
-          <div className="section">
-            <div className="title">Speakers & Keynote Talks</div>
-            <SpeakerList speakers={meta.speakers} />
-          </div>
-        )}
-        {types.includes("speakers") && (
           <div className="section">
             <div className="title">Speakers & Keynote Talks</div>
             <SpeakerList speakers={meta.speakers} />
