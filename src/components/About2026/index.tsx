@@ -40,6 +40,15 @@ const About2026 = ({
         <div className="description" style={{ textAlign: "center" }}>
           <b>All deadlines are 11:59 pm</b> ("Anywhere on Earth").
         </div>
+        {overview.sponsorshipContact && (
+          <div className="sponsorship-note">
+            If you're interested in Sponsorship, please reach out to{" "}
+            {overview.sponsorshipName}:{" "}
+            <a href={`mailto:${overview.sponsorshipContact}`}>
+              {overview.sponsorshipContact}
+            </a>
+          </div>
+        )}
         <Divider></Divider>
 
         {/* Overview Description */}

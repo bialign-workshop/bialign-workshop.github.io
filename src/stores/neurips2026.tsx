@@ -182,6 +182,8 @@ const overview: Overview = {
     </>
   ),
   committeeApplyLink: "https://forms.gle/yCy8ErNeiDdMweBm6",
+  sponsorshipName: "Hua Shen",
+  sponsorshipContact: "huashen@nyu.edu",
   backgroundImg: "2026_neurips_logo_background.png",
   confLogoImg: "2026_neurips_logo.png",
   logoImg: "logo.png",

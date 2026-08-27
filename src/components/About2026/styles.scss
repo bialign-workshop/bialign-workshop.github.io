@@ -32,6 +32,20 @@
     margin-top: 20px;
     font-size: 20px;
   }
+
+  // Deliberately high-contrast so the sponsorship call-out is hard to miss.
+  .sponsorship-note {
+    margin-top: 20px;
+    padding: 14px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    color: $primary-color;
+    background-color: $yellow100;
+    border: 1px solid $yellow500;
+    border-radius: 8px;
+  }
 }
 
 .about-title {
