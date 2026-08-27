@@ -87,10 +87,11 @@
   }
 
   // Modifier applied alongside .section. Must stay after .section so the
-  // background wins; matches .iclrsection's shallow blue treatment.
+  // background wins. Uses a clearly visible light blue rather than
+  // .iclrsection's near-white tint.
   .speakers-section {
-    background-color: #F9FBFE;
-    border: 1px solid #ddd;
+    background-color: $blue50;
+    border: 1px solid $blue100;
     border-radius: 8px;
   }
 }
