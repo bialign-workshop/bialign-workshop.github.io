@@ -40,15 +40,6 @@ const About2026 = ({
         <div className="description" style={{ textAlign: "center" }}>
           <b>All deadlines are 11:59 pm</b> ("Anywhere on Earth").
         </div>
-        {overview.sponsorshipContact && (
-          <div className="sponsorship-note">
-            If you're interested in Sponsorship, please reach out to:{" "}
-            <a href={`mailto:${overview.sponsorshipContact}`}>
-              {overview.sponsorshipContact}
-            </a>
-            !
-          </div>
-        )}
         <Divider></Divider>
 
         {/* Overview Description */}
@@ -73,6 +64,16 @@ export const ChallengesScopes2026 = ({
       {/* Scopes & Topics Section */}
       <div className="about-title">Scopes & Topics</div>
       <div className="description">{overview.scope}</div>
+
+      {overview.sponsorshipContact && (
+        <div className="sponsorship-note">
+          If you're interested in Sponsorship, please reach out to:{" "}
+          <a href={`mailto:${overview.sponsorshipContact}`}>
+            {overview.sponsorshipContact}
+          </a>
+          !
+        </div>
+      )}
     </div>
   );
 };
