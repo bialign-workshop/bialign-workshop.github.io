@@ -22,7 +22,7 @@ export interface People {
   linkedin?: string;
 }
 export interface Speaker extends People {
-  type: string;
+  type?: string;
 }
 export interface CHIPeople extends People {
   type: string;

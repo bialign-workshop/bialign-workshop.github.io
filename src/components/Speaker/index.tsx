@@ -17,13 +17,15 @@ const SpeakerEntry = ({ speaker }: { speaker: Speaker }): ReactElement => {
       <div>
         <b className="name"><a href={speaker.webpage} target="_blank" rel="noopener noreferrer">{speaker.name}</a>
         </b>, <i className="affiliation">{speaker.affliation}</i>
-        <Chip 
+        {speaker.type && (
+          <Chip
             style={{ marginLeft: 10 }}
             label={speaker.type}
             color="primary"
             size="small"
             variant="outlined"
           />
+        )}
         <p>{speaker.description}</p>
       </div>
     </div>

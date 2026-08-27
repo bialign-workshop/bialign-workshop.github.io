@@ -598,7 +598,6 @@ const speakers: Speaker[] = [
     affliation: "Google DeepMind",
     webpage: "https://en.wikipedia.org/wiki/Jasjeet_S._Sekhon",
     img: "jasjeet.png",
-    type: "Keynote (to be confirmed)",
     description:
       "Jasjeet Sekhon is Chief Strategy Officer at Google DeepMind, where he oversees strategic initiatives spanning research, commercialization, and policy in support of safe AGI development. He joined in 2026 from Bridgewater Associates, where he was Chief Scientist and Head of AI and helped build the firm's AIA Labs research unit, and has previously held professorships at Harvard, UC Berkeley, and Yale. His work bridges causal inference, statistics, political economy, and machine learning."
   },
@@ -607,7 +606,6 @@ const speakers: Speaker[] = [
     affliation: "The University of Hong Kong",
     webpage: "https://www.hermancappelen.net/",
     img: "herman.png",
-    type: "Keynote",
     description:
       "Herman Cappelen is Chair Professor of Philosophy at the University of Hong Kong and Director of the AI & Humanity Lab. He holds a BA from the University of Oxford and a PhD in philosophy from UC Berkeley, and previously held positions at Oxford, the University of St Andrews, and the University of Oslo. His work spans conceptual engineering, the philosophy of language, philosophical methodology, and the philosophy of artificial intelligence, bringing a philosophical lens to what it means for AI systems and human concepts to align."
   },
@@ -617,7 +615,6 @@ const speakers: Speaker[] = [
     webpage: "https://sites.google.com/site/verenateresarieser/",
     linkedin: "https://www.linkedin.com/in/verena-rieser-3590b86/",
     img: "verena.png",
-    type: "Keynote",
     description:
       "Verena Rieser is a Senior Staff Research Scientist at Google DeepMind, where she founded the VOICES (Voices-of-all in Alignment) team within the GenAI unit, a core contributor to Gemini focused on model safety and usability across diverse communities. Before joining DeepMind in 2023, she was a full Professor at Heriot-Watt University in Edinburgh; she holds a PhD from Saarland University and was a postdoctoral researcher at the University of Edinburgh. Her research spans dialogue systems, natural language generation, conversational RL agents, and evaluation methodology, with recent work on aligning AI with diverse views of what is safe and beneficial."
   },
@@ -626,7 +623,6 @@ const speakers: Speaker[] = [
     affliation: "Former White House Senior Policy Advisor for AI",
     webpage: "https://en.wikipedia.org/wiki/Sriram_Krishnan",
     img: "sriram.png",
-    type: "Keynote (to be confirmed)",
     description:
       "Sriram Krishnan served as Senior Policy Advisor for Artificial Intelligence at the White House Office of Science and Technology Policy from 2025 until mid-2026, where he helped shape U.S. federal AI strategy, including arrangements giving the government early access to frontier models for capability and security assessment. He is an entrepreneur and venture capitalist who previously held senior product roles at Microsoft, Facebook, Twitter, and Snap. He brings a policy and governance perspective on alignment that is rarely represented in technical alignment venues."
   }
