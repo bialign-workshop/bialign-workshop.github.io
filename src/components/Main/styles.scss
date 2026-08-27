@@ -90,7 +90,10 @@
   // background wins. Uses a clearly visible light blue rather than
   // .iclrsection's near-white tint.
   .speakers-section {
-    background-color: $blue50;
+    // $blue50 lightened ~30% toward white so it reads as a soft blue tint,
+    // while the $blue100 border keeps the section clearly bounded. Written as
+    // hex rather than mix(), which emits fractional rgb() values.
+    background-color: #eff5fe;
     border: 1px solid $blue100;
     border-radius: 8px;
   }
