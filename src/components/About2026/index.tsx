@@ -42,11 +42,11 @@ const About2026 = ({
         </div>
         {overview.sponsorshipContact && (
           <div className="sponsorship-note">
-            If you're interested in Sponsorship, please reach out to{" "}
-            {overview.sponsorshipName}:{" "}
+            If you're interested in Sponsorship, please reach out to:{" "}
             <a href={`mailto:${overview.sponsorshipContact}`}>
               {overview.sponsorshipContact}
             </a>
+            !
           </div>
         )}
         <Divider></Divider>

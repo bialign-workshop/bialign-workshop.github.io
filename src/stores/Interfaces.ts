@@ -80,7 +80,6 @@ export interface Overview {
   location: string;
   date: string;
   committeeApplyLink?: string;
-  sponsorshipName?: string;
   sponsorshipContact?: string;
 }
 
