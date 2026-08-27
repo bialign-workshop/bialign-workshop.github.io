@@ -50,7 +50,7 @@ const Main = ({
           </div>
         )}
         {types.includes("speakers") && (
-          <div className="section">
+          <div className="section speakers-section">
             <div className="title">Speakers & Keynote Talks</div>
             <SpeakerList speakers={meta.speakers} />
           </div>
@@ -82,7 +82,7 @@ const Main = ({
           </div>
         )}
         {types.includes("schedule") && (
-          <div className="section">
+          <div className="section speakers-section">
             <div className="title">Speakers & Keynote Talks</div>
             <SpeakerList speakers={meta.speakers} />
           </div>

@@ -85,6 +85,14 @@
     margin-top: 30px;
     padding: 5px;
   }
+
+  // Modifier applied alongside .section. Must stay after .section so the
+  // background wins; matches .iclrsection's shallow blue treatment.
+  .speakers-section {
+    background-color: #F9FBFE;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
 }
 
 .section-container {
