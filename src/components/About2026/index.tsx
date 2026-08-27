@@ -41,19 +41,30 @@ const About2026 = ({
           <b>All deadlines are 11:59 pm</b> ("Anywhere on Earth").
         </div>
         <Divider></Divider>
-        
+
         {/* Overview Description */}
         <div className="description">{overview.description}</div>
-        
-        {/* Challenges & Goals Section */}
-        <div className="about-title">Challenges & Goals</div>
-        <div className="description">{overview.challenge}</div>
-        
-        {/* Scopes & Topics Section */}
-        <div className="about-title">Scopes & Topics</div>
-        <div className="description">{overview.scope}</div>
       </div>
     </>
+  );
+};
+
+/* Rendered as its own section, separate from the Overview above. */
+export const ChallengesScopes2026 = ({
+  overview,
+}: {
+  overview: Overview;
+}): ReactElement => {
+  return (
+    <div className="about-div about-2026">
+      {/* Challenges & Goals Section */}
+      <div className="about-title">Challenges & Goals</div>
+      <div className="description">{overview.challenge}</div>
+
+      {/* Scopes & Topics Section */}
+      <div className="about-title">Scopes & Topics</div>
+      <div className="description">{overview.scope}</div>
+    </div>
   );
 };
 

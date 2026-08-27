@@ -13,7 +13,7 @@ import ScheduleList from "../ScheduleList";
 import ScheduleList2026 from "../ScheduleList2026";
 import LandingDiv from "../Landing";
 import AboutDiv from "../About";
-import About2026 from "../About2026";
+import About2026, { ChallengesScopes2026 } from "../About2026";
 import SpeakerList from "../Speaker";
 import PaperList from "../PaperList";
 import PaperList2026 from "../PaperList2026";
@@ -40,14 +40,22 @@ const Main = ({
       <LandingDiv overview={meta.overview} />
       <div className="app-main">
         {types.includes("about") && (
-          <div className="section">
-            <div className="title">Overview</div>
-            {meta.overview.year === "2026" ? (
-              <About2026 overview={meta.overview} cfp={meta.cfp} />
-            ) : (
-              <AboutDiv overview={meta.overview} cfp={meta.cfp} />
+          <>
+            <div className="section">
+              <div className="title">Overview</div>
+              {meta.overview.year === "2026" ? (
+                <About2026 overview={meta.overview} cfp={meta.cfp} />
+              ) : (
+                <AboutDiv overview={meta.overview} cfp={meta.cfp} />
+              )}
+            </div>
+            {meta.overview.year === "2026" && (
+              <div className="section">
+                <div className="title">Challenges, Goals &amp; Scopes</div>
+                <ChallengesScopes2026 overview={meta.overview} />
+              </div>
             )}
-          </div>
+          </>
         )}
         {types.includes("schedule") && (
           <div className="section">
