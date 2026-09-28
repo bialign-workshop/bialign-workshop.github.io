@@ -18,6 +18,15 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: var(--navy900); }
+  a { color: inherit; text-decoration: none; }
+  /* Light underline marking text links (logos, cards and milestones stay plain). */
+  a.u {
+    text-decoration: underline;
+    text-decoration-color: rgba(165, 180, 252, 0.6);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+  .partner-logos a, .qr-item a { display: block; line-height: 0; }
   body {
     font-family: "Inter", "Google Sans Text", sans-serif;
     color: white;
@@ -50,6 +59,7 @@
 
   .kicker {
     display: inline-block;
+    line-height: 20px; /* fixed so the kicker is exactly 38px tall (20 + 2*8 + 2*1) */
     padding: 8px 16px;
     border-radius: 999px;
     background: rgba(226, 84, 129, 0.15);
@@ -66,7 +76,7 @@
     line-height: 1.16;
     letter-spacing: -0.01em;
   }
-  h1 span { display: block; }
+  h1 > span { display: block; }
   h1 .sub {
     margin-top: 6px;
     background: linear-gradient(90deg, #c7d2fe 0%, var(--indigo300) 45%, var(--pink300) 100%);
@@ -137,18 +147,101 @@
   .cta .url { font-size: 22px; font-weight: 700; color: var(--indigo300); margin-top: 8px; }
   .qr { background: white; padding: 10px; border-radius: 14px; line-height: 0; flex-shrink: 0; }
   .qr img, .qr svg { display: block; }
+  .qrs { display: flex; gap: 18px; flex-shrink: 0; }
+  .qr-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .qr-tag {
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  }
+  .qr-tag.site { background: var(--indigo600); color: white; }
+  .qr-tag.paper { background: var(--pink); color: white; }
+  .cta .links { margin-top: 8px; display: grid; gap: 4px; }
+  .cta .links div { font-size: 16px; color: #cbd5e1; }
+  .cta .links b { color: var(--indigo300); font-weight: 700; }
+  .cta .links .paper b { color: var(--pink300); }
+
+  /* ---------- BiAlign Journey timeline ---------- */
+  .journey { position: relative; display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+  .journey::before {
+    /* the track the milestone dots sit on */
+    content: ""; position: absolute; left: 4%; right: 4%; top: 7px; height: 2px;
+    background: linear-gradient(90deg, rgba(129,140,248,0.25), var(--indigo400), var(--pink));
+  }
+  .milestone { display: block; position: relative; text-align: center; padding-top: 24px; }
+  .milestone::before {
+    content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--navy800); border: 3px solid var(--indigo400);
+  }
+  .milestone .date { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--indigo300); }
+  .milestone .what { font-size: 14px; font-weight: 700; line-height: 1.25; margin-top: 4px; color: #e2e8f0; }
+  /* Keep a two-line label on exactly two lines; it may run slightly into the column gap. */
+  .milestone .what .nowrap { white-space: nowrap; font-size: 13.5px; letter-spacing: -0.01em; }
+  .milestone.now::before { background: var(--pink); border-color: #fbcfe8; box-shadow: 0 0 0 6px rgba(226,84,129,0.28); }
+  .milestone.now .date { color: var(--pink300); }
+  .milestone.now .what { color: white; }
+  .milestone.now .here {
+    display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 999px;
+    background: var(--pink); color: white; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .stats span {
+    padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    background: rgba(129,140,248,0.16); color: #c7d2fe; border: 1px solid rgba(165,180,252,0.25);
+  }
+
+  @page { size: 1080px 1350px; margin: 0; }
+  @media print {
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    /* Chrome's PDF output can't clip a gradient to text, so step the gradient per word. */
+    h1 .sub { background: none; -webkit-text-fill-color: initial; }
+    h1 .sub .w { color: var(--c); -webkit-text-fill-color: var(--c); }
+  }
 
   /* ---------- Portrait 1080 x 1350 ---------- */
   .portrait { width: 1080px; height: 1350px; padding: 56px 60px; display: flex; flex-direction: column; }
   .portrait .kicker { margin-top: 36px; align-self: flex-start; }
-  .portrait h1 { margin-top: 20px; font-size: 44px; }
+  /* Partner logos span from the top of the BiAlign artwork (8px below its box top) to
+     the bottom of the kicker, pinned to the top-right corner. Both logos share one
+     height here (no NSF scale-up) so their outer edges line up exactly. */
+  .portrait .partner-logos { position: absolute; top: 6px; right: 0; gap: 26px; }
+  .portrait .partner-logos img { width: 127px; height: 127px; }
+  /* The NSF seal's spiky rim reads smaller than the solid AI-SDM disc at the same box size,
+     so scale it up to match optically (its spikes extend slightly past the box). */
+  .portrait .partner-logos img.nsf { transform: scale(1.18); }
+  .portrait h1 { margin-top: 20px; font-size: 40px; line-height: 1.2; }
   .portrait .meta { margin-top: 22px; }
   .portrait .host { margin-top: 14px; }
-  .portrait .photo { margin-top: 28px; height: 418px; }
-  .portrait .people-label { margin-top: 28px; }
-  .portrait .people { margin-top: 18px; }
-  .portrait .cta { margin-top: auto; }
-  .portrait .people { margin-bottom: 28px; }
+  /* Presenters sit above the photo as highlighted cards; the photo fills what is left. */
+  .portrait .person {
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background: linear-gradient(160deg, rgba(129, 140, 248, 0.2) 0%, rgba(226, 84, 129, 0.12) 100%);
+    border: 1px solid rgba(165, 180, 252, 0.35);
+    box-shadow: 0 14px 32px rgba(2, 6, 23, 0.45);
+  }
+  .portrait .people-label { margin-top: 24px; }
+  .portrait .people { margin-top: 14px; }
+  .portrait .person { padding: 14px 16px; gap: 14px; }
+  .portrait .person img {
+    width: 84px; height: 84px; padding: 4px;
+    box-shadow: 0 0 0 5px rgba(129, 140, 248, 0.16);
+  }
+  .portrait .person strong { font-size: 21px; white-space: nowrap; }
+  .portrait .person span { font-size: 14px; margin-top: 4px; }
+  .portrait .journey-label { margin-top: 24px; }
+  .portrait .journey { margin-top: 16px; }
+  .portrait .stats { margin-top: 14px; }
+  .portrait .photo-label { margin-top: 22px; }
+  .portrait .photo { margin-top: 14px; flex: 1; min-height: 0; }
+  /* In the short portrait strip the overlay badge would cover the front row. */
+  .portrait .photo .badge { display: none; }
+  /* Short strip: frame the group (heads to knees) rather than the tables. */
+  .portrait .photo img { object-position: 50% 39%; }
+  .portrait .cta { margin-top: 16px; padding: 16px 22px; }
+  .portrait .cta .what { font-size: 19px; margin-top: 4px; }
+  .portrait .cta .url { font-size: 20px; margin-top: 4px; }
 
   /* ---------- Landscape 1600 x 900 ---------- */
   .landscape {
@@ -181,6 +274,8 @@
   const ASSETS = "img";
   const URL_TEXT = "bialign-workshop.github.io/nsfai2026";
   const URL_FULL = "https://" + URL_TEXT;
+  const PAPER_TEXT = "hua-shen.org/assets/files/bialign-design-space.pdf";
+  const PAPER_URL = "https://" + PAPER_TEXT;
 
   const icon = {
     cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
@@ -188,23 +283,47 @@
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
   };
 
+  // Every link on the poster; they stay clickable in the exported PDF.
+  const LINKS = {
+    site: "https://bialign-workshop.github.io/",
+    aisdm: "https://www.cmu.edu/ai-sdm/",
+    nsf: "https://www.nsf.gov/",
+    workshop: "https://www.cmu.edu/ai-sdm/research/human-ai-workshop/index.html",
+    hua: "https://hua-shen.org/",
+    tiffany: "https://tknearem.wixsite.com/tknearem",
+    jenny: "https://jennyliang.me/",
+  };
+  const link = (url, inner, cls = "") => `<a href="${url}" target="_blank" rel="noopener"${cls ? ` class="${cls}"` : ""}>${inner}</a>`;
+
   const brand = `
     <div class="brand-row">
-      <img class="bialign-logo" src="${ASSETS}/logo_word_white.png" alt="BiAlign">
+      ${link(LINKS.site, `<img class="bialign-logo" src="${ASSETS}/logo_word_white.png" alt="BiAlign">`)}
       <div class="partner-logos">
-        <img src="${ASSETS}/ai-sdm-logo.png" alt="NSF AI-SDM">
-        <img class="nsf" src="${ASSETS}/nsf-logo.png" alt="NSF">
+        ${link(LINKS.aisdm, `<img src="${ASSETS}/ai-sdm-logo.png" alt="NSF AI-SDM">`)}
+        ${link(LINKS.nsf, `<img class="nsf" src="${ASSETS}/nsf-logo.png" alt="NSF">`)}
       </div>
     </div>`;
   const kicker = `<div class="kicker">BiAlign Tutorial · NSF AI-SDM 2026</div>`;
-  const title = `<h1><span>Tutorial on Bidirectional Human-AI Alignment:</span><span class="sub">From Static Preferences to Dynamic Human-AI Complementarity</span></h1>`;
+  // Word colours sampled along the subtitle gradient (#c7d2fe -> #a5b4fc -> #f9a8c5); used in print only.
+  const gradientWords = (text) => {
+    const stops = [[0, [199, 210, 254]], [0.45, [165, 180, 252]], [1, [249, 168, 197]]];
+    const at = (t) => {
+      const i = t <= stops[1][0] ? 0 : 1;
+      const [t0, a] = stops[i], [t1, b] = stops[i + 1];
+      const k = (t - t0) / (t1 - t0);
+      return `rgb(${a.map((v, j) => Math.round(v + (b[j] - v) * k)).join(",")})`;
+    };
+    const words = text.split(" ");
+    return words.map((w, i) => `<span class="w" style="--c:${at(words.length > 1 ? i / (words.length - 1) : 0)}">${w}</span>`).join(" ");
+  };
+  const title = `<h1><span>Tutorial on Bidirectional Human-AI Alignment:</span><span class="sub">${gradientWords("From Static Preferences to Dynamic Human-AI Complementarity")}</span></h1>`;
   const meta = `
     <div class="meta">
       <span class="chip">${icon.cal} September 24, 2026</span>
       <span class="chip">${icon.pin} Pittsburgh, PA</span>
       <span class="chip">${icon.clock} 2-hour interactive tutorial</span>
     </div>
-    <div class="host">Hosted by the <b>NSF AI Institute for Societal Decision Making</b> at the <b>Human-AI Complementarity Workshop: Dynamic Alignment</b></div>`;
+    <div class="host">Hosted by the ${link(LINKS.aisdm, "<b>NSF AI Institute for Societal Decision Making</b>", "u")} at the ${link(LINKS.workshop, "<b>Human-AI Complementarity Workshop: Dynamic Alignment</b>", "u")}</div>`;
   const photo = `
     <div class="photo">
       <img src="${ASSETS}/group-photo.jpg" alt="Tutorial participants">
@@ -213,18 +332,52 @@
   const people = `
     <div class="people-label">Presenters</div>
     <div class="people">
-      <div class="person"><img src="${ASSETS}/hua.png"><div><strong>Hua Shen</strong><span>NYU Shanghai / New York University</span></div></div>
-      <div class="person"><img src="${ASSETS}/tiffany.png"><div><strong>Tiffany Knearem</strong><span>TK Research</span></div></div>
-      <div class="person"><img src="${ASSETS}/jenny.png"><div><strong>Jenny T. Liang</strong><span>Carnegie Mellon University</span></div></div>
+      ${link(LINKS.hua, `<img src="${ASSETS}/hua.png"><div><strong>Hua Shen</strong><span>NYU Shanghai / New York University</span></div>`, "person")}
+      ${link(LINKS.tiffany, `<img src="${ASSETS}/tiffany.png"><div><strong>Tiffany Knearem</strong><span>TK Research</span></div>`, "person")}
+      ${link(LINKS.jenny, `<img src="${ASSETS}/jenny.png"><div><strong>Jenny T. Liang</strong><span>Carnegie Mellon University</span></div>`, "person")}
+    </div>`;
+  // [date, label, url, isThisTutorial]
+  const milestones = [
+    ["Jun 2024", "Position Paper", "https://arxiv.org/abs/2406.09264"],
+    ["Apr 2025", "ICLR &amp; CHI '25 Workshop", "https://bialign-workshop.github.io/2025"],
+    ["Fall 2025", '<span class="nowrap">1st BiAlign Course</span><br><span class="nowrap">@ NYU Shanghai</span>', "https://hua-shen.org/src/course_bialign.html"],
+    ["Dec 2025", "NeurIPS '25 Tutorial", "https://bialign-workshop.github.io/neurips2025"],
+    ["Apr 2026", "CHI '26 Workshop", "https://bialign-workshop.github.io/2026"],
+    ["Sep 2026", "BiAlign Pyramid Paper", "https://hua-shen.org/assets/files/bialign-design-space.pdf"],
+    ["Sep 2026", "NSF AI-SDM Tutorial", "https://bialign-workshop.github.io/nsfai2026", true],
+    ["Dec 2026", "NeurIPS '26 Workshop", "https://bialign-workshop.github.io/neurips2026"],
+  ];
+  const journey = `
+    <div class="people-label journey-label">The BiAlign Journey</div>
+    <div class="journey">
+      ${milestones.map(([d, w, url, now]) => link(url, `
+          <div class="date">${d}</div>
+          <div class="what">${w}</div>
+          ${now ? '<div class="here">This tutorial</div>' : ""}`, `milestone${now ? " now" : ""}`)).join("")}
+    </div>
+    <div class="stats">
+      <span>5 workshops / tutorials / SIG</span><span>~300 submissions</span><span>~1,000 authors</span><span>400+ Slack members</span><span>1,000+ attendees</span>
     </div>`;
   const cta = (qrSize) => `
     <div class="cta">
       <div>
-        <div class="label">Slides, highlights &amp; more</div>
+        <div class="label">Slides, highlights &amp; paper</div>
         <div class="what">Explore the BiAlign Pyramid design space</div>
-        <div class="url">${URL_TEXT}</div>
+        <div class="links">
+          <div class="site"><b>Tutorial:</b> ${link(URL_FULL, URL_TEXT, "u")}</div>
+          <div class="paper"><b>Paper:</b> ${link(PAPER_URL, "BiAlign Pyramid: A Design Space of Human-AI Alignment Mechanisms Across Scales", "u")}</div>
+        </div>
       </div>
-      <div class="qr" data-size="${qrSize}"></div>
+      <div class="qrs">
+        <div class="qr-item">
+          ${link(URL_FULL, `<div class="qr" data-size="${qrSize}" data-url="${URL_FULL}"></div>`)}
+          <span class="qr-tag site">Tutorial Website</span>
+        </div>
+        <div class="qr-item">
+          ${link(PAPER_URL, `<div class="qr" data-size="${qrSize}" data-url="${PAPER_URL}"></div>`)}
+          <span class="qr-tag paper">Pyramid Paper</span>
+        </div>
+      </div>
     </div>`;
 
   const layout = (location.hash || "#portrait").slice(1);
@@ -236,13 +389,13 @@
         <div class="right">${photo}${cta(112)}</div>
       </div>`;
   } else {
-    root.innerHTML = `<div class="poster portrait">${brand}${kicker}${title}${meta}${photo}${people}${cta(124)}</div>`;
+    root.innerHTML = `<div class="poster portrait">${brand}${kicker}${title}${meta}${people}${cta(100)}${journey}<div class="people-label photo-label">Thank you for joining us in Pittsburgh!</div>${photo}</div>`;
   }
 
   // QR code pointing at the tutorial page.
   document.querySelectorAll(".qr").forEach((el) => {
     const qr = qrcode(0, "M");
-    qr.addData(URL_FULL);
+    qr.addData(el.dataset.url);
     qr.make();
     const size = +el.dataset.size;
     const cell = Math.floor(size / qr.getModuleCount());

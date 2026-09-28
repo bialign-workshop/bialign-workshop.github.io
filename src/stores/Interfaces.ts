@@ -189,6 +189,7 @@ export interface Tutorial {
   slides?: TutorialSlides;
   highlights?: TutorialHighlight[];
   groupPhoto?: { img: string; caption: string };
+  acknowledgements?: { title: string; intro: string; people: CHIPeople[] };
   journey?: TutorialMilestone[];
   journeyStats?: string[];
 }

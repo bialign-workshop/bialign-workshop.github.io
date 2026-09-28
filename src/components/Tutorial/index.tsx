@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Description, GetApp, OpenInNew, Slideshow } from "@material-ui/icons";
-import { Tutorial } from "../../stores/Interfaces";
+import { CHIPeople, Tutorial } from "../../stores/Interfaces";
 import "./styles.scss";
 
 const img = (path: string) => `${process.env.PUBLIC_URL}/images/${path}`;
@@ -13,6 +13,22 @@ const SectionHeading = ({ eyebrow, title }: { eyebrow: string; title: string }) 
     <div className="tp-eyebrow">{eyebrow}</div>
     <h2>{title}</h2>
   </div>
+);
+
+const PersonCard = ({ person }: { person: CHIPeople }) => (
+  <a
+    href={person.webpage}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="tp-person"
+    title={person.description || undefined}
+  >
+    <img src={img(person.img)} alt={person.name} />
+    <span>
+      <strong>{person.name}</strong>
+      <em>{person.affliation}</em>
+    </span>
+  </a>
 );
 
 const TutorialPage = ({ tutorial }: { tutorial: Tutorial }): ReactElement => {
@@ -98,20 +114,7 @@ const TutorialPage = ({ tutorial }: { tutorial: Tutorial }): ReactElement => {
             <div className="tp-people-label">{tutorial.presentersTitle}</div>
             <div className="tp-people-grid">
               {tutorial.presenters.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.webpage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="tp-person"
-                  title={p.description}
-                >
-                  <img src={img(p.img)} alt={p.name} />
-                  <span>
-                    <strong>{p.name}</strong>
-                    <em>{p.affliation}</em>
-                  </span>
-                </a>
+                <PersonCard key={p.name} person={p} />
               ))}
             </div>
           </div>
@@ -257,7 +260,30 @@ const TutorialPage = ({ tutorial }: { tutorial: Tutorial }): ReactElement => {
             </div>
           </section>
         )}
-        {tutorial.groupPhoto && (
+        {tutorial.acknowledgements && (
+          <section className="tp-section tp-dark tp-thanks">
+            <div className="tp-wrap">
+              <SectionHeading eyebrow="With gratitude" title={tutorial.acknowledgements.title} />
+              <p className="tp-thanks-intro">{tutorial.acknowledgements.intro}</p>
+              <div className="tp-people-grid">
+                {tutorial.acknowledgements.people.map((p) => (
+                  <PersonCard key={p.name} person={p} />
+                ))}
+              </div>
+              {/* The participants photo belongs to the same thank-you. */}
+              {tutorial.groupPhoto && (
+                <figure className="tp-photo">
+                  <a href={img(tutorial.groupPhoto.img)} target="_blank" rel="noopener noreferrer">
+                    <img src={img(tutorial.groupPhoto.img)} alt={tutorial.groupPhoto.caption} loading="lazy" />
+                  </a>
+                  <figcaption>{tutorial.groupPhoto.caption}</figcaption>
+                </figure>
+              )}
+            </div>
+          </section>
+        )}
+
+        {tutorial.groupPhoto && !tutorial.acknowledgements && (
           <section className="tp-section tp-wrap">
             <SectionHeading eyebrow="Thank you" title="Tutorial Participants" />
             <figure className="tp-photo">

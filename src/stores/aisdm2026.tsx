@@ -90,7 +90,10 @@ export const AISDM2026: Tutorial = {
     { img: "aisdm2026/ai-sdm-logo.png", alt: "NSF AI-SDM", url: "https://www.cmu.edu/ai-sdm/" },
     { img: "aisdm2026/nsf-logo.png", alt: "U.S. National Science Foundation", url: "https://www.nsf.gov/" },
   ],
-  heroLinks: [{ label: "BiAlign Pyramid Paper", url: PYRAMID_PAPER }],
+  heroLinks: [
+    { label: "BiAlign Position Paper", url: "https://arxiv.org/abs/2406.09264" },
+    { label: "BiAlign Pyramid Design Space", url: PYRAMID_PAPER },
+  ],
   slides: {
     viewUrl: `${SLIDES_PUB}/pub?start=false&loop=false&delayms=3000`,
     embedUrl: `${SLIDES_PUB}/embed?start=false&loop=false&delayms=3000`,
@@ -150,6 +153,28 @@ export const AISDM2026: Tutorial = {
     img: "aisdm2026/group-photo.jpg",
     caption:
       "BiAlign tutorial participants at the NSF AI-SDM Human-AI Complementarity Workshop, Pittsburgh, September 24, 2026.",
+  },
+  acknowledgements: {
+    title: "Special Thanks",
+    intro: "Thank you to our key tutorial coordinators, and to everyone who joined us in Pittsburgh!",
+    people: [
+      {
+        name: "Norman Gottron",
+        affliation: "NSF AI-SDM Managing Director",
+        webpage: "https://www.linkedin.com/in/norman-gottron-18813617",
+        img: "aisdm2026/norman-gottron.png",
+        type: "Coordinator",
+        description: "",
+      },
+      {
+        name: "Coty Gonzalez",
+        affliation: "NSF AI-SDM Co-Director",
+        webpage: "https://www.cmu.edu/dietrich/sds/people/faculty/cleotilde-gonzalez.html",
+        img: "aisdm2026/coty-gonzalez.png",
+        type: "Coordinator",
+        description: "",
+      },
+    ],
   },
   presentersTitle: "Presenters",
   presenters,

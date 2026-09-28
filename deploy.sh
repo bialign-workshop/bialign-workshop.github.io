@@ -15,7 +15,10 @@ git remote add github $GIT_REPO_URL
 git checkout -b gh-pages
 git add .
 git commit -am "Static site deploy"
-git push github gh-pages --force
+# The build is ~100 MB; git's default 1 MB HTTP buffer makes GitHub reject the push (HTTP 400).
+git -c http.postBuffer=524288000 push github gh-pages --force
+# Drop the throwaway repo so build/ stays a plain folder in the main repo.
+rm -rf .git
 cd ..
 rm -rf .deploy
 
