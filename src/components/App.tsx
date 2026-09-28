@@ -14,6 +14,10 @@ import Footer from "./Footer";
 import { Iclr2025 } from "../stores/iclr2025";
 import { CHI2026 } from "../stores/chi2026";
 import { NeurIPS2026 } from "../stores/neurips2026";
+import { AISDM2026 } from "../stores/aisdm2026";
+import { NeurIPS2025Tutorial } from "../stores/neurips2025";
+import TutorialPage from "./Tutorial";
+import NeurIPS2025TutorialPage from "./NeurIPS2025Tutorial";
 
 
 
@@ -266,6 +270,18 @@ const App = (): ReactElement => {
                   types={["about", "speakers", "organizers", "committee"]}
                 />
               )}
+            />
+            {/* NeurIPS 2025 Tutorial on Human-AI Alignment */}
+            <Route
+              path={["/neurips2025", "/neurips2025/about"]}
+              exact
+              render={() => <NeurIPS2025TutorialPage tutorial={NeurIPS2025Tutorial} />}
+            />
+            {/* BiAlign tutorial at the AI-SDM Human-AI Complementarity Workshop */}
+            <Route
+              path={["/nsfai2026", "/nsfai2026/about"]}
+              exact
+              render={() => <TutorialPage tutorial={AISDM2026} />}
             />
             {/* Redirects from old chi2026 paths to new 2026 paths */}
             <Route

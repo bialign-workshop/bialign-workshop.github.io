@@ -12,13 +12,14 @@ export default function Footer(): ReactElement {
   // Extract year/venue slug from current pathname (e.g., "/2025/about" -> "2025",
   // "/2026/about" -> "2026", "/neurips2026/about" -> "neurips2026")
   const getYearFromPath = () => {
-    const match = location.pathname.match(/^\/(\d{4}|neurips2026)/);
+    const match = location.pathname.match(/^\/(\d{4}|neurips2026|neurips2025|nsfai2026)/);
     return match ? match[1] : "2025";
   };
 
   const year = getYearFromPath();
   const getMetadata = () => {
-    if (year === "neurips2026") return NeurIPS2026;
+    // The tutorials share the NeurIPS 2026 contact and Slack
+    if (year === "neurips2026" || year === "nsfai2026" || year === "neurips2025") return NeurIPS2026;
     if (year === "2026") return CHI2026;
     return Iclr2025;
   };

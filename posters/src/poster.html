@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BiAlign NSF AI-SDM Tutorial Poster</title>
+<link href="https://fonts.googleapis.com/css?family=Google+Sans+Display:400,500,700|Google+Sans+Text:400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  :root {
+    --navy900: #0f172a;
+    --navy800: #1e293b;
+    --indigo300: #a5b4fc;
+    --indigo400: #818cf8;
+    --indigo600: #4f46e5;
+    --pink: #e25481;
+    --pink300: #f9a8c5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--navy900); }
+  body {
+    font-family: "Inter", "Google Sans Text", sans-serif;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+  }
+  .poster {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 520px at 92% -6%, rgba(129, 140, 248, 0.38), transparent 60%),
+      radial-gradient(820px 520px at -10% 104%, rgba(226, 84, 129, 0.30), transparent 60%),
+      linear-gradient(150deg, var(--navy900) 0%, var(--navy800) 100%);
+  }
+  .poster::after {
+    /* faint dot grid for texture */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+  }
+  .poster > * { position: relative; z-index: 1; }
+
+  .brand-row { display: flex; align-items: center; justify-content: space-between; }
+  .bialign-logo { height: 58px; display: block; }
+  .partner-logos { display: flex; align-items: center; gap: 22px; }
+  .partner-logos img { width: 76px; height: 76px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+  .partner-logos img.nsf { transform: scale(1.18); }
+
+  .kicker {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(226, 84, 129, 0.15);
+    border: 1px solid rgba(226, 84, 129, 0.5);
+    color: var(--pink300);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: "Google Sans Display", "Inter", sans-serif;
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+  }
+  h1 span { display: block; }
+  h1 .sub {
+    margin-top: 6px;
+    background: linear-gradient(90deg, #c7d2fe 0%, var(--indigo300) 45%, var(--pink300) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #e2e8f0;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .chip svg { width: 18px; height: 18px; color: var(--indigo300); }
+  .host { color: #94a3b8; font-size: 18px; line-height: 1.5; }
+  .host b { color: #e2e8f0; font-weight: 600; }
+
+  .photo {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(165, 180, 252, 0.25);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; display: block; }
+  .photo .badge {
+    position: absolute;
+    left: 20px; bottom: 20px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .photo .badge em { font-style: normal; color: var(--pink300); }
+
+  .people-label {
+    display: flex; align-items: center; gap: 14px;
+    color: var(--pink300);
+    font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .people-label::before, .people-label::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.14); }
+  .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .person { display: flex; align-items: center; gap: 14px; }
+  .person img {
+    width: 76px; height: 76px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    padding: 3px; background: linear-gradient(135deg, var(--indigo400), var(--pink));
+  }
+  .person strong { display: block; font-size: 19px; font-weight: 700; }
+  .person span { display: block; font-size: 14px; color: #cbd5e1; margin-top: 2px; line-height: 1.35; }
+
+  .cta {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 22px 26px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, rgba(79, 70, 229, 0.35), rgba(226, 84, 129, 0.22));
+    border: 1px solid rgba(165, 180, 252, 0.35);
+  }
+  .cta .label { font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink300); }
+  .cta .what { font-size: 21px; font-weight: 700; margin-top: 6px; }
+  .cta .url { font-size: 22px; font-weight: 700; color: var(--indigo300); margin-top: 8px; }
+  .qr { background: white; padding: 10px; border-radius: 14px; line-height: 0; flex-shrink: 0; }
+  .qr img, .qr svg { display: block; }
+
+  /* ---------- Portrait 1080 x 1350 ---------- */
+  .portrait { width: 1080px; height: 1350px; padding: 56px 60px; display: flex; flex-direction: column; }
+  .portrait .kicker { margin-top: 36px; align-self: flex-start; }
+  .portrait h1 { margin-top: 20px; font-size: 44px; }
+  .portrait .meta { margin-top: 22px; }
+  .portrait .host { margin-top: 14px; }
+  .portrait .photo { margin-top: 28px; height: 418px; }
+  .portrait .people-label { margin-top: 28px; }
+  .portrait .people { margin-top: 18px; }
+  .portrait .cta { margin-top: auto; }
+  .portrait .people { margin-bottom: 28px; }
+
+  /* ---------- Landscape 1600 x 900 ---------- */
+  .landscape {
+    width: 1600px; height: 900px; padding: 56px 60px;
+    display: grid; grid-template-columns: 1fr 740px; gap: 44px;
+  }
+  .landscape .left { display: flex; flex-direction: column; min-width: 0; }
+  .landscape .kicker { margin-top: 30px; align-self: flex-start; }
+  .landscape h1 { margin-top: 18px; font-size: 40px; }
+  .landscape .meta { margin-top: 20px; }
+  .landscape .host { margin-top: 12px; font-size: 17px; }
+  .landscape .people-label { margin-top: 26px; }
+  .landscape .people { margin-top: 16px; grid-template-columns: 1fr; gap: 12px; }
+  .landscape .person img { width: 60px; height: 60px; }
+  .landscape .person strong { font-size: 18px; }
+  .landscape .right { display: flex; flex-direction: column; gap: 22px; min-height: 0; }
+  .landscape .photo { flex: 1; }
+  /* Zoom past the ceiling and empty tables in the near-square frame. */
+  .landscape .photo img { transform: scale(1.1); transform-origin: 50% 62%; }
+  .landscape .cta { padding: 18px 22px; }
+  .landscape .cta .what { font-size: 19px; }
+  .landscape .cta .url { font-size: 19px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+
+<script>
+  const ASSETS = "img";
+  const URL_TEXT = "bialign-workshop.github.io/nsfai2026";
+  const URL_FULL = "https://" + URL_TEXT;
+
+  const icon = {
+    cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  };
+
+  const brand = `
+    <div class="brand-row">
+      <img class="bialign-logo" src="${ASSETS}/logo_word_white.png" alt="BiAlign">
+      <div class="partner-logos">
+        <img src="${ASSETS}/ai-sdm-logo.png" alt="NSF AI-SDM">
+        <img class="nsf" src="${ASSETS}/nsf-logo.png" alt="NSF">
+      </div>
+    </div>`;
+  const kicker = `<div class="kicker">BiAlign Tutorial · NSF AI-SDM 2026</div>`;
+  const title = `<h1><span>Tutorial on Bidirectional Human-AI Alignment:</span><span class="sub">From Static Preferences to Dynamic Human-AI Complementarity</span></h1>`;
+  const meta = `
+    <div class="meta">
+      <span class="chip">${icon.cal} September 24, 2026</span>
+      <span class="chip">${icon.pin} Pittsburgh, PA</span>
+      <span class="chip">${icon.clock} 2-hour interactive tutorial</span>
+    </div>
+    <div class="host">Hosted by the <b>NSF AI Institute for Societal Decision Making</b> at the <b>Human-AI Complementarity Workshop: Dynamic Alignment</b></div>`;
+  const photo = `
+    <div class="photo">
+      <img src="${ASSETS}/group-photo.jpg" alt="Tutorial participants">
+      <div class="badge">Thank you to everyone who joined us <em>in Pittsburgh!</em></div>
+    </div>`;
+  const people = `
+    <div class="people-label">Presenters</div>
+    <div class="people">
+      <div class="person"><img src="${ASSETS}/hua.png"><div><strong>Hua Shen</strong><span>NYU Shanghai / New York University</span></div></div>
+      <div class="person"><img src="${ASSETS}/tiffany.png"><div><strong>Tiffany Knearem</strong><span>TK Research</span></div></div>
+      <div class="person"><img src="${ASSETS}/jenny.png"><div><strong>Jenny T. Liang</strong><span>Carnegie Mellon University</span></div></div>
+    </div>`;
+  const cta = (qrSize) => `
+    <div class="cta">
+      <div>
+        <div class="label">Slides, highlights &amp; more</div>
+        <div class="what">Explore the BiAlign Pyramid design space</div>
+        <div class="url">${URL_TEXT}</div>
+      </div>
+      <div class="qr" data-size="${qrSize}"></div>
+    </div>`;
+
+  const layout = (location.hash || "#portrait").slice(1);
+  const root = document.getElementById("root");
+  if (layout === "landscape") {
+    root.innerHTML = `
+      <div class="poster landscape">
+        <div class="left">${brand}${kicker}${title}${meta}${people}</div>
+        <div class="right">${photo}${cta(112)}</div>
+      </div>`;
+  } else {
+    root.innerHTML = `<div class="poster portrait">${brand}${kicker}${title}${meta}${photo}${people}${cta(124)}</div>`;
+  }
+
+  // QR code pointing at the tutorial page.
+  document.querySelectorAll(".qr").forEach((el) => {
+    const qr = qrcode(0, "M");
+    qr.addData(URL_FULL);
+    qr.make();
+    const size = +el.dataset.size;
+    const cell = Math.floor(size / qr.getModuleCount());
+    el.innerHTML = qr.createSvgTag({ cellSize: cell, margin: 0 });
+  });
+</script>
+</body>
+</html>

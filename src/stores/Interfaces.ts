@@ -114,3 +114,81 @@ export interface Metadata {
   schedule: Schedule[];
 
 }
+
+// Standalone tutorial pages (e.g. /neurips2025, /aisdm2026). Optional fields let
+// each tutorial show only the sections its source material has.
+export interface TutorialLink {
+  label: string;
+  url: string;
+}
+
+export interface TutorialFact {
+  label: string;
+  value: string;
+  icon: ReactElement;
+  url?: string;
+}
+
+export interface TutorialPart {
+  title: string;
+  emoji?: string;
+  subtitle?: string;
+  description?: string;
+}
+
+export interface TutorialSession {
+  number: string;
+  title: string;
+  speaker?: string;
+  note?: string;
+  slides?: string;
+  duration: string;
+}
+
+export interface TutorialSlides {
+  viewUrl: string;
+  embedUrl: string;
+  pdfUrl?: string;
+}
+
+export interface TutorialHighlight {
+  img: string;
+  title: string;
+  caption: string;
+}
+
+export interface TutorialMilestone {
+  date: string;
+  title: string;
+  detail?: string;
+  url?: string;
+  current?: boolean;
+}
+
+export interface Tutorial {
+  kicker: string;
+  kickerUrl?: string;
+  heading: string;
+  headingUrl?: string;
+  subheading?: string;
+  host?: TutorialLink;
+  event?: TutorialLink;
+  heroLinks?: TutorialLink[];
+  facts: TutorialFact[];
+  title?: string;
+  abstract?: string[];
+  parts?: TutorialPart[];
+  objectives?: string[];
+  sessions?: TutorialSession[];
+  presentersTitle: string;
+  presenters: CHIPeople[];
+  panelists?: CHIPeople[];
+  links?: TutorialLink[];
+  cta?: TutorialLink & { title: string; text: string };
+  logos?: { img: string; alt: string; url: string }[];
+  slides?: TutorialSlides;
+  highlights?: TutorialHighlight[];
+  groupPhoto?: { img: string; caption: string };
+  journey?: TutorialMilestone[];
+  journeyStats?: string[];
+}

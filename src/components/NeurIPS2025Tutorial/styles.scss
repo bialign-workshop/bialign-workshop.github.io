@@ -1,0 +1,408 @@
+// Plain-CSS translation of the Tailwind classes used by the original page,
+// scoped under .hai-tutorial so nothing leaks into the rest of the site.
+$slate900: #0f172a;
+$slate800: #1e293b;
+$slate700: #334155;
+$slate600: #475569;
+$gray200: #e5e7eb;
+$gray300: #d1d5db;
+$gray400: #9ca3af;
+$indigo300: #a5b4fc;
+$indigo400: #818cf8;
+$indigo500: #6366f1;
+$indigo600: #4f46e5;
+$teal500: #14b8a6;
+$accent: #fecc66;
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+
+.hai-tutorial {
+  font-family: "Inter", sans-serif;
+  color: $gray200;
+  background-color: $slate900;
+  background: linear-gradient(145deg, $slate900 0%, $slate800 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Fill the viewport below the sticky site header, like the original's full-page background.
+  // .app is a fixed-height flex column, so without flex-shrink: 0 this block would shrink to
+  // the viewport and squeeze the gradient into one screen instead of spanning the whole page.
+  min-height: calc(100vh - 60px);
+  flex-shrink: 0;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  // The site sets Google Sans on headings globally; the original uses Inter throughout.
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .glass-card {
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(51, 65, 85, 0.7);
+    border-radius: 0.75rem;
+  }
+
+  .hai-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    @media (min-width: $md) {
+      padding: 5rem 1rem;
+    }
+  }
+
+  .hai-section,
+  .hai-header {
+    margin-bottom: 4rem;
+    @media (min-width: $md) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    @media (min-width: $md) {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  // Header
+  .hai-header {
+    text-align: center;
+    .hai-kicker {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      color: $indigo400;
+      transition: color 0.2s;
+      &:hover {
+        color: $indigo300;
+      }
+      @media (min-width: $md) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+    h1 {
+      margin-top: 0.75rem;
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: 800;
+      color: white;
+      // Tailwind's md:text-5xl / lg:text-6xl also set line-height: 1, overriding leading-tight.
+      @media (min-width: $md) {
+        font-size: 3rem;
+        line-height: 1;
+      }
+      @media (min-width: $lg) {
+        font-size: 3.75rem;
+      }
+    }
+    .hai-lead {
+      margin: 1rem auto 0;
+      max-width: 48rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      color: $gray300;
+      @media (min-width: $md) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+    .hai-hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem 1rem;
+      a {
+        color: $accent;
+      }
+      svg {
+        font-size: 1.1em;
+        vertical-align: -0.15em;
+      }
+    }
+  }
+
+  // Speaker and panelist cards
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &.speakers {
+      @media (min-width: $lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    &.panelists {
+      @media (min-width: $md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (min-width: $lg) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgba(51, 65, 85, 0.7);
+    }
+    img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      border: 4px solid $slate600;
+      object-fit: cover;
+    }
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: $indigo300;
+    }
+  }
+
+  // Date / time / location
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    @media (min-width: $md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .detail-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    .detail-icon {
+      flex-shrink: 0;
+      color: $indigo400;
+      svg {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+      }
+    }
+    h3 {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      color: white;
+    }
+    p {
+      color: $gray300;
+    }
+  }
+
+  // Outline
+  .outline-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    @media (min-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .outline-card {
+    padding: 1.5rem;
+    text-align: center;
+    transition: background-color 0.15s;
+    &:hover {
+      background-color: rgba(51, 65, 85, 0.7);
+    }
+    .outline-emoji {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: $gray300;
+    }
+  }
+
+  // Schedule timeline
+  .schedule-card {
+    padding: 1.5rem;
+    @media (min-width: $md) {
+      padding: 2.5rem;
+    }
+  }
+  .timeline {
+    list-style: none;
+    margin: 0 0 -2rem; // the original's -mb-8
+    padding: 0;
+    li {
+      position: relative;
+      padding-bottom: 2rem;
+      &:last-child {
+        padding-bottom: 0;
+        .timeline-line {
+          display: none;
+        }
+      }
+    }
+    .timeline-line {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      margin-left: -1px;
+      height: 100%;
+      width: 2px;
+      background-color: $slate600;
+    }
+    .timeline-row {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+    }
+    .timeline-badge {
+      flex-shrink: 0;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 9999px;
+      background-color: $indigo600;
+      box-shadow: 0 0 0 8px $slate800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      &.panel {
+        background-color: $teal500;
+      }
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    .timeline-content {
+      display: flex;
+      flex: 1;
+      min-width: 0;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.375rem;
+      p {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        color: white;
+      }
+      .accent {
+        color: $accent;
+      }
+      svg {
+        font-size: 1.1em;
+        vertical-align: -0.15em;
+      }
+      time {
+        white-space: nowrap;
+        text-align: right;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: $gray400;
+      }
+    }
+  }
+
+  // Call to action
+  .hai-cta {
+    text-align: center;
+    h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+      @media (min-width: $md) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: $gray300;
+      max-width: 36rem;
+      margin: 0 auto 2rem;
+    }
+    a {
+      display: inline-block;
+      background-color: $indigo600;
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      &:hover {
+        background-color: $indigo500;
+        transform: translateY(-0.125rem);
+      }
+    }
+  }
+
+  .hai-footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid $slate700;
+    p {
+      color: $gray400;
+    }
+  }
+}

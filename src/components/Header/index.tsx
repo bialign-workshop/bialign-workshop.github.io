@@ -46,7 +46,7 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   // Extract year/venue slug from current pathname (e.g., "/2025/about" -> "2025",
   // "/2026/about" -> "2026", "/neurips2026/about" -> "neurips2026")
   const getYearFromPath = () => {
-    const match = location.pathname.match(/^\/(\d{4}|neurips2026)/);
+    const match = location.pathname.match(/^\/(\d{4}|neurips2026|neurips2025|nsfai2026)/);
     return match ? match[1] : "2025";
   };
 
@@ -70,6 +70,10 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
   // Get the pages to display based on year
   const getPagesForYear = () => {
     // if (selectedYear === "2026" || selectedYear === "neurips2026") {
+    if (selectedYear === "nsfai2026" || selectedYear === "neurips2025") {
+      // Tutorials are single pages
+      return ["about"];
+    }
     if (selectedYear === "neurips2026") {
       // For 2026 workshops, show: Overview, CFP, Speakers, Organizers, Schedule, Program Committee
       // "papers" (Accepted Papers) temporarily hidden until papers are accepted
@@ -158,8 +162,10 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
             onClick={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
           >
-            <MenuItem value="2025">ICLR 2025</MenuItem>
+            <MenuItem value="2025">ICLR &amp; CHI 2025</MenuItem>
+            <MenuItem value="neurips2025">NeurIPS Tutorial 2025</MenuItem>
             <MenuItem value="2026">CHI 2026</MenuItem>
+            <MenuItem value="nsfai2026">NSF AI-SDM Tutorial 2026</MenuItem>
             <MenuItem value="neurips2026">NeurIPS 2026</MenuItem>
           </Select>
         </div>
