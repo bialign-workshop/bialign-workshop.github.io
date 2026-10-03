@@ -80,6 +80,9 @@ export interface Overview {
   location: string;
   date: string;
   committeeApplyLink?: string;
+  committeeNote?: string;
+  // When set, the Accepted Papers page lists orals and posters with this OpenReview link.
+  papersOpenReviewLink?: string;
   sponsorshipContact?: string;
 }
 

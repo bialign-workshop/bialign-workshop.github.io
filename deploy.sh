@@ -7,10 +7,18 @@
 GIT_REPO_URL="https://github.com/bialign-workshop/bialign-workshop.github.io.git"
 
 
+# Stop at the first failure. Without this, a failed `git init` below lets the
+# following git commands fall through to the main repo and commit on its branch.
+set -e
+
 mkdir .deploy
 cp -R ./* .deploy
 cd build
 git init .
+if [ ! -d .git ]; then
+  echo "deploy: git init failed in build/; aborting so nothing is committed to the main repo" >&2
+  exit 1
+fi
 git remote add github $GIT_REPO_URL
 git checkout -b gh-pages
 git add .

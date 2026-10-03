@@ -17,6 +17,7 @@ import About2026, { ChallengesScopes2026 } from "../About2026";
 import SpeakerList from "../Speaker";
 import PaperList from "../PaperList";
 import PaperList2026 from "../PaperList2026";
+import AcceptedPaperList from "../AcceptedPaperList";
 
 
 export type PageBlock =
@@ -74,7 +75,13 @@ const Main = ({
         {types.includes("orals") && (
           <div className="section">
             <div className="title">Accepted Papers</div>
-            {meta.overview.year === "2026" ? (
+            {meta.overview.papersOpenReviewLink ? (
+              <AcceptedPaperList
+                orals={meta.orals}
+                posters={meta.poster}
+                openreviewLink={meta.overview.papersOpenReviewLink}
+              />
+            ) : meta.overview.year === "2026" ? (
               <PaperList2026 orals={meta.orals} poster={meta.poster} tiny={meta.tiny} />
             ) : (
               <PaperList orals={meta.orals} poster={meta.poster} tiny={meta.tiny} />
@@ -130,6 +137,11 @@ const Main = ({
                     PC Member Application Form -- NeurIPS 2026 Dynamic Alignment Workshop
                   </a>!
                 </b>
+              </div>
+            )}
+            {meta.overview.committeeNote && (
+              <div className="committee-apply">
+                <b>{meta.overview.committeeNote}</b>
               </div>
             )}
             <CommmitteeList members={meta.pcs} />

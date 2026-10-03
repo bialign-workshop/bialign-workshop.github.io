@@ -75,10 +75,7 @@ const Header = ({ selectedVenue, onVenueChange }: HeaderProps) => {
       return ["about"];
     }
     if (selectedYear === "neurips2026") {
-      // For 2026 workshops, show: Overview, CFP, Speakers, Organizers, Schedule, Program Committee
-      // "papers" (Accepted Papers) temporarily hidden until papers are accepted
-      // return ["about", "cfp", "papers", "speakers", "organizers", "schedule", "committee"];
-      return ["about", "cfp", "schedule", "organizers", "speakers", "committee"];
+      return ["about", "cfp", "papers", "schedule", "organizers", "speakers", "committee"];
     }
     // For other years, show all pages
     return Object.keys(PageIds);
